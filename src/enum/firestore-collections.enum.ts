@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-shadow
-export const enum Collection {
+export enum Collection {
     Inquiries = 'inquiries',
     AdminUsers = 'adminUsers',
     TempAssignClaim = 'tempAssignClaim',
