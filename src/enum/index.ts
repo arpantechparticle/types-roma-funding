@@ -1,3 +1,4 @@
 // Export all enums here
 export {Collection} from './firestore-collections.enum';
-export {EntityType} from './entity-type';
+export {EntityType} from './entity-type.enum';
+export {Roles} from './roles.enum';
