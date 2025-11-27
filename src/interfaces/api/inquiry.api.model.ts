@@ -97,10 +97,11 @@ export interface InquiryVehicleDetail {
   mileage?: number;
 }
 
-export interface InquiryDeclaration {
-  acknowledgement: boolean;
-  signature?: string;
-  signedAt?: Timestamp;
+export interface InquiryDocuments {
+  governmentId?: string;      // Driver’s License / PR Card / Passport
+  proofOfIncome?: string;     // Paystubs, Bank Statements
+  proofOfAddress?: string;    // Utility Bill / Bank Statement
+  specificationSheet?: string; // Safety Cert, Registration Copy
 }
 
 export interface InquiryApiModel {
@@ -115,7 +116,8 @@ export interface InquiryApiModel {
   references?: InquiryReferenceDetail[];
   previousFinancingHistory?: InquiryFinancingHistory;
   vehicleDetails?: InquiryVehicleDetail;
-  declaration?: InquiryDeclaration;
+  documents: InquiryDocuments;
+  acknowledgement: boolean;
   createdAt: Timestamp;
   updatedAt: Timestamp;
   deletedAt: Timestamp | null;

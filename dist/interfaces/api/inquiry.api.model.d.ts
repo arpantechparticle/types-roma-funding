@@ -87,10 +87,11 @@ export interface InquiryVehicleDetail {
     vin?: string;
     mileage?: number;
 }
-export interface InquiryDeclaration {
-    acknowledgement: boolean;
-    signature?: string;
-    signedAt?: Timestamp;
+export interface InquiryDocuments {
+    governmentId?: string;
+    proofOfIncome?: string;
+    proofOfAddress?: string;
+    specificationSheet?: string;
 }
 export interface InquiryApiModel {
     id: string;
@@ -104,7 +105,8 @@ export interface InquiryApiModel {
     references?: InquiryReferenceDetail[];
     previousFinancingHistory?: InquiryFinancingHistory;
     vehicleDetails?: InquiryVehicleDetail;
-    declaration?: InquiryDeclaration;
+    documents: InquiryDocuments;
+    acknowledgement: boolean;
     createdAt: Timestamp;
     updatedAt: Timestamp;
     deletedAt: Timestamp | null;
