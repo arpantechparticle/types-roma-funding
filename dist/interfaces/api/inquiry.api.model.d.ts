@@ -62,12 +62,15 @@ export interface InquiryBankReference {
     phone?: PhoneNumberModel;
 }
 export interface InquiryReferenceDetail {
-    lenderName: string;
-    contactPerson?: string;
+    name: string;
+    address?: string;
     phone?: PhoneNumberModel;
-    accountNumber?: string;
-    balance?: number;
-    remarks?: string;
+}
+export interface InquiryFinancingHistory {
+    hasFinancedBefore: boolean;
+    financeCompany?: string;
+    equipmentType?: string;
+    amountFinanced?: number;
 }
 export interface InquiryVehicleDetail {
     vehicleType: string;
@@ -94,7 +97,8 @@ export interface InquiryApiModel {
     employmentInformation: InquiryEmploymentInformation;
     bankReference: InquiryBankReference;
     references?: InquiryReferenceDetail[];
-    vehicleDetails?: InquiryVehicleDetail[];
+    financingHistory?: InquiryFinancingHistory;
+    vehicleDetails?: InquiryVehicleDetail;
     declaration?: InquiryDeclaration;
     createdAt: Timestamp;
     updatedAt: Timestamp;
