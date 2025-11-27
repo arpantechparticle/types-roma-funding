@@ -83,13 +83,18 @@ export interface InquiryFinancingHistory {
 
 export interface InquiryVehicleDetail {
   vehicleType: string;
-  make: string;
-  model: string;
   year: number;
+  make: string;
+  modelName?: string;
+  body?: string;
+  price?: number;
+  payment?: number;
+  termMonths?: number;
+  downPayment?: number;
+  salesperson?: string;
+  stockNumber?: string;
   vin?: string;
   mileage?: number;
-  purchasePrice?: number;
-  downPayment?: number;
 }
 
 export interface InquiryDeclaration {
@@ -108,7 +113,7 @@ export interface InquiryApiModel {
   employmentInformation: InquiryEmploymentInformation;
   bankReference: InquiryBankReference;
   references?: InquiryReferenceDetail[];
-  financingHistory?: InquiryFinancingHistory;
+  previousFinancingHistory?: InquiryFinancingHistory;
   vehicleDetails?: InquiryVehicleDetail;
   declaration?: InquiryDeclaration;
   createdAt: Timestamp;
