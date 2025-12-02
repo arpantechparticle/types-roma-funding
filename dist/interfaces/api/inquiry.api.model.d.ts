@@ -22,7 +22,7 @@ export interface InquiryApplicantHomeDetails {
     currentMortgageBalance: number | null;
     currentMarketValue: number | null;
     lenderName: string | null;
-    yearsThere: number;
+    yearsThere: number | null;
     priorAddress: AddressModel | null;
     address: AddressModel;
     landmark: string | null;
@@ -45,7 +45,7 @@ export interface InquiryApplicantInformation {
 export interface InquiryEmploymentInformation {
     currentEmployer: string;
     currentEmployerPhone: PhoneNumberModel | null;
-    yearsThere: number;
+    yearsThere: number | null;
     position: string;
     priorEmployer: string | null;
     priorEmployerPhone: PhoneNumberModel | null;
