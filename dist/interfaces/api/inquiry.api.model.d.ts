@@ -99,7 +99,7 @@ export interface InquiryApiModel {
     timeZone: string;
     source: EntityType;
     businessInformation: InquiryBusinessInformation;
-    applicants: InquiryApplicantInformation[];
+    applicant: InquiryApplicantInformation;
     employmentInformation: InquiryEmploymentInformation;
     bankReference: InquiryBankReference;
     references?: InquiryReferenceDetail[];
