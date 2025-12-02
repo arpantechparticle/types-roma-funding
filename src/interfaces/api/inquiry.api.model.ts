@@ -8,100 +8,98 @@ export type InquiryStatus = 'new' | 'in-progress' | 'resolved' | 'closed';
 
 export interface InquiryBusinessInformation {
   businessName: string;
-  doingBusinessAs?: string;
+  doingBusinessAs: string | null;
   typeOfBusiness: string;
-  taxId?: string;
+  taxId: string | null;
   email: string;
   phone: PhoneNumberModel;
-  fax?: PhoneNumberModel;
-  yearsInBusiness?: number;
-  grossAnnualSales?: number;
-  addressSearchText?: string;
+  fax: PhoneNumberModel | null;
+  yearsInBusiness: number;
+  grossAnnualSales: number;
   address: AddressModel;
 }
 
 export interface InquiryApplicantHomeDetails {
   ownHome: boolean;
-  monthlyMortgageAmount?: number;
-  currentMortgageBalance?: number;
-  currentMarketValue?: number;
-  lenderName?: string;
-  yearsThere?: number;
-  priorAddress?: AddressModel;
-  addressSearchText?: string;
+  monthlyMortgageAmount: number | null;
+  currentMortgageBalance: number | null;
+  currentMarketValue: number | null;
+  lenderName: string | null;
+  yearsThere: number;
+  priorAddress: AddressModel | null;
   address: AddressModel;
-  landmark?: string | null;
+  landmark: string | null;
 }
 
 export interface InquiryApplicantInformation {
   fullName: string;
   title: string;
-  ownershipPercentage?: number;
-  dateOfBirth?: string; // ISO date string
-  socialSecurityNumber?: string;
-  isUsCitizen?: boolean;
-  driversLicenseNumber?: string;
-  grossAnnualIncome?: number;
-  additionalIncome?: number;
-  sourceOfAdditionalIncome?: string;
-  homePhone?: PhoneNumberModel;
-  mobilePhone?: PhoneNumberModel;
+  ownershipPercentage: number | null;
+  dateOfBirth: string; // ISO date string
+  socialSecurityNumber: string | null;
+  isUsCitizen: boolean;
+  driversLicenseNumber: string | null;
+  grossAnnualIncome: number | null;
+  additionalIncome: number | null;
+  sourceOfAdditionalIncome: string | null;
+  homePhone: PhoneNumberModel | null;
+  mobilePhone: PhoneNumberModel | null;
   homeDetails: InquiryApplicantHomeDetails;
 }
 
 export interface InquiryEmploymentInformation {
   currentEmployer: string;
-  currentEmployerPhone?: PhoneNumberModel;
-  yearsThere?: number;
-  position?: string;
-  priorEmployer?: string;
-  priorEmployerPhone?: PhoneNumberModel;
-  priorPosition?: string;
-  priorEmployerYears?: number;
+  currentEmployerPhone: PhoneNumberModel | null;
+  yearsThere: number;
+  position: string;
+  priorEmployer: string | null;
+  priorEmployerPhone: PhoneNumberModel | null;
+  priorPosition: string | null;
+  priorEmployerYears: number | null;
 }
 
 export interface InquiryBankReference {
   bankName: string;
-  branch?: string;
-  accountNumber?: string;
-  contactPerson?: string;
-  phone?: PhoneNumberModel;
+  branch: string | null;
+  accountNumber: string | null;
+  contactPerson: string | null;
+  phone: PhoneNumberModel | null;
 }
 
 export interface InquiryReferenceDetail {
   name: string;
-  address?: string;
-  phone?: PhoneNumberModel;
+  address: string | null;
+  phone: PhoneNumberModel | null;
 }
 
 export interface InquiryFinancingHistory {
   hasFinancedBefore: boolean;
-  financeCompany?: string;
-  equipmentType?: string;
-  amountFinanced?: number;
+  financeCompany: string | null;
+  equipmentType: string | null;
+  amountFinanced: number | null;
 }
 
 export interface InquiryVehicleDetail {
   vehicleType: string;
   year: number;
   make: string;
-  modelName?: string;
-  body?: string;
-  price?: number;
-  payment?: number;
-  termMonths?: number;
-  downPayment?: number;
-  salesperson?: string;
-  stockNumber?: string;
-  vin?: string;
-  mileage?: number;
+  modelName: string | null;
+  body: string | null;
+  price: number | null;
+  payment: number | null;
+  termMonths: number | null;
+  downPayment: number | null;
+  salesperson: string | null;
+  stockNumber: string | null;
+  vin: string | null;
+  mileage: number | null;
 }
 
 export interface InquiryDocuments {
-  governmentId?: string;      // Driver’s License / PR Card / Passport
-  proofOfIncome?: string;     // Paystubs, Bank Statements
-  proofOfAddress?: string;    // Utility Bill / Bank Statement
-  specificationSheet?: string; // Safety Cert, Registration Copy
+  governmentId: string | null;      // Driver’s License / PR Card / Passport
+  proofOfIncome: string | null;     // Paystubs, Bank Statements
+  proofOfAddress: string | null;    // Utility Bill / Bank Statement
+  specificationSheet: string | null; // Safety Cert, Registration Copy
 }
 
 export interface InquiryApiModel {
@@ -114,17 +112,17 @@ export interface InquiryApiModel {
   applicant: InquiryApplicantInformation;
   employmentInformation: InquiryEmploymentInformation;
   bankReference: InquiryBankReference;
-  references?: InquiryReferenceDetail[];
-  previousFinancingHistory?: InquiryFinancingHistory;
-  vehicleDetails?: InquiryVehicleDetail;
+  references: InquiryReferenceDetail[] | null;
+  previousFinancingHistory: InquiryFinancingHistory | null;
+  vehicleDetails: InquiryVehicleDetail | null;
   documents: InquiryDocuments;
   acknowledgement: boolean;
   createdAt: Timestamp;
   updatedAt: Timestamp;
   deletedAt: Timestamp | null;
   isDeleted: boolean;
-  createdBy?: CreatedByModel;
-  updatedBy?: CreatedByModel;
-  deletedBy?: CreatedByModel;
+  createdBy: CreatedByModel;
+  updatedBy: CreatedByModel;
+  deletedBy: CreatedByModel;
 }
 
