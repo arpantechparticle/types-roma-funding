@@ -12,8 +12,8 @@ export interface InquiryBusinessInformation {
     email: string;
     phone: PhoneNumberModel;
     fax: PhoneNumberModel | null;
-    yearsInBusiness: number;
-    grossAnnualSales: number;
+    yearsInBusiness: number | null;
+    grossAnnualSales: number | null;
     address: AddressModel;
 }
 export interface InquiryApplicantHomeDetails {
