@@ -95,6 +95,7 @@ export interface InquiryDocuments {
 }
 export interface InquiryApiModel {
     id: string;
+    inquiryNumber: number;
     status: InquiryStatus;
     timeZone: string;
     source: EntityType;
