@@ -85,7 +85,6 @@ export interface InquiryFinancingHistory {
 export interface InquiryVehicleDetail {
   hasTruckInMind: boolean;
 
-  vehicleType: string | null;
   year: number | null;
   make: string | null;
   modelName: string | null;
