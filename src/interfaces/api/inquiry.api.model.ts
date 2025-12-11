@@ -35,7 +35,7 @@ export interface InquiryApplicantInformation {
   fullName: string;
   title: string;
   ownershipPercentage: number | null;
-  dateOfBirth: string; // ISO date string
+  dateOfBirth: Timestamp;
   socialSecurityNumber: string | null;
   isUsCitizen: boolean;
   driversLicenseNumber: string | null;
@@ -75,6 +75,7 @@ export interface InquiryReferenceDetail {
 export interface InquiryFinancingHistory {
   hasFinancedBefore: boolean;
   financeCompany: string | null;
+  purchaseDate: Timestamp | null;
   year: number;
   make: string;
   modelName: string | null;
