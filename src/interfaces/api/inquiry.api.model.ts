@@ -106,10 +106,10 @@ export interface InquiryVehicleDetail {
 }
 
 export interface InquiryDocuments {
-  governmentId: string | null;      // Driver’s License / PR Card / Passport
-  proofOfIncome: string | null;     // Paystubs, Bank Statements
-  proofOfAddress: string | null;    // Utility Bill / Bank Statement
-  specificationSheet: string | null; // Safety Cert, Registration Copy
+  governmentId: string | null;      // Domestic or international government ID (require)
+  bankStatement: string | null;     // require
+  specificationSheet: string | null;  // optional
+  socialSecurityCard: string | null;  // optional
 }
 
 export interface InquiryApiModel {

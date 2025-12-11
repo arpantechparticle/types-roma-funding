@@ -94,9 +94,9 @@ export interface InquiryVehicleDetail {
 }
 export interface InquiryDocuments {
     governmentId: string | null;
-    proofOfIncome: string | null;
-    proofOfAddress: string | null;
+    bankStatement: string | null;
     specificationSheet: string | null;
+    socialSecurityCard: string | null;
 }
 export interface InquiryApiModel {
     id: string;
