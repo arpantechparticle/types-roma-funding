@@ -83,19 +83,29 @@ export interface InquiryFinancingHistory {
 }
 
 export interface InquiryVehicleDetail {
-  vehicleType: string;
-  year: number;
-  make: string;
+  hasTruckInMind: boolean;
+
+  vehicleType: string | null;
+  year: number | null;
+  make: string | null;
   modelName: string | null;
   body: string | null;
   price: number | null;
   payment: number | null;
   termMonths: number | null;
-  downPayment: number | null;
   salesperson: string | null;
   stockNumber: string | null;
   vin: string | null;
   mileage: number | null;
+
+  hasTradeIn: boolean;
+  tradeInYear: number | null;
+  tradeInMake: string | null;
+  tradeInModelName: string | null;
+  tradeInMileage: number | null;
+
+  hasCashDownPayment: boolean;
+  downPayment: number | null;
 }
 
 export interface InquiryDocuments {
