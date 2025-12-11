@@ -89,9 +89,7 @@ export interface InquiryVehicleDetail {
   year: number | null;
   make: string | null;
   modelName: string | null;
-  body: string | null;
   price: number | null;
-  payment: number | null;
   termMonths: number | null;
   salesperson: string | null;
   stockNumber: string | null;
