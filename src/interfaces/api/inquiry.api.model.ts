@@ -75,7 +75,9 @@ export interface InquiryReferenceDetail {
 export interface InquiryFinancingHistory {
   hasFinancedBefore: boolean;
   financeCompany: string | null;
-  equipmentType: string | null;
+  year: number;
+  make: string;
+  modelName: string | null;
   amountFinanced: number | null;
 }
 
