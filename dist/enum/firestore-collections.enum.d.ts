@@ -2,5 +2,9 @@ export declare enum Collection {
     Inquiries = "inquiries",
     AdminUsers = "adminUsers",
     Contacts = "contacts",
-    TempAssignClaim = "tempAssignClaim"
+    TempAssignClaim = "tempAssignClaim",
+    Loans = "loans",
+    Borrowers = "borrowers",
+    Persions = "persions",
+    Vehicles = "vehicles"
 }
