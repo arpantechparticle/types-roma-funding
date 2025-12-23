@@ -24,8 +24,25 @@ get_branch_list() {
     git branch --list --format="%(refname:short)"
 }
 
-# Prompt user to select a branch using fzf
-selected_branch=$(get_branch_list | fzf --prompt="Select branch to push:")
+# Prompt user to select a branch (fzf if available, otherwise POSIX select)
+if command -v fzf >/dev/null 2>&1; then
+    selected_branch=$(get_branch_list | fzf --prompt="Select branch to push: ")
+else
+    echo "fzf not found; falling back to numbered selection."
+    mapfile -t branches < <(get_branch_list)
+    if [ "${#branches[@]}" -eq 0 ]; then
+        echo "No branches found. Aborting."
+        exit 1
+    fi
+
+    select branch in "${branches[@]}"; do
+        if [ -n "$branch" ]; then
+            selected_branch="$branch"
+            break
+        fi
+        echo "Please choose a valid option."
+    done
+fi
 
 # Validate selected branch
 if [ -z "$selected_branch" ]; then
