@@ -3,6 +3,6 @@ export {InquiryApiModel, InquiryBusinessInformation, InquiryApplicantInformation
 export {UserApiModel} from './user.api.model';
 export {ContactApiModel} from './contact.api.model';
 export {PersonApiModel} from './person.api.model';
-export {BorrowerApiModel} from './borrower.api.model';
+export {BorrowerApiModel, BusinessPrimaryContactModel} from './borrower.api.model';
 export {LoanApiModel} from './loan.api.model';
 export {VehicleApiModel, VehicleInsuranceModel} from './vehicle.api.model';
