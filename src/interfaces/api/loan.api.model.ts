@@ -17,12 +17,16 @@ export interface LoanApiModel {
   loanProgramType: LoanProgramType;
   status: LoanStatus;
 
+  borrowers: BorrowerModel[];
   borrowerIds: string[];
+
   vehicleId: string;
+  vehicle: VehicleModel;
 
   // Financial Terms
   interestType: InterestType;
   paymentFrequency: PaymentFrequency;
+
   principalAmount: number;
   totalInterest: number;
   totalPayable: number;
@@ -46,7 +50,7 @@ export interface LoanApiModel {
   // Compliance
   state: string;
   contractSignedAt: Timestamp;
-  
+
   createdAt: Timestamp;
   updatedAt: Timestamp;
   deletedAt: Timestamp | null;
@@ -56,4 +60,17 @@ export interface LoanApiModel {
   deletedBy: CreatedByModel;
   timeZone: string;
   source: EntityType;
+}
+
+export interface BorrowerModel {
+    id: string;
+    name: string;
+}
+
+export interface VehicleModel {
+    id: string;
+    year: string;
+    make: string;
+    model: string;
+    trim: string;
 }

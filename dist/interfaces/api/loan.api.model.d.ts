@@ -7,8 +7,10 @@ export interface LoanApiModel {
     loanType: LoanType;
     loanProgramType: LoanProgramType;
     status: LoanStatus;
+    borrowers: BorrowerModel[];
     borrowerIds: string[];
     vehicleId: string;
+    vehicle: VehicleModel;
     interestType: InterestType;
     paymentFrequency: PaymentFrequency;
     principalAmount: number;
@@ -37,4 +39,15 @@ export interface LoanApiModel {
     deletedBy: CreatedByModel;
     timeZone: string;
     source: EntityType;
+}
+export interface BorrowerModel {
+    id: string;
+    name: string;
+}
+export interface VehicleModel {
+    id: string;
+    year: string;
+    make: string;
+    model: string;
+    trim: string;
 }
