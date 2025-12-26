@@ -4,11 +4,10 @@ exports.LoanStatus = void 0;
 var LoanStatus;
 (function (LoanStatus) {
     LoanStatus["Draft"] = "draft";
-    LoanStatus["Approved"] = "approved";
     LoanStatus["Active"] = "active";
-    LoanStatus["Delinquent"] = "delinquent";
-    LoanStatus["Defaulted"] = "defaulted";
-    LoanStatus["ChargedOff"] = "charged_off";
-    LoanStatus["Closed"] = "closed";
+    LoanStatus["Underwriting"] = "underwriting";
+    LoanStatus["PaidOff"] = "paidOff";
+    LoanStatus["Reposessed"] = "reposessed";
+    LoanStatus["CollectionAmount"] = "collectionAmount";
 })(LoanStatus || (exports.LoanStatus = LoanStatus = {}));
 //# sourceMappingURL=loan-status.enum.js.map

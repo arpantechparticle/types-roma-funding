@@ -9,11 +9,20 @@ export {EmploymentStatus} from './employment-status.enum';
 
 //Loan
 export {LoanStatus} from './loan/loan-status.enum';
-export {InterestType} from './loan/interest-type.enum';
+export {SubLoanStatus} from './loan/sub-loan-status.enum';
+export {CalculationType} from './loan/calculation-type.enum';
 export {PaymentFrequency} from './loan/payment-frequency.enum';
 export {ServicingStatus} from './loan/servicing-status.enum';
 export {LoanType} from './loan/loan-type.enum';
-export {LoanProgramType} from './loan/loan-program-type.enum';
+export {LoanCategory} from './loan/loan-category.enum';
+export {InsuranceCoverageType} from './loan/insurance-coverage-type.enum';
+export {InsuranceStatus} from './loan/insurance-status.enum';
+export {CalculationMethod} from './loan/calculation-method.enum';
+export {LateFeeType} from './loan/late-fee-type.enum';
+export {LateFeePercentageBase} from './loan/late-fee-percentage-base.enum';
+export {InterestRateFrequency} from './loan/interest-rate-frequency.enum';
+export {AprIncludes} from './loan/apr-includes.enum';
+export {EcoaCode} from './loan/ecoa-code.enum';
 
 //Collateral
 export {LicensePlateStatus} from './collateral/license-plate-status.enum';

@@ -9,8 +9,8 @@ export interface CollateralModel {
   year: number;
   make: string;
   model: string;
-  trim: string;
-  miles: number;
+  trim: string | null;
+  miles: number | null;
 
   additionalInfo: string | null;
   color: string | null;

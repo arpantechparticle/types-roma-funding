@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EngineType = exports.TitleStatus = exports.LienStatus = exports.LicensePlateStatus = exports.LoanProgramType = exports.LoanType = exports.ServicingStatus = exports.PaymentFrequency = exports.InterestType = exports.LoanStatus = exports.EmploymentStatus = exports.BorrowerType = exports.Roles = exports.TaxIdType = exports.IRSBusinessEntityType = exports.EntityType = exports.Collection = void 0;
+exports.EngineType = exports.TitleStatus = exports.LienStatus = exports.LicensePlateStatus = exports.EcoaCode = exports.AprIncludes = exports.InterestRateFrequency = exports.LateFeePercentageBase = exports.LateFeeType = exports.CalculationMethod = exports.InsuranceStatus = exports.InsuranceCoverageType = exports.LoanCategory = exports.LoanType = exports.ServicingStatus = exports.PaymentFrequency = exports.CalculationType = exports.SubLoanStatus = exports.LoanStatus = exports.EmploymentStatus = exports.BorrowerType = exports.Roles = exports.TaxIdType = exports.IRSBusinessEntityType = exports.EntityType = exports.Collection = void 0;
 // Export all enums here
 var firestore_collections_enum_1 = require("./firestore-collections.enum");
 Object.defineProperty(exports, "Collection", { enumerable: true, get: function () { return firestore_collections_enum_1.Collection; } });
@@ -19,16 +19,34 @@ Object.defineProperty(exports, "EmploymentStatus", { enumerable: true, get: func
 //Loan
 var loan_status_enum_1 = require("./loan/loan-status.enum");
 Object.defineProperty(exports, "LoanStatus", { enumerable: true, get: function () { return loan_status_enum_1.LoanStatus; } });
-var interest_type_enum_1 = require("./loan/interest-type.enum");
-Object.defineProperty(exports, "InterestType", { enumerable: true, get: function () { return interest_type_enum_1.InterestType; } });
+var sub_loan_status_enum_1 = require("./loan/sub-loan-status.enum");
+Object.defineProperty(exports, "SubLoanStatus", { enumerable: true, get: function () { return sub_loan_status_enum_1.SubLoanStatus; } });
+var calculation_type_enum_1 = require("./loan/calculation-type.enum");
+Object.defineProperty(exports, "CalculationType", { enumerable: true, get: function () { return calculation_type_enum_1.CalculationType; } });
 var payment_frequency_enum_1 = require("./loan/payment-frequency.enum");
 Object.defineProperty(exports, "PaymentFrequency", { enumerable: true, get: function () { return payment_frequency_enum_1.PaymentFrequency; } });
 var servicing_status_enum_1 = require("./loan/servicing-status.enum");
 Object.defineProperty(exports, "ServicingStatus", { enumerable: true, get: function () { return servicing_status_enum_1.ServicingStatus; } });
 var loan_type_enum_1 = require("./loan/loan-type.enum");
 Object.defineProperty(exports, "LoanType", { enumerable: true, get: function () { return loan_type_enum_1.LoanType; } });
-var loan_program_type_enum_1 = require("./loan/loan-program-type.enum");
-Object.defineProperty(exports, "LoanProgramType", { enumerable: true, get: function () { return loan_program_type_enum_1.LoanProgramType; } });
+var loan_category_enum_1 = require("./loan/loan-category.enum");
+Object.defineProperty(exports, "LoanCategory", { enumerable: true, get: function () { return loan_category_enum_1.LoanCategory; } });
+var insurance_coverage_type_enum_1 = require("./loan/insurance-coverage-type.enum");
+Object.defineProperty(exports, "InsuranceCoverageType", { enumerable: true, get: function () { return insurance_coverage_type_enum_1.InsuranceCoverageType; } });
+var insurance_status_enum_1 = require("./loan/insurance-status.enum");
+Object.defineProperty(exports, "InsuranceStatus", { enumerable: true, get: function () { return insurance_status_enum_1.InsuranceStatus; } });
+var calculation_method_enum_1 = require("./loan/calculation-method.enum");
+Object.defineProperty(exports, "CalculationMethod", { enumerable: true, get: function () { return calculation_method_enum_1.CalculationMethod; } });
+var late_fee_type_enum_1 = require("./loan/late-fee-type.enum");
+Object.defineProperty(exports, "LateFeeType", { enumerable: true, get: function () { return late_fee_type_enum_1.LateFeeType; } });
+var late_fee_percentage_base_enum_1 = require("./loan/late-fee-percentage-base.enum");
+Object.defineProperty(exports, "LateFeePercentageBase", { enumerable: true, get: function () { return late_fee_percentage_base_enum_1.LateFeePercentageBase; } });
+var interest_rate_frequency_enum_1 = require("./loan/interest-rate-frequency.enum");
+Object.defineProperty(exports, "InterestRateFrequency", { enumerable: true, get: function () { return interest_rate_frequency_enum_1.InterestRateFrequency; } });
+var apr_includes_enum_1 = require("./loan/apr-includes.enum");
+Object.defineProperty(exports, "AprIncludes", { enumerable: true, get: function () { return apr_includes_enum_1.AprIncludes; } });
+var ecoa_code_enum_1 = require("./loan/ecoa-code.enum");
+Object.defineProperty(exports, "EcoaCode", { enumerable: true, get: function () { return ecoa_code_enum_1.EcoaCode; } });
 //Collateral
 var license_plate_status_enum_1 = require("./collateral/license-plate-status.enum");
 Object.defineProperty(exports, "LicensePlateStatus", { enumerable: true, get: function () { return license_plate_status_enum_1.LicensePlateStatus; } });

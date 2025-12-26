@@ -11,3 +11,4 @@ export { LicensePlateModel } from './loan/license-plate.model';
 export { LienModel } from './loan/lien.model';
 export { WarrantyModel } from './loan/warranty.model';
 export { carrierComplianceModel } from './loan/carrier-compliance.model';
+export { InsuranceModel } from './loan/insurance.model';

@@ -1,3 +1,5 @@
 export enum LoanType {
-  Vehicle = "vehicle",
+  Installment = "installment",
+  Flooring = "flooring",
+  CreditLimit = "credit_limit",
 }

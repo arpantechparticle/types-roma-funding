@@ -1,45 +1,56 @@
 import {
   EntityType,
-  InterestType,
-  LoanProgramType,
+  CalculationType,
+  LoanCategory,
   LoanStatus,
   LoanType,
   PaymentFrequency,
-  ServicingStatus,
+  SubLoanStatus,
+  CalculationMethod,
+  LateFeeType,
+  LateFeePercentageBase,
+  InterestRateFrequency,
+  AprIncludes,
+  EcoaCode,
 } from "../../enum";
 import { CreatedByModel } from "../created-by.model";
 import { Timestamp } from "../timestamp";
 import { CollateralModel } from "../loan/collateral.model";
 import { LoanChecklist } from "../loan/checklist.model";
+import { InsuranceModel } from "../loan/insurance.model";
 
 export interface LoanApiModel {
   id: string;
   loanNumber: string;
-  loanType: LoanType;
-  loanProgramType: LoanProgramType;
   status: LoanStatus;
+  subStatus: SubLoanStatus;
+
+  loanType: LoanType;
+  loanCategory: LoanCategory;
+  calculationType: CalculationType;
+  aprIncludes: AprIncludes;
+
+  //loan terms
+  totalLoanAmount: number;
+  discountAmount: number;
+  underwritingFee: number;
+  interestRate: number;
+  interestRateFrequency: InterestRateFrequency;
+  contractDate: Timestamp;
+  firstPaymentDate: Timestamp;
+  paymentFrequency: PaymentFrequency;
+  termCount: number;
+  gracePeriodDays: number;
+
+  lateFeeConfig: LateFeeConfig;
 
   borrowers: BorrowerModel[];
   borrowerIds: string[];
-
-
-  principalAmount: number;
-  discountAmount: number | null;
-  originationFee: number | null;
-
-  interestRate: number;
-  interestType: InterestType;
-
-  paymentFrequency: PaymentFrequency;
-  termCount: number;
-
-  contractDate: Timestamp;
-  firstPaymentDate: Timestamp;
-  gracePeriodDays: number;
-
   collateral: CollateralModel;
-  
   checklist: LoanChecklist;
+  insurance?: InsuranceModel | null;
+  closedDate: Timestamp | null;
+  additionalInfo: AdditionalInfoModel;
 
   createdAt: Timestamp;
   updatedAt: Timestamp;
@@ -55,4 +66,23 @@ export interface LoanApiModel {
 export interface BorrowerModel {
   id: string;
   name: string;
+  ECOACode: EcoaCode;
+}
+
+export interface LateFeeConfig {
+  flatFee: number;               // e.g. $25
+  percentageFee: number;         // e.g. 5 (% of installment)
+  calculationMethod: CalculationMethod;
+  type: LateFeeType;
+  percentageBase: LateFeePercentageBase;
+}
+
+export interface AdditionalInfoModel {
+  netAmountDown: number;
+  salesPrice: number;
+  taxes: number;
+  gapInsurance: number;
+  warranty: number;
+  dealerProfit: number;
+  reserveAmount: number;
 }
