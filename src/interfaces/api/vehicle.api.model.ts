@@ -3,7 +3,7 @@ import { CreatedByModel } from "../created-by.model";
 import { Timestamp } from "../timestamp";
 
 export interface VehicleApiModel {
-    id: string;
+  id: string;
   // Identification
   vin: string;
   year: number;
