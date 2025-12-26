@@ -23,33 +23,22 @@ export interface LoanApiModel {
   vehicleId: string;
   vehicle: VehicleModel;
 
-  // Financial Terms
-  interestType: InterestType;
-  paymentFrequency: PaymentFrequency;
-
+  // Loan terms
   principalAmount: number;
-  totalInterest: number;
-  totalPayable: number;
-  apr: number;
+  discountAmount: number | null;
+  originationFee: number | null;
+
+  interestRate: number;
+  interestType: InterestType;
+
+  paymentFrequency: PaymentFrequency;
   termCount: number;
-  installmentAmount: number;
 
-  // Schedule
-  startDate: Date;
-  maturityDate: Date;
+  contractDate: Timestamp;
+  firstPaymentDate: Timestamp;
+  gracePeriodDays: number;
 
-  // Servicing Info
-  outstandingPrincipal: number;
-  outstandingInterest: number;
-  outstandingFees: number;
-  nextDueDate: Date;
-  nextDueAmount: number;
-  delinquencyDays: number;
-  servicingStatus: ServicingStatus;
-
-  // Compliance
-  state: string;
-  contractSignedAt: Timestamp;
+  checklist: LoanChecklist;
 
   createdAt: Timestamp;
   updatedAt: Timestamp;
@@ -63,14 +52,66 @@ export interface LoanApiModel {
 }
 
 export interface BorrowerModel {
-    id: string;
-    name: string;
+  id: string;
+  name: string;
 }
 
 export interface VehicleModel {
-    id: string;
-    year: string;
-    make: string;
-    model: string;
-    trim: string;
+  id: string;
+  year: string;
+  make: string;
+  model: string;
+  trim: string;
+}
+
+export interface LoanChecklist {
+  underwriting: {
+    completedFundingPacket: boolean;
+    keyOnFile: boolean;
+    qbSyncCompleted: boolean;
+    gpsInstalled: boolean;
+    verifiedResidence: boolean;
+    verifiedReferences: boolean;
+    verifiedIncome: boolean;
+    insuranceListedAsLienholder: boolean;
+  };
+
+  operations: {
+    modificationMade: boolean;
+    repairsTruckInRepair: boolean;
+    advancementGiven: boolean;
+    profileUpdated: boolean;
+    welcomePhoneCall: boolean;
+    welcomePacket: boolean;
+    titleReceived: boolean;
+  };
+
+  paidOff: {
+    accountClosure: boolean;
+    lienRelease: boolean;
+    gpsUninstalled: boolean;
+  };
+
+  repossession: {
+    salesTaxRefundApplied: boolean;
+    vehicleSold: boolean;
+    warrantyCancellation: boolean;
+    gapCancellation: boolean;
+    repossessionStatement: boolean;
+  };
+
+  specialAccountStatus: {
+    accidentIndicator: boolean;
+    paymentPlanAccepted: boolean;
+    insuranceClaimPending: boolean;
+  };
+
+  audits: {
+    titleELT: boolean;
+    finalAudit: boolean;
+  };
+
+  custody: {
+    keyInRomaPossession: boolean;
+  };
 }

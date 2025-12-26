@@ -3,5 +3,5 @@ export { UserApiModel } from './user.api.model';
 export { ContactApiModel } from './contact.api.model';
 export { PersonApiModel } from './person.api.model';
 export { BorrowerApiModel, BusinessPrimaryContactModel } from './borrower.api.model';
-export { LoanApiModel, BorrowerModel, VehicleModel } from './loan.api.model';
+export { LoanApiModel, BorrowerModel, VehicleModel, LoanChecklist } from './loan.api.model';
 export { VehicleApiModel, VehicleInsuranceModel } from './vehicle.api.model';
