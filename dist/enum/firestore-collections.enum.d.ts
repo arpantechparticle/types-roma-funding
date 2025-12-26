@@ -5,6 +5,5 @@ export declare enum Collection {
     TempAssignClaim = "tempAssignClaim",
     Loans = "loans",
     Borrowers = "borrowers",
-    Persions = "persions",
-    Vehicles = "vehicles"
+    Persions = "persions"
 }

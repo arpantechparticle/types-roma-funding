@@ -1,38 +1,31 @@
+import { EngineType } from "../../enum/collateral/engine-type.enum";
+import { LicensePlateModel } from "./license-plate.model";
+import { LienModel } from "./lien.model";
+import { WarrantyModel } from "./warranty.model";
+import { carrierComplianceModel } from "./carrier-compliance.model";
+
 export interface CollateralModel {
   vin: string;
   year: number;
   make: string;
   model: string;
   trim: string;
-  bodyType: string | null;
-  mileage: number;
+  miles: number;
 
-  // Purchase & value
-  purchasePrice: number;
-  downPayment: number;
-  financedAmount: number;
-  estimatedValue: number;
-  ltvRatio: number;
+  additionalInfo: string | null;
+  color: string | null;
 
-  // Title & lien
-  titleNumber: string;
-  titleState: string;
-  lienPosition: number;
-  lienHolderName: string;
-  titleStatus: string;
-  titleRecordedAt: Date;
+  isGpsInstalled: boolean;
+  gpsCode: string | null;
 
-  // Insurance
-  insuranceProvider: string;
-  insurancePolicyNumber: string;
-  insuranceCoverageType: string;
-  insuranceExpiryDate: Date;
-  insuranceVerified: boolean;
+  //Book value is the estimated market worth of a vehicle (from sources like KBB or NADA) that lenders use to judge loan risk and calculate LTV—not the price the borrower paid.
+  bookValue: number | null;
+  grossWeightValueNumber: number | null;
+  engineType: EngineType | null;
 
-  // Risk & tracking
-  condition: string;
-  gpsInstalled: boolean;
-  odometerVerified: boolean;
-  notes: string;
+  licensePlate?: LicensePlateModel | null;
+  lien?: LienModel | null;
+  warranty?: WarrantyModel | null;
+  carrierCompliance?: carrierComplianceModel | null;
+  notes?: string | null;
 }
-

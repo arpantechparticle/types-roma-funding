@@ -5,9 +5,12 @@ export {Timestamp} from './timestamp';
 export {AddressModel} from './address.model';
 export {CountryModel} from './country.model';
 export {PhoneNumberModel} from './phone-number-model';
-export {BusinessDetailsModel} from './business-details.model';
 export {PersionDetailsModel} from './persion-details.model';
 
 //Loan
 export {LoanChecklist} from './loan/checklist.model';
 export {CollateralModel} from './loan/collateral.model';
+export {LicensePlateModel} from './loan/license-plate.model';
+export {LienModel} from './loan/lien.model';
+export {WarrantyModel} from './loan/warranty.model';
+export {carrierComplianceModel} from './loan/carrier-compliance.model';

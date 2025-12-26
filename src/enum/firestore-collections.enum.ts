@@ -6,5 +6,4 @@ export enum Collection {
     Loans = 'loans',
     Borrowers = 'borrowers',
     Persions = 'persions',
-    Vehicles = 'vehicles',
 }
