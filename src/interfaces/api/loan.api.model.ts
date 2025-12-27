@@ -18,6 +18,7 @@ import { Timestamp } from "../timestamp";
 import { CollateralModel } from "../loan/collateral.model";
 import { LoanChecklist } from "../loan/checklist.model";
 import { InsuranceModel } from "../loan/insurance.model";
+import { InterestAccrualMethod } from "../../enum/loan/interest-accrual-method.enum";
 
 export interface LoanApiModel {
   id: string;
@@ -30,8 +31,26 @@ export interface LoanApiModel {
   calculationType: CalculationType;
   aprIncludes: AprIncludes;
 
-  //loan terms
-  totalLoanAmount: number;
+  
+  /**
+   * Amount Financed = Vehicle Sale Price + Sales Tax + Title + Registration + Dealer/Doc Fees + GAP/Warranty (if financed) - Down Payment - Trade-In Credit
+   * This represents the principal amount on which interest is calculated
+   */
+  amountFinanced: number; //16000
+  
+  /**
+   * Finance Charge = Total Interest + Prepaid Finance Fees
+   * This represents the total cost of borrowing over the life of the loan
+   */
+  financeCharge: number; // 1200
+
+  /**
+   * Total Loan Amount = Amount Financed + Finance Charge
+   * This represents the total amount of the loan, including both the principal and the interest
+   */
+  totalLoanAmount: number; // 17200
+
+  
   discountAmount: number;
   underwritingFee: number;
   interestRate: number;
@@ -39,7 +58,12 @@ export interface LoanApiModel {
   contractDate: Timestamp;
   firstPaymentDate: Timestamp;
   paymentFrequency: PaymentFrequency;
+
   termCount: number;
+  installmentAmount: number;
+  totalScheduledPayments: number; // usually = termCount
+  totalInterestExpected: number;
+  totalOfPayments: number; // TILA requirement
   gracePeriodDays: number;
 
   lateFeeConfig: LateFeeConfig;
@@ -51,6 +75,23 @@ export interface LoanApiModel {
   insurance?: InsuranceModel | null;
   closedDate: Timestamp | null;
   additionalInfo: AdditionalInfoModel;
+
+  // running balances
+  outstandingPrincipal: number;
+  accruedInterest: number;
+  accruedLateFees: number;
+  otherFeesBalance: number;
+
+  // snapshots
+  lastPaymentDate: Timestamp | null;
+  lastAccrualDate: Timestamp;
+  nextDueDate: Timestamp;
+
+  interestAccrualMethod: InterestAccrualMethod;
+
+  daysPastDue: number;
+  delinquentSince: Timestamp | null;
+  chargeOffDate?: Timestamp | null;
 
   createdAt: Timestamp;
   updatedAt: Timestamp;
@@ -66,12 +107,12 @@ export interface LoanApiModel {
 export interface BorrowerModel {
   id: string;
   name: string;
-  ECOACode: EcoaCode;
+  ECOACode: EcoaCode | null;
 }
 
 export interface LateFeeConfig {
-  flatFee: number;               // e.g. $25
-  percentageFee: number;         // e.g. 5 (% of installment)
+  flatFee: number; // e.g. $25
+  percentageFee: number; // e.g. 5 (% of installment)
   calculationMethod: CalculationMethod;
   type: LateFeeType;
   percentageBase: LateFeePercentageBase;
