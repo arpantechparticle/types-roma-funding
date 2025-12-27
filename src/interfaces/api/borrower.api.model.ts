@@ -25,6 +25,9 @@ export interface BorrowerApiModel {
   primaryAddress: AddressModel;
   mailingAddress: AddressModel; // if
 
+  // Associated loans
+  loanIds: string[];
+
   //Individual borrower
   firstName: string | null;
   lastName: string | null;

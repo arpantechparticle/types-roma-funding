@@ -16,6 +16,7 @@ export interface BorrowerApiModel {
     secondaryEmail: string | null;
     primaryAddress: AddressModel;
     mailingAddress: AddressModel;
+    loanIds: string[];
     firstName: string | null;
     lastName: string | null;
     middleName: string | null;
