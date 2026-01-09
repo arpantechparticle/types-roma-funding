@@ -3,6 +3,8 @@ import { LicensePlateModel } from "./license-plate.model";
 import { LienModel } from "./lien.model";
 import { WarrantyModel } from "./warranty.model";
 import { carrierComplianceModel } from "./carrier-compliance.model";
+import { GpsIntegrationApiModel } from "../api/gps-integration.api.model";
+import { GpsIntegrationModel } from "../gps-integration.model";
 
 export interface CollateralModel {
   vin: string;
@@ -27,6 +29,8 @@ export interface CollateralModel {
   lien?: LienModel | null;
   warranty?: WarrantyModel | null;
   carrierCompliance?: carrierComplianceModel | null;
+  gpsIntegrations?: GpsIntegrationModel[];
+  gpsIntegrationsIds?: string[];
   notes?: string | null;
 
   
