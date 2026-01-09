@@ -31,7 +31,8 @@ export interface LoanApiModel {
   calculationType: CalculationType;
   aprIncludes: AprIncludes;
 
-  
+  additionalInfo: AdditionalInfoModel;
+
   /**
    * Amount Financed = Vehicle Sale Price + Sales Tax + Title + Registration + Dealer/Doc Fees + GAP/Warranty (if financed) - Down Payment - Trade-In Credit
    * This represents the principal amount on which interest is calculated
@@ -53,6 +54,7 @@ export interface LoanApiModel {
   
   discountAmount: number;
   underwritingFee: number;
+
   interestRate: number;
   interestRateFrequency: InterestRateFrequency;
   contractDate: Timestamp;
@@ -74,7 +76,6 @@ export interface LoanApiModel {
   checklist: LoanChecklist;
   insurance?: InsuranceModel | null;
   closedDate: Timestamp | null;
-  additionalInfo: AdditionalInfoModel;
 
   // running balances
   outstandingPrincipal: number;
@@ -119,11 +120,11 @@ export interface LateFeeConfig {
 }
 
 export interface AdditionalInfoModel {
-  netAmountDown: number;
   salesPrice: number;
-  taxes: number;
-  gapInsurance: number;
-  warranty: number;
-  dealerProfit: number;
-  reserveAmount: number;
+  netAmountDown: number | null;
+  taxes: number | null;
+  gapInsurance: number | null;
+  warranty: number | null;
+  dealerProfit: number | null;
+  reserveAmount: number | null;
 }

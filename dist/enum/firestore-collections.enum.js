@@ -10,5 +10,6 @@ var Collection;
     Collection["Loans"] = "loans";
     Collection["Borrowers"] = "borrowers";
     Collection["Persions"] = "persions";
+    Collection["GpsIntegrations"] = "gpsIntegrations";
 })(Collection || (exports.Collection = Collection = {}));
 //# sourceMappingURL=firestore-collections.enum.js.map

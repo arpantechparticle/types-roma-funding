@@ -28,4 +28,6 @@ export interface CollateralModel {
   warranty?: WarrantyModel | null;
   carrierCompliance?: carrierComplianceModel | null;
   notes?: string | null;
+
+  
 }

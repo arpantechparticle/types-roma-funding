@@ -1,8 +1,7 @@
 export declare enum LoanStatus {
     Draft = "draft",
-    Active = "active",
     Underwriting = "underwriting",
+    Active = "active",
     PaidOff = "paidOff",
-    Reposessed = "reposessed",
-    CollectionAmount = "collectionAmount"
+    closed = "closed"
 }
