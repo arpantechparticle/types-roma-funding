@@ -3,7 +3,7 @@ import { CreatedByModel } from "../created-by.model";
 export interface GpsIntegrationApiModel {
     id: string;
     url: string;
-    active: boolean;
+    status: boolean;
     description: string;
     createdAt: Timestamp;
     updatedAt: Timestamp;
