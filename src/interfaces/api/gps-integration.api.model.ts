@@ -5,6 +5,8 @@ export interface GpsIntegrationApiModel {
   id: string;
 
   url: string;
+  active: boolean;
+  description: string;
   
   createdAt: Timestamp;
   updatedAt: Timestamp;
