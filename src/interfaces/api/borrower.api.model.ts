@@ -18,6 +18,8 @@ export interface BorrowerApiModel {
   taxIdType: TaxIdType;
   taxId: string;
   taxIdLast4: string;
+  ein: string | null; // Employer Identification Number
+  ssn: string | null; // Social Security Number
   primaryPhone: PhoneNumberModel;
   secondaryPhone: PhoneNumberModel | null;
   primaryEmail: string;
