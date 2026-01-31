@@ -91,4 +91,9 @@ export interface AdditionalInfoModel {
     warranty: number | null;
     dealerProfit: number | null;
     reserveAmount: number | null;
+    /**
+     * Closing Fee - Fixed fee added to principal silently (not shown to customer)
+     * Added directly to Amount Financed
+     */
+    closingFee: number | null;
 }
