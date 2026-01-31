@@ -106,8 +106,8 @@ export interface InquiryVehicleDetail {
 }
 
 export interface InquiryDocuments {
-  governmentId: string | null;      // Domestic or international government ID (require)
-  bankStatement: string | null;     // require
+  governmentId: string | null;        // Domestic or international government ID (require)
+  bankStatement: string | null;       // require
   specificationSheet: string | null;  // optional
   socialSecurityCard: string | null;  // optional
 }
