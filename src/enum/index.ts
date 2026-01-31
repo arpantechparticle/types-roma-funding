@@ -10,7 +10,6 @@ export {EmploymentStatus} from './employment-status.enum';
 //Loan
 export {LoanStatus} from './loan/loan-status.enum';
 export {SubLoanStatus} from './loan/sub-loan-status.enum';
-export {CalculationType} from './loan/calculation-type.enum';
 export {PaymentFrequency} from './loan/payment-frequency.enum';
 export {ServicingStatus} from './loan/servicing-status.enum';
 export {LoanType} from './loan/loan-type.enum';
