@@ -1,5 +1,6 @@
 export interface AddressModel {
     addressLine1: string;
+    addressLine2?: string | null;
     state: string;
     street: string;
     country: string;
