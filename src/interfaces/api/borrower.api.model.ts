@@ -2,7 +2,6 @@ import {
   BorrowerType,
   EntityType,
   IRSBusinessEntityType,
-  TaxIdType,
 } from "../../enum";
 import { AddressModel } from "../address.model";
 import { CreatedByModel } from "../created-by.model";
@@ -13,31 +12,21 @@ export interface BorrowerApiModel {
   id: string;
   type: BorrowerType;
 
-  // common name for both individual and business
+  // Business borrower name
   fullName: string;
-  taxIdType: TaxIdType;
-  taxId: string;
-  taxIdLast4: string;
-  ein: string | null; // Employer Identification Number
-  ssn: string | null; // Social Security Number
+  ein: string; // Employer Identification Number (mandatory)
+  ssn: string; // Social Security Number (mandatory)
   primaryPhone: PhoneNumberModel;
   secondaryPhone: PhoneNumberModel | null;
   primaryEmail: string;
   secondaryEmail: string | null;
   primaryAddress: AddressModel;
-  mailingAddress: AddressModel; // if
+  mailingAddress: AddressModel;
 
   // Associated loans
   loanIds: string[];
 
-  //Individual borrower
-  firstName: string | null;
-  lastName: string | null;
-  middleName: string | null;
-  dateOfBirth: Timestamp | null;
-  gender: string | null;
-
-  //Business borrower
+  // Business borrower fields
   businessName: string | null;
   typeOfBusiness: IRSBusinessEntityType | null;
   fax: PhoneNumberModel | null;
