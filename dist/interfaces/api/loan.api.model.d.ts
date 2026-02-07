@@ -50,6 +50,10 @@ export interface LoanApiModel {
     checklist: LoanChecklist;
     insurance?: InsuranceModel | null;
     closedDate: Timestamp | null;
+    closingFeeTotal: number;
+    closingFeeRemaining: number;
+    principalTotal: number;
+    principalRemaining: number;
     outstandingPrincipal: number;
     accruedInterest: number;
     accruedLateFees: number;

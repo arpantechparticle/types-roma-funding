@@ -77,6 +77,12 @@ export interface LoanApiModel {
   insurance?: InsuranceModel | null;
   closedDate: Timestamp | null;
 
+  // Closing fee & principal tracking (fee-first allocation)
+  closingFeeTotal: number;
+  closingFeeRemaining: number;
+  principalTotal: number;
+  principalRemaining: number;
+
   // running balances
   outstandingPrincipal: number;
   accruedInterest: number;
