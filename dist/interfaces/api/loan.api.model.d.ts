@@ -65,6 +65,7 @@ export interface LoanApiModel {
     daysPastDue: number;
     delinquentSince: Timestamp | null;
     chargeOffDate?: Timestamp | null;
+    inquiryId: string | null;
     createdAt: Timestamp;
     updatedAt: Timestamp;
     deletedAt: Timestamp | null;

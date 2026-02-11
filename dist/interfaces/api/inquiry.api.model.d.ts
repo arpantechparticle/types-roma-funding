@@ -113,6 +113,7 @@ export interface InquiryApiModel {
     vehicleDetails: InquiryVehicleDetail | null;
     documents: InquiryDocuments;
     acknowledgement: boolean;
+    loanId: string | null;
     createdAt: Timestamp;
     updatedAt: Timestamp;
     deletedAt: Timestamp | null;
