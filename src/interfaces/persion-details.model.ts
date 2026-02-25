@@ -47,7 +47,7 @@ export interface HomeDetailsModel {
   currentMarketValue: number | null;
   lenderName: string | null;
   yearsThere: number | null;
-  priorAddress: AddressModel | null;
+  priorAddress: AddressModel | string | null;
   address: AddressModel;
   landmark: string | null;
 }

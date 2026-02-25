@@ -3,7 +3,7 @@ import { CreatedByModel } from "../created-by.model";
 import { Timestamp } from "../timestamp";
 import { AddressModel } from "../address.model";
 import { PhoneNumberModel } from "../phone-number-model";
-export type InquiryStatus = 'new' | 'in-progress' | 'resolved' | 'closed';
+export type InquiryStatus = 'new' | 'in-progress' | 'accepted' | 'rejected';
 export interface InquiryBusinessInformation {
     businessName: string;
     doingBusinessAs: string | null;
@@ -23,7 +23,7 @@ export interface InquiryApplicantHomeDetails {
     currentMarketValue: number | null;
     lenderName: string | null;
     yearsThere: number | null;
-    priorAddress: AddressModel | null;
+    priorAddress: AddressModel | string | null;
     address: AddressModel;
     landmark: string | null;
 }
