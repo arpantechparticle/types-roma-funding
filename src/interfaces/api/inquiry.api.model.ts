@@ -68,7 +68,7 @@ export interface InquiryBankReference {
 
 export interface InquiryReferenceDetail {
   name: string;
-  address: string | null;
+  address: AddressModel | null;
   phone: PhoneNumberModel | null;
 }
 
