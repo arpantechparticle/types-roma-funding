@@ -102,6 +102,9 @@ export interface LoanApiModel {
 
   inquiryId: string | null;
 
+  titleDocument: string | null;
+  underwritingDocuments: LoanUnderwritingDocuments | null;
+
   createdAt: Timestamp;
   updatedAt: Timestamp;
   deletedAt: Timestamp | null;
@@ -125,6 +128,13 @@ export interface LateFeeConfig {
   calculationMethod: CalculationMethod;
   type: LateFeeType;
   percentageBase: LateFeePercentageBase;
+}
+
+export interface LoanUnderwritingDocuments {
+  governmentId: string | null;
+  bankStatement: string | null;
+  specificationSheet: string | null;
+  socialSecurityCard: string | null;
 }
 
 export interface AdditionalInfoModel {
