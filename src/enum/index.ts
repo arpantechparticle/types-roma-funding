@@ -16,6 +16,7 @@ export {LoanType} from './loan/loan-type.enum';
 export {LoanCategory} from './loan/loan-category.enum';
 export {InsuranceCoverageType} from './loan/insurance-coverage-type.enum';
 export {InsuranceStatus} from './loan/insurance-status.enum';
+export {InsuranceCancellationType} from './loan/insurance-cancellation-type.enum';
 export {CalculationMethod} from './loan/calculation-method.enum';
 export {LateFeeType} from './loan/late-fee-type.enum';
 export {LateFeePercentageBase} from './loan/late-fee-percentage-base.enum';

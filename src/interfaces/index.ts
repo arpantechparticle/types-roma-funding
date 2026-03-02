@@ -15,4 +15,5 @@ export {LienModel} from './loan/lien.model';
 export {WarrantyModel} from './loan/warranty.model';
 export {carrierComplianceModel} from './loan/carrier-compliance.model';
 export {InsuranceModel} from './loan/insurance.model';
+export {InsurancePolicyApiModel} from './loan/insurance-policy.model';
 export {GpsIntegrationModel} from './gps-integration.model';

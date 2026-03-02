@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CalculationType = exports.EngineType = exports.TitleStatus = exports.LienStatus = exports.LicensePlateStatus = exports.EcoaCode = exports.AprIncludes = exports.InterestRateFrequency = exports.LateFeePercentageBase = exports.LateFeeType = exports.CalculationMethod = exports.InsuranceStatus = exports.InsuranceCoverageType = exports.LoanCategory = exports.LoanType = exports.ServicingStatus = exports.PaymentFrequency = exports.SubLoanStatus = exports.LoanStatus = exports.EmploymentStatus = exports.BorrowerType = exports.Roles = exports.TaxIdType = exports.IRSBusinessEntityType = exports.EntityType = exports.Collection = void 0;
+exports.CalculationType = exports.EngineType = exports.TitleStatus = exports.LienStatus = exports.LicensePlateStatus = exports.EcoaCode = exports.AprIncludes = exports.InterestRateFrequency = exports.LateFeePercentageBase = exports.LateFeeType = exports.CalculationMethod = exports.InsuranceCancellationType = exports.InsuranceStatus = exports.InsuranceCoverageType = exports.LoanCategory = exports.LoanType = exports.ServicingStatus = exports.PaymentFrequency = exports.SubLoanStatus = exports.LoanStatus = exports.EmploymentStatus = exports.BorrowerType = exports.Roles = exports.TaxIdType = exports.IRSBusinessEntityType = exports.EntityType = exports.Collection = void 0;
 // Export all enums here
 var firestore_collections_enum_1 = require("./firestore-collections.enum");
 Object.defineProperty(exports, "Collection", { enumerable: true, get: function () { return firestore_collections_enum_1.Collection; } });
@@ -33,6 +33,8 @@ var insurance_coverage_type_enum_1 = require("./loan/insurance-coverage-type.enu
 Object.defineProperty(exports, "InsuranceCoverageType", { enumerable: true, get: function () { return insurance_coverage_type_enum_1.InsuranceCoverageType; } });
 var insurance_status_enum_1 = require("./loan/insurance-status.enum");
 Object.defineProperty(exports, "InsuranceStatus", { enumerable: true, get: function () { return insurance_status_enum_1.InsuranceStatus; } });
+var insurance_cancellation_type_enum_1 = require("./loan/insurance-cancellation-type.enum");
+Object.defineProperty(exports, "InsuranceCancellationType", { enumerable: true, get: function () { return insurance_cancellation_type_enum_1.InsuranceCancellationType; } });
 var calculation_method_enum_1 = require("./loan/calculation-method.enum");
 Object.defineProperty(exports, "CalculationMethod", { enumerable: true, get: function () { return calculation_method_enum_1.CalculationMethod; } });
 var late_fee_type_enum_1 = require("./loan/late-fee-type.enum");
