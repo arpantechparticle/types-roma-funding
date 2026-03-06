@@ -20,6 +20,8 @@ export { LateFeePercentageBase } from './loan/late-fee-percentage-base.enum';
 export { InterestRateFrequency } from './loan/interest-rate-frequency.enum';
 export { AprIncludes } from './loan/apr-includes.enum';
 export { EcoaCode } from './loan/ecoa-code.enum';
+export { PaymentMethodType } from './loan/payment-method-type.enum';
+export { PaymentTransactionStatus } from './loan/payment-transaction-status.enum';
 export { LicensePlateStatus } from './collateral/license-plate-status.enum';
 export { LienStatus } from './collateral/lien-status.enum';
 export { TitleStatus } from './collateral/title-status.enum';
