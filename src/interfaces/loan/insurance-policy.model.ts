@@ -6,12 +6,18 @@ import { InsuranceCancellationType } from "../../enum/loan/insurance-cancellatio
 export interface InsurancePolicyApiModel {
   id: string;
   policyNumber: string;
+  insuranceCompany: string;
   coverageStart: Timestamp;
   coverageEnd: Timestamp;
+  coverageAmount: number | null;
   cancellationDate: Timestamp | null;
   cancellationType: InsuranceCancellationType | null;
+  cancellationReason: string | null;
   agency: string;
   agent: string;
+  agentPhone: string | null;
+  agentEmail: string | null;
+  isActive: boolean;
 
   createdAt: Timestamp;
   updatedAt: Timestamp;

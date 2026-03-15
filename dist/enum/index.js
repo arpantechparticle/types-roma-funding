@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CalculationType = exports.EngineType = exports.TitleStatus = exports.LienStatus = exports.LicensePlateStatus = exports.PaymentTransactionStatus = exports.PaymentMethodType = exports.EcoaCode = exports.AprIncludes = exports.InterestRateFrequency = exports.LateFeePercentageBase = exports.LateFeeType = exports.CalculationMethod = exports.InsuranceCancellationType = exports.InsuranceStatus = exports.InsuranceCoverageType = exports.LoanCategory = exports.LoanType = exports.ServicingStatus = exports.PaymentFrequency = exports.SubLoanStatus = exports.LoanStatus = exports.EmploymentStatus = exports.BorrowerType = exports.Roles = exports.TaxIdType = exports.IRSBusinessEntityType = exports.EntityType = exports.Collection = void 0;
+exports.CalculationType = exports.EngineType = exports.TitleStatus = exports.LienStatus = exports.LicensePlateStatus = exports.CollateralFundingPaymentMethod = exports.PaymentTransactionStatus = exports.PaymentMethodType = exports.EcoaCode = exports.AprIncludes = exports.InterestRateFrequency = exports.LateFeePercentageBase = exports.LateFeeType = exports.CalculationMethod = exports.InsuranceCancellationType = exports.InsuranceStatus = exports.InsuranceCoverageType = exports.LoanCategory = exports.LoanType = exports.ServicingStatus = exports.PaymentFrequency = exports.SubLoanStatus = exports.LoanStatus = exports.EmploymentStatus = exports.BorrowerType = exports.Roles = exports.TaxIdType = exports.IRSBusinessEntityType = exports.EntityType = exports.Collection = void 0;
 // Export all enums here
 var firestore_collections_enum_1 = require("./firestore-collections.enum");
 Object.defineProperty(exports, "Collection", { enumerable: true, get: function () { return firestore_collections_enum_1.Collection; } });
@@ -51,6 +51,8 @@ var payment_method_type_enum_1 = require("./loan/payment-method-type.enum");
 Object.defineProperty(exports, "PaymentMethodType", { enumerable: true, get: function () { return payment_method_type_enum_1.PaymentMethodType; } });
 var payment_transaction_status_enum_1 = require("./loan/payment-transaction-status.enum");
 Object.defineProperty(exports, "PaymentTransactionStatus", { enumerable: true, get: function () { return payment_transaction_status_enum_1.PaymentTransactionStatus; } });
+var collateral_funding_payment_method_enum_1 = require("./loan/collateral-funding-payment-method.enum");
+Object.defineProperty(exports, "CollateralFundingPaymentMethod", { enumerable: true, get: function () { return collateral_funding_payment_method_enum_1.CollateralFundingPaymentMethod; } });
 //Collateral
 var license_plate_status_enum_1 = require("./collateral/license-plate-status.enum");
 Object.defineProperty(exports, "LicensePlateStatus", { enumerable: true, get: function () { return license_plate_status_enum_1.LicensePlateStatus; } });
