@@ -2,6 +2,7 @@ import { Timestamp } from "../timestamp";
 import { CreatedByModel } from "../created-by.model";
 import { EntityType } from "../../enum";
 import { InsuranceCancellationType } from "../../enum/loan/insurance-cancellation-type.enum";
+import { PhoneNumberModel } from "../phone-number-model";
 export interface InsurancePolicyApiModel {
     id: string;
     policyNumber: string;
@@ -14,7 +15,7 @@ export interface InsurancePolicyApiModel {
     cancellationReason: string | null;
     agency: string;
     agent: string;
-    agentPhone: string | null;
+    agentPhone: PhoneNumberModel | null;
     agentEmail: string | null;
     isActive: boolean;
     createdAt: Timestamp;
