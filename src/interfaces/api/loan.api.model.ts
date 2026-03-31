@@ -145,9 +145,17 @@ export interface AdditionalInfoModel {
   warranty: number | null;
   dealerProfit: number | null;
   reserveAmount: number | null;
+  feeBreakdown: FeeBreakdownModel;
+}
+
+export interface FeeBreakdownModel {
+  closingFees: number; // $1250
+  technologyFee: number; // $750
+  collateralReviewFee: number; // $1100
+  underwritingFee: number; // $900
+  
   /**
-   * Closing Fee - Fixed fee added to principal silently (not shown to customer)
-   * Added directly to Amount Financed
+   * Total of all fees = closingFees + technologyFee + collateralReviewFee + underwritingFee
    */
-  closingFee: number | null;
+  total: number;
 }
