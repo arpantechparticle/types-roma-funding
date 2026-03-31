@@ -111,8 +111,4 @@ export interface FeeBreakdownModel {
     technologyFee: number;
     collateralReviewFee: number;
     underwritingFee: number;
-    /**
-     * Total of all fees = closingFees + technologyFee + collateralReviewFee + underwritingFee
-     */
-    total: number;
 }

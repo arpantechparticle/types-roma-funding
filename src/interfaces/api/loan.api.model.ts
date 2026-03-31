@@ -153,9 +153,4 @@ export interface FeeBreakdownModel {
   technologyFee: number; // $750
   collateralReviewFee: number; // $1100
   underwritingFee: number; // $900
-  
-  /**
-   * Total of all fees = closingFees + technologyFee + collateralReviewFee + underwritingFee
-   */
-  total: number;
 }
