@@ -7,3 +7,4 @@ export {BorrowerApiModel, BusinessPrimaryContactModel} from './borrower.api.mode
 export {LoanApiModel, BorrowerModel, LateFeeConfig, AdditionalInfoModel, LoanUnderwritingDocuments, FeeBreakdownModel } from './loan.api.model';
 export {GpsIntegrationApiModel} from './gps-integration.api.model';
 export {PaymentProfileApiModel} from './payment-profile.api.model';
+export {AmortizationScheduleApiModel} from './amortization-schedule.api.model';
