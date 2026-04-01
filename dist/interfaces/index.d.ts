@@ -16,4 +16,5 @@ export { InsurancePolicyApiModel } from './loan/insurance-policy.model';
 export { PaymentProfileApiModel } from './loan/payment-profile.model';
 export { PaymentTransactionApiModel } from './loan/payment-transaction.model';
 export { CollateralFundingApiModel } from './loan/collateral-funding.model';
+export { PaymentLedgerApiModel } from './loan/payment-ledger.model';
 export { GpsIntegrationModel } from './gps-integration.model';

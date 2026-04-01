@@ -23,6 +23,7 @@ export { EcoaCode } from './loan/ecoa-code.enum';
 export { PaymentMethodType } from './loan/payment-method-type.enum';
 export { PaymentTransactionStatus } from './loan/payment-transaction-status.enum';
 export { CollateralFundingPaymentMethod } from './loan/collateral-funding-payment-method.enum';
+export { PaymentLedgerEntryType } from './loan/payment-ledger-entry-type.enum';
 export { LicensePlateStatus } from './collateral/license-plate-status.enum';
 export { LienStatus } from './collateral/lien-status.enum';
 export { TitleStatus } from './collateral/title-status.enum';
