@@ -11,5 +11,7 @@ export declare enum Collection {
     Installments = "installments",
     LoanPayments = "loanPayments",
     PaymentLedger = "paymentLedger",
-    PaymentTransactions = "paymentTransactions"
+    PaymentTransactions = "paymentTransactions",
+    PaymentAttempts = "paymentAttempts",
+    PaymentAllocations = "paymentAllocations"
 }
