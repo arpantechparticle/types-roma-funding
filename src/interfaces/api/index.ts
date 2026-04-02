@@ -8,3 +8,8 @@ export {LoanApiModel, BorrowerModel, LateFeeConfig, AdditionalInfoModel, LoanUnd
 export {GpsIntegrationApiModel} from './gps-integration.api.model';
 export {PaymentProfileApiModel} from './payment-profile.api.model';
 export {AmortizationScheduleApiModel} from './amortization-schedule.api.model';
+export {LoanPaymentApiModel} from './loan-payments.api.model';
+export {InstallmentApiModel} from './installment.api.model';
+export {PaymentAllocationApiModel} from './payment-allocation.api.model';
+export {PaymentAttemptApiModel} from './payment-attempt.api.model';
+export {PaymentLedgerApiModel} from './payment-ledger.api.model';

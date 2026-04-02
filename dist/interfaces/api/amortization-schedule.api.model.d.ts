@@ -9,6 +9,9 @@ export interface AmortizationScheduleApiModel {
     feePaid: number;
     interestAmount: number;
     principalAmount: number;
+    lateFeeAmount: number;
+    nfsFeeAmount: number;
+    closingFeeAmount: number;
     remainingClosingFee: number;
     remainingPrincipal: number;
     beginningBalance: number;
@@ -16,6 +19,8 @@ export interface AmortizationScheduleApiModel {
     cumulativeInterest: number;
     cumulativePrincipal: number;
     cumulativeFeePaid: number;
+    cumulativeNsfFeePaid: number;
+    cumulativeClosingFeePaid: number;
     status: AmortizationStatus;
     loanId: string;
     createdAt: Timestamp;

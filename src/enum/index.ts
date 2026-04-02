@@ -28,6 +28,7 @@ export {PaymentTransactionStatus} from './loan/payment-transaction-status.enum';
 export {CollateralFundingPaymentMethod} from './loan/collateral-funding-payment-method.enum';
 export {PaymentLedgerEntryType} from './loan/payment-ledger-entry-type.enum';
 export {AmortizationStatus} from './loan/amortization-status.enum';
+export {InstallmentStatus} from './loan/installment-status.enum';
 
 //Collateral
 export {LicensePlateStatus} from './collateral/license-plate-status.enum';

@@ -37,23 +37,22 @@ export interface LoanApiModel {
    * Amount Financed = Vehicle Sale Price + Sales Tax + Title + Registration + Dealer/Doc Fees + GAP/Warranty (if financed) - Down Payment - Trade-In Credit
    * This represents the principal amount on which interest is calculated
    */
-  amountFinanced: number; //16000
+  // amountFinanced: number; //16000
   
   /**
    * Finance Charge = Total Interest + Prepaid Finance Fees
    * This represents the total cost of borrowing over the life of the loan
    */
-  financeCharge: number; // 1200
+  // financeCharge: number; // 1200 => X
 
   /**
    * Total Loan Amount = Amount Financed + Finance Charge
    * This represents the total amount of the loan, including both the principal and the interest
    */
-  totalLoanAmount: number; // 17200
+  // totalLoanAmount: number; // 17200 => X
 
   
   discountAmount: number;
-  underwritingFee: number;
 
   interestRate: number;
   interestRateFrequency: InterestRateFrequency;
@@ -61,11 +60,30 @@ export interface LoanApiModel {
   firstPaymentDate: Timestamp;
   paymentFrequency: PaymentFrequency;
 
+  initialFinanceCharge: number;
+  initialTotalOfPayments: number;
+  initialInstallmentAmount: number;
+
+   /**
+   * principalOriginal - Amount Financed = Vehicle Sale Price + Sales Tax + Title + Registration + Dealer/Doc Fees + GAP/Warranty (if financed) - Down Payment - Trade-In Credit
+   * This represents the principal amount on which interest is calculated
+   */
+  principalOriginal: number;      // total financed principal (amount financed)
+  closingFee: number;
+  lateFee: number;
+  nfsFee: number;
+  
+  principalOutstanding: number;  // current balance
+  closingFeeOutstanding: number;
+  lateFeeOutstanding: number;
+  nfsFeeOutstanding: number;
+  feeOutstanding: number; // closingFeeOutstanding + lateFeeOutstanding + nfsFeeOutstanding
+
   termCount: number;
-  installmentAmount: number;
-  totalScheduledPayments: number; // usually = termCount
-  totalInterestExpected: number;
-  totalOfPayments: number; // TILA requirement
+  // installmentAmount: number; // => X
+  // totalScheduledPayments: number; // usually = termCount => X
+  // totalInterestExpected: number; // => X
+  // totalOfPayments: number; // TILA requirement  => X
   gracePeriodDays: number;
 
   lateFeeConfig: LateFeeConfig;
@@ -78,13 +96,13 @@ export interface LoanApiModel {
   closedDate: Timestamp | null;
 
   // Closing fee & principal tracking (fee-first allocation)
-  closingFeeTotal: number;
-  closingFeeRemaining: number;
-  principalTotal: number;
-  principalRemaining: number;
+  // closingFeeTotal: number;
+  // closingFeeRemaining: number;
+  // principalTotal: number;
+  // principalRemaining: number;
 
   // running balances
-  outstandingPrincipal: number;
+  // outstandingPrincipal: number;
   accruedInterest: number;
   accruedLateFees: number;
   otherFeesBalance: number;
@@ -111,7 +129,7 @@ export interface LoanApiModel {
   isDeleted: boolean;
   createdBy: CreatedByModel;
   updatedBy: CreatedByModel;
-  deletedBy: CreatedByModel;
+  deletedBy: CreatedByModel | null;
   timeZone: string;
   source: EntityType;
 }

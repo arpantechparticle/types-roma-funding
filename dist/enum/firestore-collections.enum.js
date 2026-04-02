@@ -12,6 +12,8 @@ var Collection;
     Collection["Persions"] = "persions";
     Collection["GpsIntegrations"] = "gpsIntegrations";
     Collection["AmortizationSchedule"] = "amortizationSchedule";
+    Collection["Installments"] = "installments";
+    Collection["LoanPayments"] = "loanPayments";
     Collection["PaymentLedger"] = "paymentLedger";
     Collection["PaymentTransactions"] = "paymentTransactions";
 })(Collection || (exports.Collection = Collection = {}));

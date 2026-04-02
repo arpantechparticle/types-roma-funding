@@ -6,21 +6,30 @@ export interface AmortizationScheduleApiModel {
   id: string;
   paymentNumber: number;
   dueDate: Timestamp;
+
   scheduledPayment: number;
   feePaid: number;
+
   interestAmount: number;
   principalAmount: number;
+  lateFeeAmount: number;
+  nfsFeeAmount: number;
+  closingFeeAmount: number;
+
   remainingClosingFee: number;
   remainingPrincipal: number;
   beginningBalance: number;
   endingBalance: number;
+
   cumulativeInterest: number;
   cumulativePrincipal: number;
   cumulativeFeePaid: number;
+  cumulativeNsfFeePaid: number;
+  cumulativeClosingFeePaid: number;
+  
   status: AmortizationStatus;
   loanId: string;
 
-  // Metadata - automatically handled by Firestore service
   createdAt: Timestamp;
   updatedAt: Timestamp;
   deletedAt: Timestamp | null;

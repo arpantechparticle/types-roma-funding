@@ -19,29 +19,37 @@ export interface LoanApiModel {
      * Amount Financed = Vehicle Sale Price + Sales Tax + Title + Registration + Dealer/Doc Fees + GAP/Warranty (if financed) - Down Payment - Trade-In Credit
      * This represents the principal amount on which interest is calculated
      */
-    amountFinanced: number;
     /**
      * Finance Charge = Total Interest + Prepaid Finance Fees
      * This represents the total cost of borrowing over the life of the loan
      */
-    financeCharge: number;
     /**
      * Total Loan Amount = Amount Financed + Finance Charge
      * This represents the total amount of the loan, including both the principal and the interest
      */
-    totalLoanAmount: number;
     discountAmount: number;
-    underwritingFee: number;
     interestRate: number;
     interestRateFrequency: InterestRateFrequency;
     contractDate: Timestamp;
     firstPaymentDate: Timestamp;
     paymentFrequency: PaymentFrequency;
+    initialFinanceCharge: number;
+    initialTotalOfPayments: number;
+    initialInstallmentAmount: number;
+    /**
+    * principalOriginal - Amount Financed = Vehicle Sale Price + Sales Tax + Title + Registration + Dealer/Doc Fees + GAP/Warranty (if financed) - Down Payment - Trade-In Credit
+    * This represents the principal amount on which interest is calculated
+    */
+    principalOriginal: number;
+    closingFee: number;
+    lateFee: number;
+    nfsFee: number;
+    principalOutstanding: number;
+    closingFeeOutstanding: number;
+    lateFeeOutstanding: number;
+    nfsFeeOutstanding: number;
+    feeOutstanding: number;
     termCount: number;
-    installmentAmount: number;
-    totalScheduledPayments: number;
-    totalInterestExpected: number;
-    totalOfPayments: number;
     gracePeriodDays: number;
     lateFeeConfig: LateFeeConfig;
     borrowers: BorrowerModel[];
@@ -50,11 +58,6 @@ export interface LoanApiModel {
     checklist: LoanChecklist;
     insurance?: InsuranceModel | null;
     closedDate: Timestamp | null;
-    closingFeeTotal: number;
-    closingFeeRemaining: number;
-    principalTotal: number;
-    principalRemaining: number;
-    outstandingPrincipal: number;
     accruedInterest: number;
     accruedLateFees: number;
     otherFeesBalance: number;
@@ -74,7 +77,7 @@ export interface LoanApiModel {
     isDeleted: boolean;
     createdBy: CreatedByModel;
     updatedBy: CreatedByModel;
-    deletedBy: CreatedByModel;
+    deletedBy: CreatedByModel | null;
     timeZone: string;
     source: EntityType;
 }
