@@ -10,11 +10,15 @@ export interface InstallmentApiModel {
     closingFeeDue: number;
     nsfFeeDue: number;
     lateFeeDue: number;
+    totalDue: number;
     principalPaid: number;
     interestPaid: number;
     closingFeePaid: number;
     nsfFeePaid: number;
     lateFeePaid: number;
+    totalPaid: number;
+    isFullyPaid?: boolean;
+    paidDate?: Timestamp | null;
     status: InstallmentStatus;
     loanId: string;
     createdAt: Timestamp;

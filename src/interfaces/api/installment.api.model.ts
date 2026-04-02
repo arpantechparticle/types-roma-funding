@@ -7,20 +7,27 @@ export interface InstallmentApiModel {
   paymentNumber: number;
   dueDate: Timestamp;
 
+  // 🔹 Expected (schedule)
   principalDue: number;
   interestDue: number;
   closingFeeDue: number;
   nsfFeeDue: number;
   lateFeeDue: number;
+  totalDue: number;
 
+  // 🔹 Actual (tracking)
   principalPaid: number;
   interestPaid: number;
   closingFeePaid: number;
   nsfFeePaid: number;
   lateFeePaid: number;
-  
+  totalPaid: number;
+
+  // 🔹 Status
+  isFullyPaid?: boolean;
+  paidDate?: Timestamp | null;
   status: InstallmentStatus;
-  
+
   loanId: string;
   createdAt: Timestamp;
   updatedAt: Timestamp;
