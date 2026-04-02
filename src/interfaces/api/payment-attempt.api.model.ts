@@ -10,6 +10,7 @@ export interface PaymentAttemptApiModel {
   status: "initiated" | "success" | "failed";
   retryCount: number;
   nextRetryDate?: Timestamp | null;
+  nsfFeeApplied?: boolean;
 
   loanId: string;
   createdAt: Timestamp;
