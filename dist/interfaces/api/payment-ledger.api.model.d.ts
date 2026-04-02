@@ -4,8 +4,9 @@ import { EntityType } from "../../enum";
 export interface PaymentLedgerApiModel {
     id: string;
     loanId: string;
-    paymentId: string;
-    transactionId: string;
+    attemptId: string | null;
+    paymentId: string | null;
+    transactionId: string | null;
     date: Timestamp;
     type: "payment" | "fee";
     principalPaid: number;

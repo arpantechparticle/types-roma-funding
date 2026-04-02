@@ -137,6 +137,7 @@ export interface LateFeeConfig {
   type: LateFeeType;
   percentageBase: LateFeePercentageBase;
   gracePeriodDays: number;
+  nsfFeeAmount: number; // e.g. $35
 }
 
 export interface LoanUnderwritingDocuments {

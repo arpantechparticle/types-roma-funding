@@ -1,6 +1,6 @@
 {
   "name": "types-roma-funding",
-  "version": "1.0.60-rc.7",
+  "version": "1.0.60-rc.8",
   "description": "Types library for Roma Funding LLC",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

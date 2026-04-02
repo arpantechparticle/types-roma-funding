@@ -5,10 +5,11 @@ import { EntityType } from "../../enum";
 export interface PaymentLedgerApiModel {
   id: string;
   loanId: string;
-  paymentId: string;
-  transactionId: string; // authorization.net transaction id
-  date: Timestamp;
+  attemptId: string | null;
+  paymentId: string | null;
+  transactionId: string | null; // authorization.net transaction id
 
+  date: Timestamp;
   type: "payment" | "fee";
 
   principalPaid: number;   
