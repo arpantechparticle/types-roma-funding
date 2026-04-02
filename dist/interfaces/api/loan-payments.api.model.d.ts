@@ -9,6 +9,9 @@ export interface LoanPaymentApiModel {
     status: "Success" | "Failed";
     transactionId: string;
     loanId: string;
+    allocationStatus?: 'pending' | 'allocated' | 'failed';
+    allocationError?: string | null;
+    allocatedAt?: Timestamp | null;
     createdAt: Timestamp;
     updatedAt: Timestamp;
     deletedAt: Timestamp | null;

@@ -14,6 +14,10 @@ export interface LoanPaymentApiModel {
   transactionId: string; // from authorize.net
   loanId: string;
 
+  allocationStatus?: 'pending' | 'allocated' | 'failed';
+  allocationError?: string | null;
+  allocatedAt?: Timestamp | null;
+
   createdAt: Timestamp;
   updatedAt: Timestamp;
   deletedAt: Timestamp | null;

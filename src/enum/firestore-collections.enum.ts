@@ -14,4 +14,5 @@ export enum Collection {
     PaymentTransactions = 'paymentTransactions',
     PaymentAttempts = 'paymentAttempts',
     PaymentAllocations = 'paymentAllocations',
+    PaymentProfiles = 'paymentProfiles',
 }
