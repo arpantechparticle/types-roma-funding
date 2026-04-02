@@ -3,13 +3,11 @@ import { CreatedByModel } from "../created-by.model";
 import { EntityType } from "../../enum";
 export interface PaymentAttemptApiModel {
     id: string;
+    loanId: string;
     installmentId: string;
     amount: number;
     status: "initiated" | "success" | "failed";
-    retryCount: number;
-    nextRetryDate?: Timestamp | null;
     nsfFeeApplied?: boolean;
-    loanId: string;
     createdAt: Timestamp;
     updatedAt: Timestamp;
     deletedAt: Timestamp | null;

@@ -3,6 +3,7 @@ import { CreatedByModel } from "../created-by.model";
 import { EntityType } from "../../enum";
 export interface PaymentAllocationApiModel {
     id: string;
+    loanId: string;
     paymentId: string;
     installmentId: string;
     principalApplied: number;
@@ -10,7 +11,6 @@ export interface PaymentAllocationApiModel {
     lateFeeApplied: number;
     nsfFeeApplied: number;
     closingFeeApplied: number;
-    loanId: string;
     createdAt: Timestamp;
     updatedAt: Timestamp;
     deletedAt: Timestamp | null;

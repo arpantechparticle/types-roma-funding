@@ -4,15 +4,15 @@ import { EntityType } from "../../enum";
 
 export interface PaymentAttemptApiModel {
   id: string;
+  loanId: string;
   installmentId: string;
   
   amount: number;
-  status: "initiated" | "success" | "failed";
-  retryCount: number;
-  nextRetryDate?: Timestamp | null;
+  status: "initiated" | "success" | "failed";  
   nsfFeeApplied?: boolean;
+  // retryCount: number;
+  // nextRetryDate?: Timestamp | null;
 
-  loanId: string;
   createdAt: Timestamp;
   updatedAt: Timestamp;
   deletedAt: Timestamp | null;

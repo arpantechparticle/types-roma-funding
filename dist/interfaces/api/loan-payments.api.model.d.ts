@@ -3,12 +3,12 @@ import { CreatedByModel } from "../created-by.model";
 import { EntityType } from "../../enum";
 export interface LoanPaymentApiModel {
     id: string;
+    loanId: string;
+    transactionId: string;
+    paymentDate: Timestamp;
     amount: number;
-    date: Timestamp;
     method: "Manual" | "Auto";
     status: "Success" | "Failed";
-    transactionId: string;
-    loanId: string;
     allocationStatus?: 'pending' | 'allocated' | 'failed';
     allocationError?: string | null;
     allocatedAt?: Timestamp | null;

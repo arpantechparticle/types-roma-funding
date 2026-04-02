@@ -4,6 +4,7 @@ import { EntityType } from "../../enum";
 
 export interface PaymentAllocationApiModel {
   id: string;
+  loanId: string;
   paymentId: string;
   installmentId: string;
 
@@ -13,7 +14,6 @@ export interface PaymentAllocationApiModel {
   nsfFeeApplied: number;
   closingFeeApplied: number;
   
-  loanId: string;
   createdAt: Timestamp;
   updatedAt: Timestamp;
   deletedAt: Timestamp | null;

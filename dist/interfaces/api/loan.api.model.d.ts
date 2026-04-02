@@ -27,50 +27,43 @@ export interface LoanApiModel {
      * Total Loan Amount = Amount Financed + Finance Charge
      * This represents the total amount of the loan, including both the principal and the interest
      */
-    discountAmount: number;
     interestRate: number;
     interestRateFrequency: InterestRateFrequency;
+    paymentFrequency: PaymentFrequency;
+    interestAccrualMethod: InterestAccrualMethod;
+    lateFeeConfig: LateFeeConfig;
+    termCount: number;
     contractDate: Timestamp;
     firstPaymentDate: Timestamp;
-    paymentFrequency: PaymentFrequency;
-    initialFinanceCharge: number;
-    initialTotalOfPayments: number;
-    initialInstallmentAmount: number;
-    /**
-    * principalOriginal - Amount Financed = Vehicle Sale Price + Sales Tax + Title + Registration + Dealer/Doc Fees + GAP/Warranty (if financed) - Down Payment - Trade-In Credit
-    * This represents the principal amount on which interest is calculated
-    */
+    closedDate?: Timestamp | null;
+    chargeOffDate?: Timestamp | null;
     principalOriginal: number;
     closingFee: number;
-    lateFee: number;
-    nfsFee: number;
+    initialEstimatedTotalInterest: number;
+    initialTotalOfPayments: number;
+    initialInstallmentAmount: number;
+    accruedInterest: number;
+    totalInterestPaid: number;
     principalOutstanding: number;
     closingFeeOutstanding: number;
+    closingFeePaid: number;
     lateFeeOutstanding: number;
+    lateFeePaid: number;
     nfsFeeOutstanding: number;
-    feeOutstanding: number;
-    termCount: number;
-    gracePeriodDays: number;
-    lateFeeConfig: LateFeeConfig;
+    nfsFeePaid: number;
     borrowers: BorrowerModel[];
     borrowerIds: string[];
     collateral: CollateralModel;
     checklist: LoanChecklist;
     insurance?: InsuranceModel | null;
-    closedDate: Timestamp | null;
-    accruedInterest: number;
-    accruedLateFees: number;
-    otherFeesBalance: number;
-    lastPaymentDate: Timestamp | null;
-    lastAccrualDate: Timestamp;
-    nextDueDate: Timestamp;
-    interestAccrualMethod: InterestAccrualMethod;
-    daysPastDue: number;
-    delinquentSince: Timestamp | null;
-    chargeOffDate?: Timestamp | null;
     inquiryId: string | null;
     titleDocument: string | null;
     underwritingDocuments: LoanUnderwritingDocuments | null;
+    lastPaymentDate: Timestamp | null;
+    lastAccrualDate: Timestamp;
+    nextDueDate: Timestamp;
+    daysPastDue: number;
+    delinquentSince: Timestamp | null;
     createdAt: Timestamp;
     updatedAt: Timestamp;
     deletedAt: Timestamp | null;
@@ -92,6 +85,7 @@ export interface LateFeeConfig {
     calculationMethod: CalculationMethod;
     type: LateFeeType;
     percentageBase: LateFeePercentageBase;
+    gracePeriodDays: number;
 }
 export interface LoanUnderwritingDocuments {
     governmentId: string | null;

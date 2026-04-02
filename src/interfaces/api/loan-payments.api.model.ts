@@ -3,17 +3,15 @@ import { CreatedByModel } from "../created-by.model";
 import { EntityType } from "../../enum";
 
 export interface LoanPaymentApiModel {
-  id: string;
+  id: string; 
+  loanId: string;
+  transactionId: string; // from authorize.net
+  paymentDate: Timestamp;
 
   amount: number;
-  date: Timestamp;
 
   method: "Manual" | "Auto";
   status: "Success" | "Failed";
-
-  transactionId: string; // from authorize.net
-  loanId: string;
-
   allocationStatus?: 'pending' | 'allocated' | 'failed';
   allocationError?: string | null;
   allocatedAt?: Timestamp | null;

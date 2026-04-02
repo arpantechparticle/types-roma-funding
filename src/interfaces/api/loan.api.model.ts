@@ -51,49 +51,52 @@ export interface LoanApiModel {
    */
   // totalLoanAmount: number; // 17200 => X
 
-  
-  discountAmount: number;
+  // discountAmount: number;
 
   interestRate: number;
   interestRateFrequency: InterestRateFrequency;
+  paymentFrequency: PaymentFrequency;
+  interestAccrualMethod: InterestAccrualMethod;
+  lateFeeConfig: LateFeeConfig;
+  termCount: number;
+
   contractDate: Timestamp;
   firstPaymentDate: Timestamp;
-  paymentFrequency: PaymentFrequency;
+  closedDate?: Timestamp | null;
+  chargeOffDate?: Timestamp | null;
 
-  initialFinanceCharge: number;
+  principalOriginal: number; // Vehicle Sale Price + Sales Tax + Title + Registration + Dealer/Doc Fees + GAP/Warranty (if financed) - Down Payment - Trade-In Credit
+  closingFee: number;
+  initialEstimatedTotalInterest: number;
   initialTotalOfPayments: number;
   initialInstallmentAmount: number;
-
-   /**
-   * principalOriginal - Amount Financed = Vehicle Sale Price + Sales Tax + Title + Registration + Dealer/Doc Fees + GAP/Warranty (if financed) - Down Payment - Trade-In Credit
-   * This represents the principal amount on which interest is calculated
-   */
-  principalOriginal: number;      // total financed principal (amount financed)
-  closingFee: number;
-  lateFee: number;
-  nfsFee: number;
   
-  principalOutstanding: number;  // current balance
-  closingFeeOutstanding: number;
-  lateFeeOutstanding: number;
-  nfsFeeOutstanding: number;
-  feeOutstanding: number; // closingFeeOutstanding + lateFeeOutstanding + nfsFeeOutstanding
+  accruedInterest: number;
+  totalInterestPaid: number;
 
-  termCount: number;
+  principalOutstanding: number;
+  closingFeeOutstanding: number;
+  closingFeePaid: number;
+  lateFeeOutstanding: number;
+  lateFeePaid: number;
+  nfsFeeOutstanding: number;
+  nfsFeePaid: number;
+
   // installmentAmount: number; // => X
   // totalScheduledPayments: number; // usually = termCount => X
   // totalInterestExpected: number; // => X
   // totalOfPayments: number; // TILA requirement  => X
-  gracePeriodDays: number;
-
-  lateFeeConfig: LateFeeConfig;
+  // gracePeriodDays: number;
 
   borrowers: BorrowerModel[];
   borrowerIds: string[];
   collateral: CollateralModel;
   checklist: LoanChecklist;
   insurance?: InsuranceModel | null;
-  closedDate: Timestamp | null;
+  inquiryId: string | null;
+
+  titleDocument: string | null;
+  underwritingDocuments: LoanUnderwritingDocuments | null;
 
   // Closing fee & principal tracking (fee-first allocation)
   // closingFeeTotal: number;
@@ -103,25 +106,12 @@ export interface LoanApiModel {
 
   // running balances
   // outstandingPrincipal: number;
-  accruedInterest: number;
-  accruedLateFees: number;
-  otherFeesBalance: number;
 
-  // snapshots
   lastPaymentDate: Timestamp | null;
   lastAccrualDate: Timestamp;
   nextDueDate: Timestamp;
-
-  interestAccrualMethod: InterestAccrualMethod;
-
-  daysPastDue: number;
+  daysPastDue: number; // days past after the next due date, added when there is no payment after nextDueDate
   delinquentSince: Timestamp | null;
-  chargeOffDate?: Timestamp | null;
-
-  inquiryId: string | null;
-
-  titleDocument: string | null;
-  underwritingDocuments: LoanUnderwritingDocuments | null;
 
   createdAt: Timestamp;
   updatedAt: Timestamp;
@@ -146,6 +136,7 @@ export interface LateFeeConfig {
   calculationMethod: CalculationMethod;
   type: LateFeeType;
   percentageBase: LateFeePercentageBase;
+  gracePeriodDays: number;
 }
 
 export interface LoanUnderwritingDocuments {
