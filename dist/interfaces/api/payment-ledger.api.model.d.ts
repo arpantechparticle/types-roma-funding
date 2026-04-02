@@ -9,7 +9,7 @@ export interface PaymentLedgerApiModel {
     date: Timestamp;
     type: "payment" | "fee";
     principalPaid: number;
-    interestAccrued: number;
+    interestPaid: number;
     closingFeePaid: number;
     nsfFeePaid: number;
     lateFeePaid: number;
