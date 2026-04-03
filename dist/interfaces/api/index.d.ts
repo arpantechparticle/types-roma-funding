@@ -6,7 +6,6 @@ export { BorrowerApiModel, BusinessPrimaryContactModel } from './borrower.api.mo
 export { LoanApiModel, BorrowerModel, LateFeeConfig, AdditionalInfoModel, LoanUnderwritingDocuments, FeeBreakdownModel } from './loan.api.model';
 export { GpsIntegrationApiModel } from './gps-integration.api.model';
 export { PaymentProfileApiModel } from './payment-profile.api.model';
-export { LoanPaymentApiModel } from './loan-payments.api.model';
 export { InstallmentApiModel } from './installment.api.model';
 export { PaymentAllocationApiModel } from './payment-allocation.api.model';
 export { PaymentLedgerApiModel } from './payment-ledger.api.model';
