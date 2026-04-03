@@ -7,6 +7,7 @@ export enum Collection {
     Borrowers = 'borrowers',
     Persions = 'persions',
     GpsIntegrations = 'gpsIntegrations',
+    Dealers = 'dealers',
     Installments = 'installments',
     LoanPayments = 'loanPayments',
     PaymentLedger = 'paymentLedger',

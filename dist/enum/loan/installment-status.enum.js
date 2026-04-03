@@ -7,6 +7,5 @@ var InstallmentStatus;
     InstallmentStatus["Paid"] = "paid";
     InstallmentStatus["PartiallyPaid"] = "partially paid";
     InstallmentStatus["Late"] = "late";
-    InstallmentStatus["Overdue"] = "overdue";
 })(InstallmentStatus || (exports.InstallmentStatus = InstallmentStatus = {}));
 //# sourceMappingURL=installment-status.enum.js.map

@@ -3,5 +3,4 @@ export enum InstallmentStatus {
   Paid = 'paid',
   PartiallyPaid = 'partially paid',
   Late = 'late',
-  Overdue = 'overdue',
 }

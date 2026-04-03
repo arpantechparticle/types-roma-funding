@@ -11,6 +11,7 @@ var Collection;
     Collection["Borrowers"] = "borrowers";
     Collection["Persions"] = "persions";
     Collection["GpsIntegrations"] = "gpsIntegrations";
+    Collection["Dealers"] = "dealers";
     Collection["Installments"] = "installments";
     Collection["LoanPayments"] = "loanPayments";
     Collection["PaymentLedger"] = "paymentLedger";

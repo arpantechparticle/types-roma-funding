@@ -6,6 +6,7 @@ export interface PaymentLedgerApiModel {
     loanId: string;
     transactionId: string | null;
     authorizeNetTransactionId: string | null;
+    installmentId: string | null;
     date: Timestamp;
     type: "payment" | "fee";
     principalPaid: number;
