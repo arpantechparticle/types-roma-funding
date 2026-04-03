@@ -1,4 +1,4 @@
-export enum PaymentTransactionStatus {
+export enum AuthorizeNetTransactionStatus {
   Pending = 'pending',
   Approved = 'approved',
   Declined = 'declined',

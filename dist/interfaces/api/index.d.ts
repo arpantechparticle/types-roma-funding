@@ -9,5 +9,4 @@ export { PaymentProfileApiModel } from './payment-profile.api.model';
 export { LoanPaymentApiModel } from './loan-payments.api.model';
 export { InstallmentApiModel } from './installment.api.model';
 export { PaymentAllocationApiModel } from './payment-allocation.api.model';
-export { PaymentAttemptApiModel } from './payment-attempt.api.model';
 export { PaymentLedgerApiModel } from './payment-ledger.api.model';

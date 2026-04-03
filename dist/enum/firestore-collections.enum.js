@@ -15,7 +15,6 @@ var Collection;
     Collection["LoanPayments"] = "loanPayments";
     Collection["PaymentLedger"] = "paymentLedger";
     Collection["PaymentTransactions"] = "paymentTransactions";
-    Collection["PaymentAttempts"] = "paymentAttempts";
     Collection["PaymentAllocations"] = "paymentAllocations";
     Collection["PaymentProfiles"] = "paymentProfiles";
 })(Collection || (exports.Collection = Collection = {}));
