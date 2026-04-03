@@ -15,8 +15,10 @@ export interface InstallmentApiModel {
   lateFeeDue: number;
   totalDue: number;
 
-  remainingPrincipal: number; //after installment payment
-  remainingClosingFee: number; //after installment payment
+  principalBefore: number;
+  closingFeeBefore: number;
+  principalAfter: number;
+  closingFeeAfter: number;
 
   // 🔹 Actual (tracking)
   principalPaid: number;

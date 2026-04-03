@@ -1,14 +1,24 @@
 import { Timestamp } from "../timestamp";
 import { CreatedByModel } from "../created-by.model";
-import { EntityType } from "../../enum";
+import { EntityType, PaymentTransactionStatus } from "../../enum";
 
 export interface LoanPaymentApiModel {
-  id: string; 
+  id: string;
   loanId: string;
   transactionId: string; // from authorize.net
   paymentDate: Timestamp;
 
   amount: number;
+
+  authCode: string | null;
+  responseCode: string | null;
+  responseMessage: string | null;
+
+  transactionStatus: PaymentTransactionStatus;
+  errorMessage: string | null;
+
+  cardLast4: string;
+  cardType: string;
 
   method: "Manual" | "Auto";
   status: "Success" | "Failed";
