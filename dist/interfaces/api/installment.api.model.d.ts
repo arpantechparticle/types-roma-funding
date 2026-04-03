@@ -11,6 +11,8 @@ export interface InstallmentApiModel {
     nsfFeeDue: number;
     lateFeeDue: number;
     totalDue: number;
+    remainingPrincipal: number;
+    remainingClosingFee: number;
     principalPaid: number;
     interestPaid: number;
     closingFeePaid: number;

@@ -15,6 +15,9 @@ export interface InstallmentApiModel {
   lateFeeDue: number;
   totalDue: number;
 
+  remainingPrincipal: number; //after installment payment
+  remainingClosingFee: number; //after installment payment
+
   // 🔹 Actual (tracking)
   principalPaid: number;
   interestPaid: number;
