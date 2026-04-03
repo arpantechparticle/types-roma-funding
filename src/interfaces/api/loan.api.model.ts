@@ -82,6 +82,10 @@ export interface LoanApiModel {
   nfsFeeOutstanding: number;
   nfsFeePaid: number;
 
+  includeClosingFeeInInterest: boolean;
+  includeLateFeeInInterest: boolean;
+  includeNsfFeeInInterest: boolean;
+
   // installmentAmount: number; // => X
   // totalScheduledPayments: number; // usually = termCount => X
   // totalInterestExpected: number; // => X

@@ -51,6 +51,9 @@ export interface LoanApiModel {
     lateFeePaid: number;
     nfsFeeOutstanding: number;
     nfsFeePaid: number;
+    includeClosingFeeInInterest: boolean;
+    includeLateFeeInInterest: boolean;
+    includeNsfFeeInInterest: boolean;
     borrowers: BorrowerModel[];
     borrowerIds: string[];
     collateral: CollateralModel;
