@@ -33,26 +33,6 @@ export interface LoanApiModel {
 
   additionalInfo: AdditionalInfoModel;
 
-  /**
-   * Amount Financed = Vehicle Sale Price + Sales Tax + Title + Registration + Dealer/Doc Fees + GAP/Warranty (if financed) - Down Payment - Trade-In Credit
-   * This represents the principal amount on which interest is calculated
-   */
-  // amountFinanced: number; //16000
-  
-  /**
-   * Finance Charge = Total Interest + Prepaid Finance Fees
-   * This represents the total cost of borrowing over the life of the loan
-   */
-  // financeCharge: number; // 1200 => X
-
-  /**
-   * Total Loan Amount = Amount Financed + Finance Charge
-   * This represents the total amount of the loan, including both the principal and the interest
-   */
-  // totalLoanAmount: number; // 17200 => X
-
-  // discountAmount: number;
-
   interestRate: number;
   interestRateFrequency: InterestRateFrequency;
   paymentFrequency: PaymentFrequency;
@@ -67,9 +47,6 @@ export interface LoanApiModel {
 
   principalOriginal: number; // Vehicle Sale Price + Sales Tax + Title + Registration + Dealer/Doc Fees + GAP/Warranty (if financed) - Down Payment - Trade-In Credit
   closingFee: number;
-  initialEstimatedTotalInterest: number;
-  initialTotalOfPayments: number;
-  initialInstallmentAmount: number;
   
   accruedInterest: number;
   totalInterestPaid: number;
@@ -86,12 +63,6 @@ export interface LoanApiModel {
   includeLateFeeInInterest: boolean;
   includeNsfFeeInInterest: boolean;
 
-  // installmentAmount: number; // => X
-  // totalScheduledPayments: number; // usually = termCount => X
-  // totalInterestExpected: number; // => X
-  // totalOfPayments: number; // TILA requirement  => X
-  // gracePeriodDays: number;
-
   borrowers: BorrowerModel[];
   borrowerIds: string[];
   collateral: CollateralModel;
@@ -104,19 +75,9 @@ export interface LoanApiModel {
   titleDocument: string | null;
   underwritingDocuments: LoanUnderwritingDocuments | null;
 
-  // Closing fee & principal tracking (fee-first allocation)
-  // closingFeeTotal: number;
-  // closingFeeRemaining: number;
-  // principalTotal: number;
-  // principalRemaining: number;
-
-  // running balances
-  // outstandingPrincipal: number;
-
   lastPaymentDate: Timestamp | null;
   lastAccrualDate: Timestamp;
   nextDueDate: Timestamp;
-  installmentSummary: InstallmentSummaryModel | null;
   daysPastDue: number; // days past after the next due date, added when there is no payment after nextDueDate
   delinquentSince: Timestamp | null;
 
@@ -170,19 +131,4 @@ export interface FeeBreakdownModel {
   technologyFee: number; // $750
   collateralReviewFee: number; // $1100
   underwritingFee: number; // $900
-}
-
-export interface InstallmentSummaryModel {
-  totalInstallments: number;
-  scheduledInstallments: number;
-  paidInstallments: number;
-  partiallyPaidInstallments: number;
-  overdueInstallments: number;
-  totalPrincipalDue: number;
-  totalInterestDue: number;
-  totalFeesDue: number;
-  totalPrincipalPaid: number;
-  totalInterestPaid: number;
-  totalFeesPaid: number;
-  totalRemaining: number;
 }

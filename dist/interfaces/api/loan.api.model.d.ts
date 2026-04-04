@@ -15,18 +15,6 @@ export interface LoanApiModel {
     calculationType: CalculationType;
     aprIncludes: AprIncludes;
     additionalInfo: AdditionalInfoModel;
-    /**
-     * Amount Financed = Vehicle Sale Price + Sales Tax + Title + Registration + Dealer/Doc Fees + GAP/Warranty (if financed) - Down Payment - Trade-In Credit
-     * This represents the principal amount on which interest is calculated
-     */
-    /**
-     * Finance Charge = Total Interest + Prepaid Finance Fees
-     * This represents the total cost of borrowing over the life of the loan
-     */
-    /**
-     * Total Loan Amount = Amount Financed + Finance Charge
-     * This represents the total amount of the loan, including both the principal and the interest
-     */
     interestRate: number;
     interestRateFrequency: InterestRateFrequency;
     paymentFrequency: PaymentFrequency;
@@ -39,9 +27,6 @@ export interface LoanApiModel {
     chargeOffDate?: Timestamp | null;
     principalOriginal: number;
     closingFee: number;
-    initialEstimatedTotalInterest: number;
-    initialTotalOfPayments: number;
-    initialInstallmentAmount: number;
     accruedInterest: number;
     totalInterestPaid: number;
     principalOutstanding: number;
@@ -67,7 +52,6 @@ export interface LoanApiModel {
     lastPaymentDate: Timestamp | null;
     lastAccrualDate: Timestamp;
     nextDueDate: Timestamp;
-    installmentSummary: InstallmentSummaryModel | null;
     daysPastDue: number;
     delinquentSince: Timestamp | null;
     createdAt: Timestamp;
@@ -115,18 +99,4 @@ export interface FeeBreakdownModel {
     technologyFee: number;
     collateralReviewFee: number;
     underwritingFee: number;
-}
-export interface InstallmentSummaryModel {
-    totalInstallments: number;
-    scheduledInstallments: number;
-    paidInstallments: number;
-    partiallyPaidInstallments: number;
-    overdueInstallments: number;
-    totalPrincipalDue: number;
-    totalInterestDue: number;
-    totalFeesDue: number;
-    totalPrincipalPaid: number;
-    totalInterestPaid: number;
-    totalFeesPaid: number;
-    totalRemaining: number;
 }
