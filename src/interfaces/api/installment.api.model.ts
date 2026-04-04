@@ -16,9 +16,18 @@ export interface InstallmentApiModel {
   totalDue: number;
 
   principalBefore: number;
+  interestBefore: number;
   closingFeeBefore: number;
+  nfsFeeBefore: number;
+  lateFeeBefore: number;
+  totalBefore: number;
+
   principalAfter: number;
+  interestAfter: number;
   closingFeeAfter: number;
+  nfsFeeAfter: number;
+  lateFeeAfter: number;
+  totalAfter: number;
 
   // 🔹 Actual (tracking)
   principalPaid: number;

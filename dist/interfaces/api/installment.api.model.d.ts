@@ -12,9 +12,17 @@ export interface InstallmentApiModel {
     lateFeeDue: number;
     totalDue: number;
     principalBefore: number;
+    interestBefore: number;
     closingFeeBefore: number;
+    nfsFeeBefore: number;
+    lateFeeBefore: number;
+    totalBefore: number;
     principalAfter: number;
+    interestAfter: number;
     closingFeeAfter: number;
+    nfsFeeAfter: number;
+    lateFeeAfter: number;
+    totalAfter: number;
     principalPaid: number;
     interestPaid: number;
     closingFeePaid: number;
