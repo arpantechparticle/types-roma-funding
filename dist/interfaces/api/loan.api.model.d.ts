@@ -60,15 +60,16 @@ export interface LoanApiModel {
     checklist: LoanChecklist;
     insurance?: InsuranceModel | null;
     inquiryId: string | null;
+    hasDealer: boolean;
+    dealerId: string | null;
     titleDocument: string | null;
     underwritingDocuments: LoanUnderwritingDocuments | null;
     lastPaymentDate: Timestamp | null;
     lastAccrualDate: Timestamp;
     nextDueDate: Timestamp;
+    installmentSummary: InstallmentSummaryModel | null;
     daysPastDue: number;
     delinquentSince: Timestamp | null;
-    hasDealer?: boolean;
-    dealerId: string;
     createdAt: Timestamp;
     updatedAt: Timestamp;
     deletedAt: Timestamp | null;
@@ -114,4 +115,18 @@ export interface FeeBreakdownModel {
     technologyFee: number;
     collateralReviewFee: number;
     underwritingFee: number;
+}
+export interface InstallmentSummaryModel {
+    totalInstallments: number;
+    scheduledInstallments: number;
+    paidInstallments: number;
+    partiallyPaidInstallments: number;
+    overdueInstallments: number;
+    totalPrincipalDue: number;
+    totalInterestDue: number;
+    totalFeesDue: number;
+    totalPrincipalPaid: number;
+    totalInterestPaid: number;
+    totalFeesPaid: number;
+    totalRemaining: number;
 }
