@@ -117,6 +117,9 @@ export interface LoanApiModel {
   daysPastDue: number; // days past after the next due date, added when there is no payment after nextDueDate
   delinquentSince: Timestamp | null;
 
+  hasDealer?: boolean;
+  dealerId: string;
+
   createdAt: Timestamp;
   updatedAt: Timestamp;
   deletedAt: Timestamp | null;

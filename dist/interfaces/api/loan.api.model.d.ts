@@ -67,6 +67,8 @@ export interface LoanApiModel {
     nextDueDate: Timestamp;
     daysPastDue: number;
     delinquentSince: Timestamp | null;
+    hasDealer?: boolean;
+    dealerId: string;
     createdAt: Timestamp;
     updatedAt: Timestamp;
     deletedAt: Timestamp | null;
