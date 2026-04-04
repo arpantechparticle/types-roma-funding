@@ -8,26 +8,17 @@ export interface InstallmentApiModel {
   dueDate: Timestamp;
 
   // 🔹 Expected (schedule)
-  principalDue: number;
   interestDue: number;
-  closingFeeDue: number;
-  nsfFeeDue: number;
-  lateFeeDue: number;
-  totalDue: number;
+  totalDue: number; // principalDue + feeDue 
 
-  principalBefore: number;
-  interestBefore: number;
-  closingFeeBefore: number;
-  nfsFeeBefore: number;
-  lateFeeBefore: number;
-  totalBefore: number;
-
-  principalAfter: number;
-  interestAfter: number;
-  closingFeeAfter: number;
-  nfsFeeAfter: number;
-  lateFeeAfter: number;
-  totalAfter: number;
+  // 🔹 Display breakdown (visual layer only)
+  totalBalanceBefore: number;
+  totalBalanceAfter: number;
+  principalPortionDisplay?: number;
+  feePortionDisplay?: number;
+  closingFeePortionDisplay?: number;
+  lateFeePortionDisplay?: number;
+  nsfFeePortionDisplay?: number;  
 
   // 🔹 Actual (tracking)
   principalPaid: number;
