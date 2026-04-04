@@ -27,6 +27,7 @@ export interface LoanApiModel {
     chargeOffDate?: Timestamp | null;
     principalOriginal: number;
     closingFee: number;
+    installmentAmount: number;
     accruedInterest: number;
     totalInterestPaid: number;
     principalOutstanding: number;

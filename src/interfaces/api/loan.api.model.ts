@@ -47,6 +47,7 @@ export interface LoanApiModel {
 
   principalOriginal: number; // Vehicle Sale Price + Sales Tax + Title + Registration + Dealer/Doc Fees + GAP/Warranty (if financed) - Down Payment - Trade-In Credit
   closingFee: number;
+  installmentAmount: number;
   
   accruedInterest: number;
   totalInterestPaid: number;
