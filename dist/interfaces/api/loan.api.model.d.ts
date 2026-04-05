@@ -20,7 +20,7 @@ export interface LoanApiModel {
     paymentFrequency: PaymentFrequency;
     interestAccrualMethod: InterestAccrualMethod;
     lateFeeConfig: LateFeeConfig;
-    termCount: number;
+    termInYears: number;
     contractDate: Timestamp;
     firstPaymentDate: Timestamp;
     closedDate?: Timestamp | null;

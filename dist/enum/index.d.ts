@@ -25,6 +25,7 @@ export { AuthorizeNetTransactionStatus } from './loan/authorize-net-transaction-
 export { CollateralFundingPaymentMethod } from './loan/collateral-funding-payment-method.enum';
 export { PaymentLedgerEntryType } from './loan/payment-ledger-entry-type.enum';
 export { InstallmentStatus } from './loan/installment-status.enum';
+export { InterestAccrualMethod } from './loan/interest-accrual-method.enum';
 export { LicensePlateStatus } from './collateral/license-plate-status.enum';
 export { LienStatus } from './collateral/lien-status.enum';
 export { TitleStatus } from './collateral/title-status.enum';
