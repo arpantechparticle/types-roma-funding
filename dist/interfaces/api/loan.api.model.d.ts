@@ -14,7 +14,7 @@ export interface LoanApiModel {
     loanCategory: LoanCategory;
     calculationType: CalculationType;
     aprIncludes: AprIncludes;
-    additionalInfo: AdditionalInfoModel;
+    loanOriginationDetails: LoanOriginationDetailsModel;
     interestRate: number;
     interestRateFrequency: InterestRateFrequency;
     paymentFrequency: PaymentFrequency;
@@ -85,7 +85,7 @@ export interface LoanUnderwritingDocuments {
     specificationSheet: string | null;
     socialSecurityCard: string | null;
 }
-export interface AdditionalInfoModel {
+export interface LoanOriginationDetailsModel {
     salesPrice: number;
     netAmountDown: number | null;
     taxes: number | null;
