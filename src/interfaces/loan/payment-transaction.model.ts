@@ -7,6 +7,7 @@ export interface PaymentTransactionApiModel {
   loanId: string;
   installmentId: string | null;
   paymentProfileId: string;
+  amount: number;
 
   transactionId: string;
   authorizeNetTransactionId: string | null;

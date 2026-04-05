@@ -1,5 +1,4 @@
 import { EntityType } from "../../enum";
-import { AddressModel } from "../address.model";
 import { CreatedByModel } from "../created-by.model";
 import { PhoneNumberModel } from "../phone-number-model";
 import { Timestamp } from "../timestamp";
@@ -9,8 +8,6 @@ export interface DealerApiModel {
     code?: string | null;
     email?: string | null;
     phone?: PhoneNumberModel | null;
-    address?: AddressModel | null;
-    isActive: boolean;
     createdAt: Timestamp;
     updatedAt: Timestamp;
     deletedAt: Timestamp | null;

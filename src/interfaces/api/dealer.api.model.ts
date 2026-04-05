@@ -6,13 +6,10 @@ import { Timestamp } from "../timestamp";
 
 export interface DealerApiModel {
   id: string;
-
   name: string;
   code?: string | null;
   email?: string | null;
   phone?: PhoneNumberModel | null;
-  address?: AddressModel | null;
-  isActive: boolean;
 
   createdAt: Timestamp;
   updatedAt: Timestamp;
