@@ -1,6 +1,6 @@
 import { Timestamp } from "../timestamp";
 import { CreatedByModel } from "../created-by.model";
-import { EntityType, AuthorizeNetTransactionStatus } from "../../enum";
+import { EntityType, AuthorizeNetTransactionStatus, TransactionStatus, PaymentMode } from "../../enum";
 export interface PaymentTransactionApiModel {
     id: string;
     loanId: string;
@@ -13,8 +13,8 @@ export interface PaymentTransactionApiModel {
     responseCode: string | null;
     responseMessage: string | null;
     authorizeNetTransactionStatus: AuthorizeNetTransactionStatus;
-    status: "initiated" | "success" | "failed";
-    paymentMode: "manual" | "auto";
+    status: TransactionStatus;
+    paymentMode: PaymentMode;
     errorMessage: string | null;
     cardLast4: string;
     cardType: string;

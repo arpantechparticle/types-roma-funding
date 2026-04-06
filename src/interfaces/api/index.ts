@@ -10,3 +10,4 @@ export {GpsIntegrationApiModel} from './gps-integration.api.model';
 export {PaymentProfileApiModel} from './payment-profile.api.model';
 export {InstallmentApiModel} from './installment.api.model';
 export {PaymentLedgerApiModel} from './payment-ledger.api.model';
+export {PaymentTransactionApiModel} from '../loan/payment-transaction.model';

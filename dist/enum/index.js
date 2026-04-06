@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CalculationType = exports.EngineType = exports.TitleStatus = exports.LienStatus = exports.LicensePlateStatus = exports.InterestAccrualMethod = exports.InstallmentStatus = exports.PaymentLedgerEntryType = exports.CollateralFundingPaymentMethod = exports.AuthorizeNetTransactionStatus = exports.PaymentMethodType = exports.EcoaCode = exports.AprIncludes = exports.InterestRateFrequency = exports.LateFeePercentageBase = exports.LateFeeType = exports.CalculationMethod = exports.InsuranceCancellationType = exports.InsuranceStatus = exports.InsuranceCoverageType = exports.LoanCategory = exports.LoanType = exports.ServicingStatus = exports.PaymentFrequency = exports.SubLoanStatus = exports.LoanStatus = exports.EmploymentStatus = exports.BorrowerType = exports.Roles = exports.TaxIdType = exports.IRSBusinessEntityType = exports.EntityType = exports.Collection = void 0;
+exports.CalculationType = exports.EngineType = exports.TitleStatus = exports.LienStatus = exports.LicensePlateStatus = exports.TransactionStatus = exports.PaymentMode = exports.PaymentStatus = exports.InterestAccrualMethod = exports.InstallmentStatus = exports.PaymentLedgerEntryType = exports.CollateralFundingPaymentMethod = exports.AuthorizeNetTransactionStatus = exports.PaymentMethodType = exports.EcoaCode = exports.AprIncludes = exports.InterestRateFrequency = exports.LateFeePercentageBase = exports.LateFeeType = exports.CalculationMethod = exports.InsuranceCancellationType = exports.InsuranceStatus = exports.InsuranceCoverageType = exports.LoanCategory = exports.LoanType = exports.ServicingStatus = exports.PaymentFrequency = exports.SubLoanStatus = exports.LoanStatus = exports.EmploymentStatus = exports.BorrowerType = exports.Roles = exports.TaxIdType = exports.IRSBusinessEntityType = exports.EntityType = exports.Collection = void 0;
 // Export all enums here
 var firestore_collections_enum_1 = require("./firestore-collections.enum");
 Object.defineProperty(exports, "Collection", { enumerable: true, get: function () { return firestore_collections_enum_1.Collection; } });
@@ -59,6 +59,12 @@ var installment_status_enum_1 = require("./loan/installment-status.enum");
 Object.defineProperty(exports, "InstallmentStatus", { enumerable: true, get: function () { return installment_status_enum_1.InstallmentStatus; } });
 var interest_accrual_method_enum_1 = require("./loan/interest-accrual-method.enum");
 Object.defineProperty(exports, "InterestAccrualMethod", { enumerable: true, get: function () { return interest_accrual_method_enum_1.InterestAccrualMethod; } });
+var payment_status_enum_1 = require("./loan/payment-status.enum");
+Object.defineProperty(exports, "PaymentStatus", { enumerable: true, get: function () { return payment_status_enum_1.PaymentStatus; } });
+var payment_mode_enum_1 = require("./loan/payment-mode.enum");
+Object.defineProperty(exports, "PaymentMode", { enumerable: true, get: function () { return payment_mode_enum_1.PaymentMode; } });
+var transaction_status_enum_1 = require("./loan/transaction-status.enum");
+Object.defineProperty(exports, "TransactionStatus", { enumerable: true, get: function () { return transaction_status_enum_1.TransactionStatus; } });
 //Collateral
 var license_plate_status_enum_1 = require("./collateral/license-plate-status.enum");
 Object.defineProperty(exports, "LicensePlateStatus", { enumerable: true, get: function () { return license_plate_status_enum_1.LicensePlateStatus; } });

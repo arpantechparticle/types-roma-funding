@@ -1,6 +1,6 @@
 import { Timestamp } from "../timestamp";
 import { CreatedByModel } from "../created-by.model";
-import { EntityType } from "../../enum";
+import { EntityType, PaymentStatus, PaymentMode } from "../../enum";
 export interface PaymentLedgerApiModel {
     id: string;
     loanId: string;
@@ -8,8 +8,8 @@ export interface PaymentLedgerApiModel {
     authorizeNetTransactionId: string | null;
     installmentId: string | null;
     date: Timestamp;
-    status: "success" | "failed";
-    paymentMode: 'auto' | 'manual';
+    status: PaymentStatus;
+    paymentMode: PaymentMode;
     principalPaid: number;
     interestPaid: number;
     closingFeePaid: number;
