@@ -25,6 +25,7 @@ export interface PaymentTransactionApiModel {
   cardType: string;
 
   nsfFeeApplied?: boolean;
+  paymentDate: Timestamp;
 
   createdAt: Timestamp;
   updatedAt: Timestamp;
