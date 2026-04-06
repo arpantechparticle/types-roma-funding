@@ -9,6 +9,8 @@ export interface PaymentTransactionApiModel {
     amount: number;
     transactionId: string;
     authorizeNetTransactionId: string | null;
+    authorizeNetCustomerProfileId: string;
+    authorizeNetPaymentProfileId: string;
     authCode: string | null;
     responseCode: string | null;
     responseMessage: string | null;

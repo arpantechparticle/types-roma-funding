@@ -11,6 +11,8 @@ export interface PaymentTransactionApiModel {
 
   transactionId: string;
   authorizeNetTransactionId: string | null;
+  authorizeNetCustomerProfileId: string;
+  authorizeNetPaymentProfileId: string;
 
   authCode: string | null;
   responseCode: string | null;

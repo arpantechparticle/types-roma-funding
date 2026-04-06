@@ -9,6 +9,10 @@ export interface PaymentLedgerApiModel {
   authorizeNetTransactionId: string | null; // authorization.net transaction id
   installmentId: string | null; // installment this payment was applied to (null if all installments paid)
 
+  // 🔹 ACCRUED INTEREST
+  newAccruedInterest: number;
+  daysAccrued: number; // how many days interest was calculated before this event;
+
   date: Timestamp;
   status: PaymentStatus;
   paymentMode: PaymentMode;
@@ -24,7 +28,7 @@ export interface PaymentLedgerApiModel {
 
   // 🔹 BEFORE SNAPSHOT (CRITICAL)
   principalBefore: number;
-  accruedInterestBefore: number;
+  unpaidAccruedInterestBefore: number;
   nsfFeeBefore: number;
   lateFeeBefore: number;
   closingFeeBefore: number;
@@ -32,14 +36,11 @@ export interface PaymentLedgerApiModel {
 
   // 🔹 AFTER SNAPSHOT (CRITICAL)
   principalAfter: number;
-  accruedInterestAfter: number;
+  unpaidAccruedInterestAfter: number;
   nsfFeeAfter: number;
   lateFeeAfter: number;
   closingFeeAfter: number;
   feeOutstandingAfter: number;
-
-  // 🔹 OPTIONAL BUT POWERFUL
-  daysAccrued?: number; // how many days interest was calculated before this event;
 
   createdAt: Timestamp;
   updatedAt: Timestamp;
