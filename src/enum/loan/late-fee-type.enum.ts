@@ -1,5 +1,0 @@
-export enum LateFeeType {
-  Standard = "standard",
-  StandardPlusFee = "standardPlusFee",
-  CurrentPeriod = "currentPeriod",
-}

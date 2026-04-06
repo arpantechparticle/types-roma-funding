@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CalculationType = exports.EngineType = exports.TitleStatus = exports.LienStatus = exports.LicensePlateStatus = exports.TransactionStatus = exports.PaymentMode = exports.PaymentStatus = exports.InterestAccrualMethod = exports.InstallmentStatus = exports.PaymentLedgerEntryType = exports.CollateralFundingPaymentMethod = exports.AuthorizeNetTransactionStatus = exports.PaymentMethodType = exports.EcoaCode = exports.AprIncludes = exports.InterestRateFrequency = exports.LateFeePercentageBase = exports.LateFeeType = exports.CalculationMethod = exports.InsuranceCancellationType = exports.InsuranceStatus = exports.InsuranceCoverageType = exports.LoanCategory = exports.LoanType = exports.ServicingStatus = exports.PaymentFrequency = exports.SubLoanStatus = exports.LoanStatus = exports.EmploymentStatus = exports.BorrowerType = exports.Roles = exports.TaxIdType = exports.IRSBusinessEntityType = exports.EntityType = exports.Collection = void 0;
+exports.CalculationType = exports.EngineType = exports.TitleStatus = exports.LienStatus = exports.LicensePlateStatus = exports.TransactionStatus = exports.PaymentMode = exports.PaymentStatus = exports.InterestAccrualMethod = exports.InstallmentStatus = exports.PaymentLedgerEntryType = exports.CollateralFundingPaymentMethod = exports.AuthorizeNetTransactionStatus = exports.PaymentMethodType = exports.EcoaCode = exports.AprIncludes = exports.InterestRateFrequency = exports.CalculationMethod = exports.InsuranceCancellationType = exports.InsuranceStatus = exports.InsuranceCoverageType = exports.LoanCategory = exports.LoanType = exports.ServicingStatus = exports.PaymentFrequency = exports.SubLoanStatus = exports.LoanStatus = exports.EmploymentStatus = exports.BorrowerType = exports.Roles = exports.TaxIdType = exports.IRSBusinessEntityType = exports.EntityType = exports.Collection = void 0;
 // Export all enums here
 var firestore_collections_enum_1 = require("./firestore-collections.enum");
 Object.defineProperty(exports, "Collection", { enumerable: true, get: function () { return firestore_collections_enum_1.Collection; } });
@@ -37,10 +37,6 @@ var insurance_cancellation_type_enum_1 = require("./loan/insurance-cancellation-
 Object.defineProperty(exports, "InsuranceCancellationType", { enumerable: true, get: function () { return insurance_cancellation_type_enum_1.InsuranceCancellationType; } });
 var calculation_method_enum_1 = require("./loan/calculation-method.enum");
 Object.defineProperty(exports, "CalculationMethod", { enumerable: true, get: function () { return calculation_method_enum_1.CalculationMethod; } });
-var late_fee_type_enum_1 = require("./loan/late-fee-type.enum");
-Object.defineProperty(exports, "LateFeeType", { enumerable: true, get: function () { return late_fee_type_enum_1.LateFeeType; } });
-var late_fee_percentage_base_enum_1 = require("./loan/late-fee-percentage-base.enum");
-Object.defineProperty(exports, "LateFeePercentageBase", { enumerable: true, get: function () { return late_fee_percentage_base_enum_1.LateFeePercentageBase; } });
 var interest_rate_frequency_enum_1 = require("./loan/interest-rate-frequency.enum");
 Object.defineProperty(exports, "InterestRateFrequency", { enumerable: true, get: function () { return interest_rate_frequency_enum_1.InterestRateFrequency; } });
 var apr_includes_enum_1 = require("./loan/apr-includes.enum");

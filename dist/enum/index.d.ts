@@ -15,8 +15,6 @@ export { InsuranceCoverageType } from './loan/insurance-coverage-type.enum';
 export { InsuranceStatus } from './loan/insurance-status.enum';
 export { InsuranceCancellationType } from './loan/insurance-cancellation-type.enum';
 export { CalculationMethod } from './loan/calculation-method.enum';
-export { LateFeeType } from './loan/late-fee-type.enum';
-export { LateFeePercentageBase } from './loan/late-fee-percentage-base.enum';
 export { InterestRateFrequency } from './loan/interest-rate-frequency.enum';
 export { AprIncludes } from './loan/apr-includes.enum';
 export { EcoaCode } from './loan/ecoa-code.enum';

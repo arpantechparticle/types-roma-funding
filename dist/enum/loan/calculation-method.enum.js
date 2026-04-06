@@ -5,7 +5,5 @@ var CalculationMethod;
 (function (CalculationMethod) {
     CalculationMethod["Flat"] = "flat";
     CalculationMethod["Percentage"] = "percentage";
-    CalculationMethod["GreaterOf"] = "greater_of";
-    CalculationMethod["LesserOf"] = "lesser_of";
 })(CalculationMethod || (exports.CalculationMethod = CalculationMethod = {}));
 //# sourceMappingURL=calculation-method.enum.js.map

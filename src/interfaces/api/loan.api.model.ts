@@ -7,8 +7,6 @@ import {
   PaymentFrequency,
   SubLoanStatus,
   CalculationMethod,
-  LateFeeType,
-  LateFeePercentageBase,
   InterestRateFrequency,
   AprIncludes,
   EcoaCode,
@@ -54,7 +52,7 @@ export interface LoanApiModel {
    * total accrued interest including past due amounts 
    * it will be updated whenever user makes a payment until now
    */
-  totalAccruedInterest: number; 
+  totalAccruedInterest: number;
   totalInterestPaid: number;
   /**
    * Intrest amount which was not paid in the last payment due to inefficient amount 
@@ -63,7 +61,7 @@ export interface LoanApiModel {
   accruedInterest: number;
 
   closingFee: number;
-  closingFeeOutstanding: number;  
+  closingFeeOutstanding: number;
   closingFeePaid: number;
 
   latFee: number;
@@ -110,11 +108,10 @@ export interface BorrowerModel {
 }
 
 export interface LateFeeConfig {
+  isActive: boolean;
   flatFee: number; // e.g. $25
   percentageFee: number; // e.g. 5 (% of installment)
   calculationMethod: CalculationMethod;
-  type: LateFeeType;
-  percentageBase: LateFeePercentageBase;
   gracePeriodDays: number;
   nsfFeeAmount: number; // e.g. $35
 }

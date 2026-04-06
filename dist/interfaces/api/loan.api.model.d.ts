@@ -1,4 +1,4 @@
-import { EntityType, CalculationType, LoanCategory, LoanStatus, LoanType, PaymentFrequency, SubLoanStatus, CalculationMethod, LateFeeType, LateFeePercentageBase, InterestRateFrequency, AprIncludes, EcoaCode } from "../../enum";
+import { EntityType, CalculationType, LoanCategory, LoanStatus, LoanType, PaymentFrequency, SubLoanStatus, CalculationMethod, InterestRateFrequency, AprIncludes, EcoaCode } from "../../enum";
 import { CreatedByModel } from "../created-by.model";
 import { Timestamp } from "../timestamp";
 import { CollateralModel } from "../loan/collateral.model";
@@ -80,11 +80,10 @@ export interface BorrowerModel {
     ECOACode: EcoaCode | null;
 }
 export interface LateFeeConfig {
+    isActive: boolean;
     flatFee: number;
     percentageFee: number;
     calculationMethod: CalculationMethod;
-    type: LateFeeType;
-    percentageBase: LateFeePercentageBase;
     gracePeriodDays: number;
     nsfFeeAmount: number;
 }
