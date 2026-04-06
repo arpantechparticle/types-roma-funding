@@ -39,7 +39,7 @@ export interface LoanApiModel {
      * Intrest amount which was not paid in the last payment due to inefficient amount
      * so we have to take it from the next payment
      */
-    accruedInterest: number;
+    unpaidAccruedInterest: number;
     closingFee: number;
     closingFeeOutstanding: number;
     closingFeePaid: number;
