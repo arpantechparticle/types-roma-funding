@@ -8,7 +8,8 @@ export interface PaymentLedgerApiModel {
     authorizeNetTransactionId: string | null;
     installmentId: string | null;
     date: Timestamp;
-    type: "payment" | "fee";
+    status: "success" | "failed";
+    paymentMode: 'auto' | 'manual';
     principalPaid: number;
     interestPaid: number;
     closingFeePaid: number;

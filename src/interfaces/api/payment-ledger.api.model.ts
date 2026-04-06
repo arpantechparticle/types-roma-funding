@@ -10,7 +10,8 @@ export interface PaymentLedgerApiModel {
   installmentId: string | null; // installment this payment was applied to (null if all installments paid)
 
   date: Timestamp;
-  type: "payment" | "fee";
+  status: "success" | "failed";
+  paymentMode: 'auto' | 'manual';
 
   principalPaid: number;   
   interestPaid: number; 

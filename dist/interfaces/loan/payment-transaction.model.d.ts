@@ -14,7 +14,7 @@ export interface PaymentTransactionApiModel {
     responseMessage: string | null;
     authorizeNetTransactionStatus: AuthorizeNetTransactionStatus;
     status: "initiated" | "success" | "failed";
-    type: "manual" | "auto";
+    paymentMode: "manual" | "auto";
     errorMessage: string | null;
     cardLast4: string;
     cardType: string;

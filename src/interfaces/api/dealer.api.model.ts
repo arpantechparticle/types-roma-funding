@@ -1,5 +1,4 @@
 import { EntityType } from "../../enum";
-import { AddressModel } from "../address.model";
 import { CreatedByModel } from "../created-by.model";
 import { PhoneNumberModel } from "../phone-number-model";
 import { Timestamp } from "../timestamp";

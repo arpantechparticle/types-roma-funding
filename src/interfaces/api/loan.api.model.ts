@@ -39,6 +39,7 @@ export interface LoanApiModel {
   interestAccrualMethod: InterestAccrualMethod;
   lateFeeConfig: LateFeeConfig;
   termInYears: number;
+  installmentAmount: number;
 
   contractDate: Timestamp;
   firstPaymentDate: Timestamp;
@@ -46,23 +47,32 @@ export interface LoanApiModel {
   chargeOffDate?: Timestamp | null;
 
   principalOriginal: number; // Vehicle Sale Price + Sales Tax + Title + Registration + Dealer/Doc Fees + GAP/Warranty (if financed) - Down Payment - Trade-In Credit
-  closingFee: number;
-  installmentAmount: number;
-  
-  accruedInterest: number;
-  totalInterestPaid: number;
-
   principalOutstanding: number;
-  closingFeeOutstanding: number;
+  principalPaid: number;
+
+  /** 
+   * total accrued interest including past due amounts 
+   * it will be updated whenever user makes a payment until now
+   */
+  totalAccruedInterest: number; 
+  totalInterestPaid: number;
+  /**
+   * Intrest amount which was not paid in the last payment due to inefficient amount 
+   * so we have to take it from the next payment
+   */
+  accruedInterest: number;
+
+  closingFee: number;
+  closingFeeOutstanding: number;  
   closingFeePaid: number;
+
+  latFee: number;
   lateFeeOutstanding: number;
   lateFeePaid: number;
+
+  nfsFee: number;
   nfsFeeOutstanding: number;
   nfsFeePaid: number;
-
-  includeClosingFeeInInterest: boolean;
-  includeLateFeeInInterest: boolean;
-  includeNsfFeeInInterest: boolean;
 
   borrowers: BorrowerModel[];
   borrowerIds: string[];

@@ -1,6 +1,6 @@
 import { Timestamp } from "../timestamp";
 import { CreatedByModel } from "../created-by.model";
-import { EntityType, InstallmentStatus } from "../../enum";
+import { EntityType } from "../../enum";
 
 export interface InstallmentApiModel {
   id: string;
@@ -31,7 +31,8 @@ export interface InstallmentApiModel {
   // 🔹 Status
   isFullyPaid?: boolean;
   paidDate?: Timestamp | null;
-  status: InstallmentStatus;
+  paymentMode?: "auto" | "manual";
+  status: "success" | "failed" | "scheduled";
 
   loanId: string;
   createdAt: Timestamp;

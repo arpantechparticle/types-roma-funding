@@ -9,5 +9,4 @@ export {DealerApiModel} from './dealer.api.model';
 export {GpsIntegrationApiModel} from './gps-integration.api.model';
 export {PaymentProfileApiModel} from './payment-profile.api.model';
 export {InstallmentApiModel} from './installment.api.model';
-export {PaymentAllocationApiModel} from './payment-allocation.api.model';
 export {PaymentLedgerApiModel} from './payment-ledger.api.model';
