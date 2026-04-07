@@ -5,7 +5,7 @@ import {
   LoanStatus,
   LoanType,
   PaymentFrequency,
-  SubLoanStatus,
+  LoanClosureReason,
   CalculationMethod,
   InterestRateFrequency,
   AprIncludes,
@@ -22,7 +22,6 @@ export interface LoanApiModel {
   id: string;
   loanNumber: string;
   status: LoanStatus;
-  subStatus: SubLoanStatus;
 
   loanType: LoanType;
   loanCategory: LoanCategory;
@@ -43,6 +42,10 @@ export interface LoanApiModel {
   firstPaymentDate: Timestamp;
   closedDate?: Timestamp | null;
   chargeOffDate?: Timestamp | null;
+  closureReason?: LoanClosureReason | null;
+  payoffDate?: Timestamp | null;
+  payoffAmount?: number | null;
+  writeOffAmount?: number | null;
 
   principalOriginal: number; // Vehicle Sale Price + Sales Tax + Title + Registration + Dealer/Doc Fees + GAP/Warranty (if financed) - Down Payment - Trade-In Credit
   principalOutstanding: number;

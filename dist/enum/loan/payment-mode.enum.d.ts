@@ -1,4 +1,5 @@
 export declare enum PaymentMode {
     Auto = "auto",
-    Manual = "manual"
+    Manual = "manual",
+    Payoff = "payoff"
 }

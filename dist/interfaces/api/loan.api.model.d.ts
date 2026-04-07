@@ -1,4 +1,4 @@
-import { EntityType, CalculationType, LoanCategory, LoanStatus, LoanType, PaymentFrequency, SubLoanStatus, CalculationMethod, InterestRateFrequency, AprIncludes, EcoaCode } from "../../enum";
+import { EntityType, CalculationType, LoanCategory, LoanStatus, LoanType, PaymentFrequency, LoanClosureReason, CalculationMethod, InterestRateFrequency, AprIncludes, EcoaCode } from "../../enum";
 import { CreatedByModel } from "../created-by.model";
 import { Timestamp } from "../timestamp";
 import { CollateralModel } from "../loan/collateral.model";
@@ -9,7 +9,6 @@ export interface LoanApiModel {
     id: string;
     loanNumber: string;
     status: LoanStatus;
-    subStatus: SubLoanStatus;
     loanType: LoanType;
     loanCategory: LoanCategory;
     calculationType: CalculationType;
@@ -26,6 +25,10 @@ export interface LoanApiModel {
     firstPaymentDate: Timestamp;
     closedDate?: Timestamp | null;
     chargeOffDate?: Timestamp | null;
+    closureReason?: LoanClosureReason | null;
+    payoffDate?: Timestamp | null;
+    payoffAmount?: number | null;
+    writeOffAmount?: number | null;
     principalOriginal: number;
     principalOutstanding: number;
     principalPaid: number;
