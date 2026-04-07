@@ -1,29 +1,27 @@
 export interface LoanChecklist {
   underwriting: {
-    completedFundingPacket: boolean;
-    keyOnFile: boolean;
-    qbSyncCompleted: boolean;
+    borrowerInfoVerified: boolean;
+    collateralDetailsComplete: boolean;
+    insurancePolicyActive: boolean;
     gpsInstalled: boolean;
+    titleReceived: boolean;
+    paymentMethodConfigured: boolean;
+    underwritingDocsComplete: boolean;
+    collateralFundingVerified: boolean;
     verifiedResidence: boolean;
     verifiedReferences: boolean;
     verifiedIncome: boolean;
-    insuranceListedAsLienholder: boolean;
   };
 
   operations: {
-    modificationMade: boolean;
-    repairsTruckInRepair: boolean;
-    advancementGiven: boolean;
     profileUpdated: boolean;
-    welcomePhoneCall: boolean;
-    welcomePacket: boolean;
-    titleReceived: boolean;
   };
 
   paidOff: {
     accountClosure: boolean;
     lienRelease: boolean;
     gpsUninstalled: boolean;
+    titleReleasedToBorrower: boolean;
   };
 
   repossession: {
@@ -43,9 +41,5 @@ export interface LoanChecklist {
   audits: {
     titleELT: boolean;
     finalAudit: boolean;
-  };
-
-  custody: {
-    keyInRomaPossession: boolean;
   };
 }
