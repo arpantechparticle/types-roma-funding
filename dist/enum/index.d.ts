@@ -7,6 +7,7 @@ export { BorrowerType } from './borrower-type.enum';
 export { EmploymentStatus } from './employment-status.enum';
 export { LoanStatus } from './loan/loan-status.enum';
 export { LoanClosureReason } from './loan/loan-closure-reason.enum';
+export * from './loan/ledger-entry-type.enum';
 export { PaymentFrequency } from './loan/payment-frequency.enum';
 export { ServicingStatus } from './loan/servicing-status.enum';
 export { LoanType } from './loan/loan-type.enum';

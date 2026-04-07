@@ -1,12 +1,13 @@
 import { Timestamp } from "../timestamp";
 import { CreatedByModel } from "../created-by.model";
-import { EntityType, PaymentStatus, PaymentMode } from "../../enum";
+import { EntityType, PaymentStatus, PaymentMode, LedgerEntryType } from "../../enum";
 export interface PaymentLedgerApiModel {
     id: string;
     loanId: string;
     transactionId: string | null;
     authorizeNetTransactionId: string | null;
     installmentId: string | null;
+    entryType: LedgerEntryType;
     newAccruedInterest: number;
     daysAccrued: number;
     date: Timestamp;

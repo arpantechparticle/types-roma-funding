@@ -1,6 +1,6 @@
 import { Timestamp } from "../timestamp";
 import { CreatedByModel } from "../created-by.model";
-import { EntityType, PaymentStatus, PaymentMode } from "../../enum";
+import { EntityType, PaymentStatus, PaymentMode, LedgerEntryType } from "../../enum";
 
 export interface PaymentLedgerApiModel {
   id: string;
@@ -8,6 +8,9 @@ export interface PaymentLedgerApiModel {
   transactionId: string | null;
   authorizeNetTransactionId: string | null; // authorization.net transaction id
   installmentId: string | null; // installment this payment was applied to (null if all installments paid)
+
+  // 🔹 ENTRY TYPE
+  entryType: LedgerEntryType; // Type of ledger entry (payment, fee, payoff, write_off, etc.)
 
   // 🔹 ACCRUED INTEREST
   newAccruedInterest: number;
