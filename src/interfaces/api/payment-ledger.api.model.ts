@@ -8,6 +8,7 @@ export interface PaymentLedgerApiModel {
   transactionId: string | null;
   authorizeNetTransactionId: string | null; // authorization.net transaction id
   installmentId: string | null; // installment this payment was applied to (null if all installments paid)
+  paymentNumber: number | null; // installment's payment number (null if no installment linked)
 
   // 🔹 ENTRY TYPE
   entryType: LedgerEntryType; // Type of ledger entry (payment, fee, payoff, write_off, etc.)

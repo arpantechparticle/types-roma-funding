@@ -7,6 +7,7 @@ export interface PaymentLedgerApiModel {
     transactionId: string | null;
     authorizeNetTransactionId: string | null;
     installmentId: string | null;
+    paymentNumber: number | null;
     entryType: LedgerEntryType;
     newAccruedInterest: number;
     daysAccrued: number;

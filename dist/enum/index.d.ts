@@ -22,7 +22,6 @@ export { EcoaCode } from './loan/ecoa-code.enum';
 export { PaymentMethodType } from './loan/payment-method-type.enum';
 export { AuthorizeNetTransactionStatus } from './loan/authorize-net-transaction-status.enum';
 export { CollateralFundingPaymentMethod } from './loan/collateral-funding-payment-method.enum';
-export { PaymentLedgerEntryType } from './loan/payment-ledger-entry-type.enum';
 export { InstallmentStatus } from './loan/installment-status.enum';
 export { InterestAccrualMethod } from './loan/interest-accrual-method.enum';
 export { PaymentStatus } from './loan/payment-status.enum';
