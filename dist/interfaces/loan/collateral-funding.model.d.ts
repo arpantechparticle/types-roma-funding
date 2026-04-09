@@ -8,6 +8,7 @@ export interface CollateralFundingApiModel {
     referenceNumber: string | null;
     paymentMethod: CollateralFundingPaymentMethod;
     proofOfPayment: string | null;
+    fundingDate: Timestamp;
     createdAt: Timestamp;
     updatedAt: Timestamp;
     deletedAt: Timestamp | null;
