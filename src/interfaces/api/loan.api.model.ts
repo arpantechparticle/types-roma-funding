@@ -43,6 +43,7 @@ export interface LoanApiModel {
   closedDate?: Timestamp | null;
   chargeOffDate?: Timestamp | null;
   closureReason?: LoanClosureReason | null;
+  customClosureReason?: string | null;
   payoffDate?: Timestamp | null;
   payoffAmount?: number | null;
   writeOffAmount?: number | null;
