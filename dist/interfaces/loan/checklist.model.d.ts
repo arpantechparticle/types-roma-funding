@@ -1,5 +1,5 @@
 export interface LoanChecklist {
-    underwriting: {
+    auto: {
         borrowerInfoVerified: boolean;
         collateralDetailsComplete: boolean;
         insurancePolicyActive: boolean;
@@ -8,6 +8,8 @@ export interface LoanChecklist {
         paymentMethodConfigured: boolean;
         underwritingDocsComplete: boolean;
         collateralFundingVerified: boolean;
+    };
+    underwriting: {
         verifiedResidence: boolean;
         verifiedReferences: boolean;
         verifiedIncome: boolean;
