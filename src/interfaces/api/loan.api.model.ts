@@ -6,7 +6,6 @@ import {
   LoanType,
   PaymentFrequency,
   LoanClosureReason,
-  CalculationMethod,
   InterestRateFrequency,
   AprIncludes,
   EcoaCode,
@@ -34,7 +33,7 @@ export interface LoanApiModel {
   interestRateFrequency: InterestRateFrequency;
   paymentFrequency: PaymentFrequency;
   interestAccrualMethod: InterestAccrualMethod;
-  lateFeeConfig: LateFeeConfig;
+  feeConfig: FeeConfig;
   termInYears: number;
   installmentAmount: number;
 
@@ -111,12 +110,9 @@ export interface BorrowerModel {
   ECOACode: EcoaCode | null;
 }
 
-export interface LateFeeConfig {
-  isActive: boolean;
-  flatFee: number; // e.g. $25
-  percentageFee: number; // e.g. 5 (% of installment)
-  calculationMethod: CalculationMethod;
-  gracePeriodDays: number;
+export interface FeeConfig {
+  flatFee: number; // e.g. $35
+  gracePeriodDays: number; // e.g. 0
   nsfFeeAmount: number; // e.g. $35
 }
 
