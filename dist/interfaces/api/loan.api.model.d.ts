@@ -1,4 +1,4 @@
-import { EntityType, CalculationType, LoanCategory, LoanStatus, LoanType, PaymentFrequency, LoanClosureReason, InterestRateFrequency, AprIncludes, EcoaCode } from "../../enum";
+import { EntityType, CalculationType, LoanCategory, LoanStatus, LoanType, PaymentFrequency, LoanClosureReason, InterestRateFrequency, AprIncludes, EcoaCode, PaymentMode } from "../../enum";
 import { CreatedByModel } from "../created-by.model";
 import { Timestamp } from "../timestamp";
 import { CollateralModel } from "../loan/collateral.model";
@@ -67,8 +67,12 @@ export interface LoanApiModel {
     lastPaymentDate: Timestamp | null;
     lastAccrualDate: Timestamp;
     nextDueDate: Timestamp;
+    originalNextDueDate: Timestamp;
     daysPastDue: number;
     delinquentSince: Timestamp | null;
+    paymentMode: PaymentMode;
+    autoPaymentSuspended: boolean;
+    lastAutoPaymentDate: Timestamp | null;
     rescheduleCount: number;
     maxReschedulesAllowed: number;
     createdAt: Timestamp;

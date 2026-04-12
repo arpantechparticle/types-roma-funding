@@ -9,6 +9,7 @@ import {
   InterestRateFrequency,
   AprIncludes,
   EcoaCode,
+  PaymentMode,
 } from "../../enum";
 import { CreatedByModel } from "../created-by.model";
 import { Timestamp } from "../timestamp";
@@ -91,8 +92,14 @@ export interface LoanApiModel {
   lastPaymentDate: Timestamp | null;
   lastAccrualDate: Timestamp;
   nextDueDate: Timestamp;
+  originalNextDueDate: Timestamp; // Original due date for current period (for late fee calculation)
   daysPastDue: number; // days past after the next due date, added when there is no payment after nextDueDate
   delinquentSince: Timestamp | null;
+
+  // Auto-payment configuration
+  paymentMode: PaymentMode; // 'auto' | 'manual'
+  autoPaymentSuspended: boolean; // Flag set to true after failed payment
+  lastAutoPaymentDate: Timestamp | null; // Prevents duplicate charges on same due date
 
   // Rescheduling tracking
   rescheduleCount: number;      // Total number of reschedules performed
