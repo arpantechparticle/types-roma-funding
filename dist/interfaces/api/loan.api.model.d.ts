@@ -50,6 +50,7 @@ export interface LoanApiModel {
     latFee: number;
     lateFeeOutstanding: number;
     lateFeePaid: number;
+    lateFeeWaived: number;
     nfsFee: number;
     nfsFeeOutstanding: number;
     nfsFeePaid: number;
@@ -68,6 +69,8 @@ export interface LoanApiModel {
     nextDueDate: Timestamp;
     daysPastDue: number;
     delinquentSince: Timestamp | null;
+    rescheduleCount: number;
+    maxReschedulesAllowed: number;
     createdAt: Timestamp;
     updatedAt: Timestamp;
     deletedAt: Timestamp | null;

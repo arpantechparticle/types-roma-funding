@@ -67,9 +67,10 @@ export interface LoanApiModel {
   closingFeeOutstanding: number;
   closingFeePaid: number;
 
-  latFee: number;
-  lateFeeOutstanding: number;
-  lateFeePaid: number;
+  latFee: number;              // Cumulative total late fees ever applied
+  lateFeeOutstanding: number;   // Current outstanding (unpaid) late fees
+  lateFeePaid: number;          // Total late fees paid
+  lateFeeWaived: number;        // Total late fees waived
 
   nfsFee: number;
   nfsFeeOutstanding: number;
@@ -92,6 +93,10 @@ export interface LoanApiModel {
   nextDueDate: Timestamp;
   daysPastDue: number; // days past after the next due date, added when there is no payment after nextDueDate
   delinquentSince: Timestamp | null;
+
+  // Rescheduling tracking
+  rescheduleCount: number;      // Total number of reschedules performed
+  maxReschedulesAllowed: number; // Configurable limit (default: 6)
 
   createdAt: Timestamp;
   updatedAt: Timestamp;

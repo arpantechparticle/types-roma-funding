@@ -1,10 +1,11 @@
 import { Timestamp } from "../timestamp";
 import { CreatedByModel } from "../created-by.model";
-import { EntityType, PaymentMode, InstallmentStatus } from "../../enum";
+import { EntityType, PaymentMode, InstallmentStatus, RescheduleReason } from "../../enum";
 export interface InstallmentApiModel {
     id: string;
     paymentNumber: number;
     dueDate: Timestamp;
+    originalDueDate: Timestamp;
     interestDue: number;
     totalDue: number;
     totalBalanceBefore: number;
@@ -24,6 +25,13 @@ export interface InstallmentApiModel {
     paidDate?: Timestamp | null;
     paymentMode?: PaymentMode;
     status: InstallmentStatus;
+    rescheduledFromDate?: Timestamp;
+    rescheduleCount?: number;
+    lastRescheduleReason?: RescheduleReason;
+    lastRescheduleBy?: CreatedByModel;
+    lastRescheduleAt?: Timestamp;
+    lateFeeAppliedAt?: Timestamp;
+    lateFeeAppliedCount?: number;
     loanId: string;
     createdAt: Timestamp;
     updatedAt: Timestamp;

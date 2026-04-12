@@ -5,5 +5,10 @@ export declare enum LedgerEntryType {
     WriteOff = "write_off",
     Settlement = "settlement",
     ChargeOff = "charge_off",
-    Refund = "refund"
+    Refund = "refund",
+    LateFeeApplied = "late_fee_applied",
+    LateFeeWaiver = "late_fee_waiver",
+    LateFeeReversal = "late_fee_reversal",
+    DueDateChange = "due_date_change",
+    LoanModification = "loan_modification"
 }

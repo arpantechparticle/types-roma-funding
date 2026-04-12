@@ -10,5 +10,11 @@ var LedgerEntryType;
     LedgerEntryType["Settlement"] = "settlement";
     LedgerEntryType["ChargeOff"] = "charge_off";
     LedgerEntryType["Refund"] = "refund";
+    // Late fee and rescheduling entries
+    LedgerEntryType["LateFeeApplied"] = "late_fee_applied";
+    LedgerEntryType["LateFeeWaiver"] = "late_fee_waiver";
+    LedgerEntryType["LateFeeReversal"] = "late_fee_reversal";
+    LedgerEntryType["DueDateChange"] = "due_date_change";
+    LedgerEntryType["LoanModification"] = "loan_modification";
 })(LedgerEntryType || (exports.LedgerEntryType = LedgerEntryType = {}));
 //# sourceMappingURL=ledger-entry-type.enum.js.map
