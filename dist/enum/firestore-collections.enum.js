@@ -13,6 +13,8 @@ var Collection;
     Collection["GpsIntegrations"] = "gpsIntegrations";
     Collection["Dealers"] = "dealers";
     Collection["Installments"] = "installments";
+    Collection["InstallmentModifications"] = "installmentModifications";
+    Collection["FeeWaivers"] = "feeWaivers";
     Collection["LoanPayments"] = "loanPayments";
     Collection["PaymentLedger"] = "paymentLedger";
     Collection["PaymentTransactions"] = "paymentTransactions";

@@ -7,6 +7,7 @@ export interface InstallmentApiModel {
     dueDate: Timestamp;
     originalDueDate: Timestamp;
     interestDue: number;
+    lateFeeDue: number;
     totalDue: number;
     totalBalanceBefore: number;
     totalBalanceAfter: number;

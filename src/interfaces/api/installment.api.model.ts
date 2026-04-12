@@ -13,7 +13,8 @@ export interface InstallmentApiModel {
 
   // 🔹 Expected (schedule)
   interestDue: number;
-  totalDue: number; // principalDue + feeDue 
+  lateFeeDue: number;  // Late fee amount due on this installment
+  totalDue: number; // principalDue + interestDue + lateFeeDue + other fees 
 
   // 🔹 Display breakdown (visual layer only)
   totalBalanceBefore: number;
