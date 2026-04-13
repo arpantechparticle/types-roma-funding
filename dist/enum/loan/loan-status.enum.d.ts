@@ -3,5 +3,7 @@ export declare enum LoanStatus {
     Underwriting = "underwriting",
     Active = "active",
     PaidOff = "paidOff",
+    Repossessed = "repossessed",
+    ChargedOff = "chargedOff",
     closed = "closed"
 }

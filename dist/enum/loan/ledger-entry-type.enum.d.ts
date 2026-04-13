@@ -10,5 +10,7 @@ export declare enum LedgerEntryType {
     LateFeeWaiver = "late_fee_waiver",
     LateFeeReversal = "late_fee_reversal",
     DueDateChange = "due_date_change",
-    LoanModification = "loan_modification"
+    LoanModification = "loan_modification",
+    Repossession = "repossession",
+    VehicleSale = "vehicle_sale"
 }

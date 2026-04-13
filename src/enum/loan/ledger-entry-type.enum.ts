@@ -13,4 +13,8 @@ export enum LedgerEntryType {
   LateFeeReversal = "late_fee_reversal",
   DueDateChange = "due_date_change",
   LoanModification = "loan_modification",
+
+  // Repossession entries
+  Repossession = "repossession",
+  VehicleSale = "vehicle_sale",
 }

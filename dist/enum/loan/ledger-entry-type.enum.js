@@ -16,5 +16,8 @@ var LedgerEntryType;
     LedgerEntryType["LateFeeReversal"] = "late_fee_reversal";
     LedgerEntryType["DueDateChange"] = "due_date_change";
     LedgerEntryType["LoanModification"] = "loan_modification";
+    // Repossession entries
+    LedgerEntryType["Repossession"] = "repossession";
+    LedgerEntryType["VehicleSale"] = "vehicle_sale";
 })(LedgerEntryType || (exports.LedgerEntryType = LedgerEntryType = {}));
 //# sourceMappingURL=ledger-entry-type.enum.js.map

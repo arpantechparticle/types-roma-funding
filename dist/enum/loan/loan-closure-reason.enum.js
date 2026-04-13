@@ -5,8 +5,8 @@ var LoanClosureReason;
 (function (LoanClosureReason) {
     LoanClosureReason["PaidInFull"] = "paid_in_full";
     LoanClosureReason["EarlyPayoff"] = "early_payoff";
-    // Repossession = "repossession",
-    // ChargeOff = "charge_off",
+    LoanClosureReason["Repossession"] = "repossession";
+    LoanClosureReason["ChargeOff"] = "charge_off";
     // Settlement = "settlement",
     // Refinanced = "refinanced",
     // VoluntarySurrender = "voluntary_surrender",

@@ -42,6 +42,14 @@ export interface LoanApiModel {
   firstPaymentDate: Timestamp;
   closedDate?: Timestamp | null;
   chargeOffDate?: Timestamp | null;
+
+  repossessionDate?: Timestamp | null;
+  recoveryAgent?: string | null;
+  vehicleSaleDate?: Timestamp | null;
+  vehicleSalePrice?: number | null;
+  vehicleSaleNetProceeds?: number | null;
+  deficiencyBalance?: number | null;
+  
   closureReason?: LoanClosureReason | null;
   customClosureReason?: string | null;
   payoffDate?: Timestamp | null;
@@ -76,6 +84,11 @@ export interface LoanApiModel {
   nfsFee: number;
   nfsFeeOutstanding: number;
   nfsFeePaid: number;
+
+  // Repossession fee tracking
+  repossessionFee: number;
+  repossessionFeeOutstanding: number;
+  repossessionFeePaid: number;
 
   borrowers: BorrowerModel[];
   borrowerIds: string[];
