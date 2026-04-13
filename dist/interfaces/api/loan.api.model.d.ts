@@ -53,7 +53,7 @@ export interface LoanApiModel {
     closingFee: number;
     closingFeeOutstanding: number;
     closingFeePaid: number;
-    latFee: number;
+    lateFee: number;
     lateFeeOutstanding: number;
     lateFeePaid: number;
     lateFeeWaived: number;

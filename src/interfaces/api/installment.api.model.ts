@@ -47,8 +47,8 @@ export interface InstallmentApiModel {
   lastRescheduleAt?: Timestamp;
 
   // 🔹 Late fee tracking
-  lateFeeAppliedAt?: Timestamp;       // When late fee was last applied
-  lateFeeAppliedCount?: number;       // How many times late fee applied
+  lateFeeAppliedAt: Timestamp | null;  // When late fee was last applied (null = not yet applied)
+  lateFeeAppliedCount?: number;         // How many times late fee applied
 
   loanId: string;
   createdAt: Timestamp;

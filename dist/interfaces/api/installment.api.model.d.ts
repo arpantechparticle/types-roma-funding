@@ -31,7 +31,7 @@ export interface InstallmentApiModel {
     lastRescheduleReason?: RescheduleReason;
     lastRescheduleBy?: CreatedByModel;
     lastRescheduleAt?: Timestamp;
-    lateFeeAppliedAt?: Timestamp;
+    lateFeeAppliedAt: Timestamp | null;
     lateFeeAppliedCount?: number;
     loanId: string;
     createdAt: Timestamp;
