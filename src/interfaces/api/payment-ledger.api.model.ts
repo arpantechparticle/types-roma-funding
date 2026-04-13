@@ -34,6 +34,7 @@ export interface PaymentLedgerApiModel {
   // 🔹 BEFORE SNAPSHOT (CRITICAL)
   principalBefore: number;
   unpaidAccruedInterestBefore: number;
+  repossessionFeeBefore: number;
   nsfFeeBefore: number;
   lateFeeBefore: number;
   closingFeeBefore: number;
@@ -42,6 +43,7 @@ export interface PaymentLedgerApiModel {
   // 🔹 AFTER SNAPSHOT (CRITICAL)
   principalAfter: number;
   unpaidAccruedInterestAfter: number;
+  repossessionFeeAfter: number;
   nsfFeeAfter: number;
   lateFeeAfter: number;
   closingFeeAfter: number;

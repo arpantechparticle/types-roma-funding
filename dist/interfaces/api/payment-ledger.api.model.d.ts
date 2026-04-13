@@ -24,12 +24,14 @@ export interface PaymentLedgerApiModel {
     nsfFeeAdded: number;
     principalBefore: number;
     unpaidAccruedInterestBefore: number;
+    repossessionFeeBefore: number;
     nsfFeeBefore: number;
     lateFeeBefore: number;
     closingFeeBefore: number;
     feeOutstandingBefore: number;
     principalAfter: number;
     unpaidAccruedInterestAfter: number;
+    repossessionFeeAfter: number;
     nsfFeeAfter: number;
     lateFeeAfter: number;
     closingFeeAfter: number;
