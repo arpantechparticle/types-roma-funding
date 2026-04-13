@@ -1,6 +1,6 @@
 import { Timestamp } from "../timestamp";
 import { CreatedByModel } from "../created-by.model";
-import { EntityType, PaymentStatus, PaymentMode, LedgerEntryType } from "../../enum";
+import { EntityType, PaymentStatus, PaymentMode, LedgerEntryType, WaiverReason } from "../../enum";
 
 export interface PaymentLedgerApiModel {
   id: string;
@@ -21,11 +21,12 @@ export interface PaymentLedgerApiModel {
   status: PaymentStatus;
   paymentMode: PaymentMode;
 
-  principalPaid: number;   
-  interestPaid: number; 
+  principalPaid: number;
+  interestPaid: number;
   closingFeePaid: number;
   nsfFeePaid: number;
   lateFeePaid: number;
+  repossessionFeePaid: number; // For vehicle sale waterfall
 
   lateFeeAdded: number;
   nsfFeeAdded: number;
@@ -45,6 +46,31 @@ export interface PaymentLedgerApiModel {
   lateFeeAfter: number;
   closingFeeAfter: number;
   feeOutstandingAfter: number;
+
+  // 🔹 LATE FEE WAIVER (EntryType = LateFeeWaiver)
+  lateFeeWaiverAmount?: number;
+  waiverReason?: WaiverReason;
+  waiverNotes?: string | null;
+
+  // 🔹 REPOSSESSION (EntryType = Repossession)
+  repossessionDetails?: {
+    repossessionDate: Date;
+    recoveryAgent: string;
+    feesAdded: number;
+    balanceBefore: number;
+    balanceAfter: number;
+  };
+  repossessionFee?: number;
+  repossessionFeeOutstanding?: number;
+
+  // 🔹 VEHICLE SALE (EntryType = VehicleSale) - Simplified
+  vehicleSaleDetails?: {
+    saleDate: Timestamp;
+    salePrice: number;
+    saleCosts: number; // Total fees (auction, transport, repair combined)
+    saleType: "auction" | "private" | "dealer";
+    buyerInfo: string | null;
+  };
 
   createdAt: Timestamp;
   updatedAt: Timestamp;

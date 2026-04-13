@@ -1,6 +1,6 @@
 import { Timestamp } from "../timestamp";
 import { CreatedByModel } from "../created-by.model";
-import { EntityType, PaymentStatus, PaymentMode, LedgerEntryType } from "../../enum";
+import { EntityType, PaymentStatus, PaymentMode, LedgerEntryType, WaiverReason } from "../../enum";
 export interface PaymentLedgerApiModel {
     id: string;
     loanId: string;
@@ -19,6 +19,7 @@ export interface PaymentLedgerApiModel {
     closingFeePaid: number;
     nsfFeePaid: number;
     lateFeePaid: number;
+    repossessionFeePaid: number;
     lateFeeAdded: number;
     nsfFeeAdded: number;
     principalBefore: number;
@@ -33,6 +34,25 @@ export interface PaymentLedgerApiModel {
     lateFeeAfter: number;
     closingFeeAfter: number;
     feeOutstandingAfter: number;
+    lateFeeWaiverAmount?: number;
+    waiverReason?: WaiverReason;
+    waiverNotes?: string | null;
+    repossessionDetails?: {
+        repossessionDate: Date;
+        recoveryAgent: string;
+        feesAdded: number;
+        balanceBefore: number;
+        balanceAfter: number;
+    };
+    repossessionFee?: number;
+    repossessionFeeOutstanding?: number;
+    vehicleSaleDetails?: {
+        saleDate: Timestamp;
+        salePrice: number;
+        saleCosts: number;
+        saleType: "auction" | "private" | "dealer";
+        buyerInfo: string | null;
+    };
     createdAt: Timestamp;
     updatedAt: Timestamp;
     deletedAt: Timestamp | null;
