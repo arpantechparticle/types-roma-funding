@@ -1,1 +1,1 @@
-{"version":3,"file":"payment-mode.enum.js","sourceRoot":"","sources":["../../../src/enum/loan/payment-mode.enum.ts"],"names":[],"mappings":";;;AAAA,IAAY,WAIX;AAJD,WAAY,WAAW;IACrB,4BAAa,CAAA;IACb,gCAAiB,CAAA;IACjB,gCAAiB,CAAA;AACnB,CAAC,EAJW,WAAW,2BAAX,WAAW,QAItB"}
+{"version":3,"file":"payment-mode.enum.js","sourceRoot":"","sources":["../../../src/enum/loan/payment-mode.enum.ts"],"names":[],"mappings":";;;AAAA,IAAY,WAGX;AAHD,WAAY,WAAW;IACrB,4BAAa,CAAA;IACb,gCAAiB,CAAA;AACnB,CAAC,EAHW,WAAW,2BAAX,WAAW,QAGtB"}

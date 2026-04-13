@@ -19,4 +19,6 @@ exports.Timestamp = void 0;
 __exportStar(require("./api"), exports);
 var timestamp_1 = require("./timestamp");
 Object.defineProperty(exports, "Timestamp", { enumerable: true, get: function () { return timestamp_1.Timestamp; } });
+//Loan
+__exportStar(require("./loan"), exports);
 //# sourceMappingURL=index.js.map
