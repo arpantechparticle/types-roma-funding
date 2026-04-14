@@ -1,16 +1,13 @@
 export declare enum LedgerEntryType {
     Payment = "payment",
-    Fee = "fee",
+    LateFee = "late_fee",
+    NsfFee = "nsf_fee",
+    RepossessionFee = "repossession_fee",
+    LateFeeWaived = "late_fee_waived",
+    NsfFeeWaived = "nsf_fee_waived",
+    RepossessionFeeWaived = "repossession_fee_waived",
+    StartLoan = "start_loan",
     Payoff = "payoff",
-    WriteOff = "write_off",
-    Settlement = "settlement",
-    ChargeOff = "charge_off",
-    Refund = "refund",
-    LateFeeApplied = "late_fee_applied",
-    LateFeeWaiver = "late_fee_waiver",
-    LateFeeReversal = "late_fee_reversal",
-    DueDateChange = "due_date_change",
-    LoanModification = "loan_modification",
-    Repossession = "repossession",
-    VehicleSale = "vehicle_sale"
+    VehicleSale = "vehicle_sale",
+    ChargeOff = "charge_off"
 }

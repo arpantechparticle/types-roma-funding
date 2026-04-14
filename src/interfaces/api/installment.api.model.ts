@@ -6,24 +6,18 @@ export interface InstallmentApiModel {
   id: string;
   paymentNumber: number;
 
-  // Due Date Fields:
   dueDate: Timestamp;                 // ACTUAL due date - can be changed by rescheduling
   originalDueDate: Timestamp;         // ORIGINAL due date - set at creation, NEVER changes
-                                     // Used for late fee calculation
 
   // 🔹 Expected (schedule)
+  principalDue: number;
   interestDue: number;
-  lateFeeDue: number;  // Late fee amount due on this installment
-  totalDue: number; // principalDue + interestDue + lateFeeDue + other fees 
+  closingFeeDue: number;
+  totalDue: number; // principalDue + interestDue + closingFeeDue
 
   // 🔹 Display breakdown (visual layer only)
   totalBalanceBefore: number;
   totalBalanceAfter: number;
-  principalPortionDisplay?: number;
-  feePortionDisplay?: number;
-  closingFeePortionDisplay?: number;
-  lateFeePortionDisplay?: number;
-  nsfFeePortionDisplay?: number;  
 
   // 🔹 Actual (tracking)
   principalPaid: number;
@@ -31,24 +25,25 @@ export interface InstallmentApiModel {
   closingFeePaid: number;
   nsfFeePaid: number;
   lateFeePaid: number;
+  repossessionFeePaid: number;
   totalPaid: number;
 
-  // 🔹 Status
-  isFullyPaid?: boolean;
-  paidDate?: Timestamp | null;
+  paymentDate?: Timestamp | null;
   paymentMode?: PaymentMode;
   status: InstallmentStatus;
 
   // 🔹 Rescheduling tracking
   rescheduledFromDate?: Timestamp;    // Previous due date (before last reschedule)
   rescheduleCount?: number;           // How many times rescheduled
-  lastRescheduleReason?: RescheduleReason;
+  lastRescheduleReason?: string;
   lastRescheduleBy?: CreatedByModel;
   lastRescheduleAt?: Timestamp;
 
   // 🔹 Late fee tracking
   lateFeeAppliedAt: Timestamp | null;  // When late fee was last applied (null = not yet applied)
   lateFeeAppliedCount?: number;         // How many times late fee applied
+  nsfFeeAppliedAt: Timestamp | null;  // When NSF fee was last applied (null = not yet applied)
+  nsfFeeAppliedCount?: number;         // How many times NSF fee applied
 
   loanId: string;
   createdAt: Timestamp;

@@ -39,22 +39,24 @@ export interface LoanApiModel {
   installmentAmount: number;
 
   contractDate: Timestamp;
-  firstPaymentDate: Timestamp;
-  closedDate?: Timestamp | null;
+  amortizationStartDate: Timestamp; // First day interest starts accruing (typically first Friday of contract)
+  lastPaymentDate: Timestamp | null;
+  lastAccrualDate: Timestamp;
+  nextDueDate: Timestamp;
+  originalNextDueDate: Timestamp; // Original due date for current period (for late fee calculation)
+  daysPastDue: number; // days past after the next due date, added when there is no payment after nextDueDate
+  delinquentSince: Timestamp | null;
+  payoffDate?: Timestamp | null;
+  payoffAmount?: number | null;
   chargeOffDate?: Timestamp | null;
-
   repossessionDate?: Timestamp | null;
-  recoveryAgent?: string | null;
+  repossessionAgent?: string | null;
   vehicleSaleDate?: Timestamp | null;
   vehicleSalePrice?: number | null;
-  vehicleSaleNetProceeds?: number | null;
   deficiencyBalance?: number | null;
   
   closureReason?: LoanClosureReason | null;
   customClosureReason?: string | null;
-  payoffDate?: Timestamp | null;
-  payoffAmount?: number | null;
-  writeOffAmount?: number | null;
 
   principalOriginal: number; // Vehicle Sale Price + Sales Tax + Title + Registration + Dealer/Doc Fees + GAP/Warranty (if financed) - Down Payment - Trade-In Credit
   principalOutstanding: number;
@@ -75,6 +77,7 @@ export interface LoanApiModel {
   closingFee: number;
   closingFeeOutstanding: number;
   closingFeePaid: number;
+  closingFeeWaived: number;     // Total closing fees waived
 
   lateFee: number;              // Cumulative total late fees ever applied
   lateFeeOutstanding: number;   // Current outstanding (unpaid) late fees
@@ -84,11 +87,13 @@ export interface LoanApiModel {
   nfsFee: number;
   nfsFeeOutstanding: number;
   nfsFeePaid: number;
+  nfsFeeWaived: number;         // Total NSF fees waived
 
   // Repossession fee tracking
   repossessionFee: number;
   repossessionFeeOutstanding: number;
   repossessionFeePaid: number;
+  repossessionFeeWaived: number; // Total repossession fees waived
 
   borrowers: BorrowerModel[];
   borrowerIds: string[];
@@ -102,21 +107,17 @@ export interface LoanApiModel {
   titleDocument: string | null;
   underwritingDocuments: LoanUnderwritingDocuments | null;
 
-  lastPaymentDate: Timestamp | null;
-  lastAccrualDate: Timestamp;
-  nextDueDate: Timestamp;
-  originalNextDueDate: Timestamp; // Original due date for current period (for late fee calculation)
-  daysPastDue: number; // days past after the next due date, added when there is no payment after nextDueDate
-  delinquentSince: Timestamp | null;
-
   // Auto-payment configuration
   paymentMode: PaymentMode; // 'auto' | 'manual'
   autoPaymentSuspended: boolean; // Flag set to true after failed payment
   lastAutoPaymentDate: Timestamp | null; // Prevents duplicate charges on same due date
 
   // Rescheduling tracking
-  rescheduleCount: number;      // Total number of reschedules performed
-  maxReschedulesAllowed: number; // Configurable limit (default: 6)
+  rescheduledFromDate?: Timestamp;    // Previous due date (before last reschedule)
+  rescheduleCount?: number;           // How many times rescheduled
+  lastRescheduleReason?: string;
+  lastRescheduleBy?: CreatedByModel;
+  lastRescheduleAt?: Timestamp;
 
   createdAt: Timestamp;
   updatedAt: Timestamp;

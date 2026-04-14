@@ -20,16 +20,19 @@ export interface PaymentLedgerApiModel {
   date: Timestamp;
   status: PaymentStatus;
   paymentMode: PaymentMode;
+  totalAmount: number;
 
-  principalPaid: number;
-  interestPaid: number;
-  closingFeePaid: number;
-  nsfFeePaid: number;
-  lateFeePaid: number;
-  repossessionFeePaid: number; // For vehicle sale waterfall
+  principal: number;
+  interest: number;
+  closingFee: number;
+  nsfFee: number;
+  lateFee: number;
+  repossessionFee: number;
 
-  lateFeeAdded: number;
-  nsfFeeAdded: number;
+  repossessionAgent?: string;
+
+  vehicleSalePrice?: number;
+  vehicleBuyerName?: string;
 
   // 🔹 BEFORE SNAPSHOT (CRITICAL)
   principalBefore: number;
@@ -38,7 +41,6 @@ export interface PaymentLedgerApiModel {
   nsfFeeBefore: number;
   lateFeeBefore: number;
   closingFeeBefore: number;
-  feeOutstandingBefore: number;
 
   // 🔹 AFTER SNAPSHOT (CRITICAL)
   principalAfter: number;
@@ -47,32 +49,6 @@ export interface PaymentLedgerApiModel {
   nsfFeeAfter: number;
   lateFeeAfter: number;
   closingFeeAfter: number;
-  feeOutstandingAfter: number;
-
-  // 🔹 LATE FEE WAIVER (EntryType = LateFeeWaiver)
-  lateFeeWaiverAmount?: number;
-  waiverReason?: WaiverReason;
-  waiverNotes?: string | null;
-
-  // 🔹 REPOSSESSION (EntryType = Repossession)
-  repossessionDetails?: {
-    repossessionDate: Date;
-    recoveryAgent: string;
-    feesAdded: number;
-    balanceBefore: number;
-    balanceAfter: number;
-  };
-  repossessionFee?: number;
-  repossessionFeeOutstanding?: number;
-
-  // 🔹 VEHICLE SALE (EntryType = VehicleSale) - Simplified
-  vehicleSaleDetails?: {
-    saleDate: Timestamp;
-    salePrice: number;
-    saleCosts: number; // Total fees (auction, transport, repair combined)
-    saleType: "auction" | "private" | "dealer";
-    buyerInfo: string | null;
-  };
 
   createdAt: Timestamp;
   updatedAt: Timestamp;

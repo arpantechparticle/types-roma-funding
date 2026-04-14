@@ -1,7 +1,6 @@
 export declare enum LoanClosureReason {
-    PaidInFull = "paid_in_full",
+    PaidOff = "paid_off",
     EarlyPayoff = "early_payoff",
-    Repossession = "repossession",
     ChargeOff = "charge_off",
     Other = "other"
 }

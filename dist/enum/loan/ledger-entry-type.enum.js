@@ -4,20 +4,15 @@ exports.LedgerEntryType = void 0;
 var LedgerEntryType;
 (function (LedgerEntryType) {
     LedgerEntryType["Payment"] = "payment";
-    LedgerEntryType["Fee"] = "fee";
+    LedgerEntryType["LateFee"] = "late_fee";
+    LedgerEntryType["NsfFee"] = "nsf_fee";
+    LedgerEntryType["RepossessionFee"] = "repossession_fee";
+    LedgerEntryType["LateFeeWaived"] = "late_fee_waived";
+    LedgerEntryType["NsfFeeWaived"] = "nsf_fee_waived";
+    LedgerEntryType["RepossessionFeeWaived"] = "repossession_fee_waived";
+    LedgerEntryType["StartLoan"] = "start_loan";
     LedgerEntryType["Payoff"] = "payoff";
-    LedgerEntryType["WriteOff"] = "write_off";
-    LedgerEntryType["Settlement"] = "settlement";
-    LedgerEntryType["ChargeOff"] = "charge_off";
-    LedgerEntryType["Refund"] = "refund";
-    // Late fee and rescheduling entries
-    LedgerEntryType["LateFeeApplied"] = "late_fee_applied";
-    LedgerEntryType["LateFeeWaiver"] = "late_fee_waiver";
-    LedgerEntryType["LateFeeReversal"] = "late_fee_reversal";
-    LedgerEntryType["DueDateChange"] = "due_date_change";
-    LedgerEntryType["LoanModification"] = "loan_modification";
-    // Repossession entries
-    LedgerEntryType["Repossession"] = "repossession";
     LedgerEntryType["VehicleSale"] = "vehicle_sale";
+    LedgerEntryType["ChargeOff"] = "charge_off";
 })(LedgerEntryType || (exports.LedgerEntryType = LedgerEntryType = {}));
 //# sourceMappingURL=ledger-entry-type.enum.js.map
