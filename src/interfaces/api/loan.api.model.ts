@@ -8,14 +8,19 @@ import {
   LoanClosureReason,
   InterestRateFrequency,
   AprIncludes,
-  EcoaCode,
   PaymentMode,
 } from "../../enum";
 import { CreatedByModel } from "../created-by.model";
 import { Timestamp } from "../timestamp";
-import { CollateralModel } from "../loan/collateral.model";
-import { LoanChecklist } from "../loan/checklist.model";
-import { InsuranceModel } from "../loan/insurance.model";
+import { 
+  CollateralModel, 
+  BorrowerModel, 
+  FeeConfig, 
+  LoanUnderwritingDocuments, 
+  LoanOriginationDetailsModel, 
+  LoanChecklist, 
+  InsuranceModel 
+} from "../loan";
 import { InterestAccrualMethod } from "../../enum/loan/interest-accrual-method.enum";
 
 export interface LoanApiModel {
@@ -40,20 +45,25 @@ export interface LoanApiModel {
 
   contractDate: Timestamp;
   amortizationStartDate: Timestamp; // First day interest starts accruing (typically first Friday of contract)
-  lastPaymentDate: Timestamp | null;
-  lastAccrualDate: Timestamp;
+  firstPaymentDate: Timestamp;
   nextDueDate: Timestamp;
   originalNextDueDate: Timestamp; // Original due date for current period (for late fee calculation)
+  lastPaymentDate: Timestamp | null;
+  lastAccrualDate: Timestamp | null;
   daysPastDue: number; // days past after the next due date, added when there is no payment after nextDueDate
   delinquentSince: Timestamp | null;
+  
   payoffDate?: Timestamp | null;
   payoffAmount?: number | null;
+
   chargeOffDate?: Timestamp | null;
+  deficiencyBalance?: number | null;
+
   repossessionDate?: Timestamp | null;
   repossessionAgent?: string | null;
+
   vehicleSaleDate?: Timestamp | null;
   vehicleSalePrice?: number | null;
-  deficiencyBalance?: number | null;
   
   closureReason?: LoanClosureReason | null;
   customClosureReason?: string | null;
@@ -128,41 +138,4 @@ export interface LoanApiModel {
   deletedBy: CreatedByModel | null;
   timeZone: string;
   source: EntityType;
-}
-
-export interface BorrowerModel {
-  id: string;
-  name: string;
-  ECOACode: EcoaCode | null;
-}
-
-export interface FeeConfig {
-  flatFee: number; // e.g. $35
-  gracePeriodDays: number; // e.g. 0
-  nsfFeeAmount: number; // e.g. $35
-}
-
-export interface LoanUnderwritingDocuments {
-  governmentId: string | null;
-  bankStatement: string | null;
-  specificationSheet: string | null;
-  socialSecurityCard: string | null;
-}
-
-export interface LoanOriginationDetailsModel {
-  salesPrice: number;
-  netAmountDown: number | null;
-  taxes: number | null;
-  gapInsurance: number | null;
-  warranty: number | null;
-  dealerProfit: number | null;
-  reserveAmount: number | null;
-  feeBreakdown: FeeBreakdownModel;
-}
-
-export interface FeeBreakdownModel {
-  closingFees: number; // $1250
-  technologyFee: number; // $750
-  collateralReviewFee: number; // $1100
-  underwritingFee: number; // $900
 }

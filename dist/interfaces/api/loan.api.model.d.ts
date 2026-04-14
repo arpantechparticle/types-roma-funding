@@ -1,9 +1,7 @@
-import { EntityType, CalculationType, LoanCategory, LoanStatus, LoanType, PaymentFrequency, LoanClosureReason, InterestRateFrequency, AprIncludes, EcoaCode, PaymentMode } from "../../enum";
+import { EntityType, CalculationType, LoanCategory, LoanStatus, LoanType, PaymentFrequency, LoanClosureReason, InterestRateFrequency, AprIncludes, PaymentMode } from "../../enum";
 import { CreatedByModel } from "../created-by.model";
 import { Timestamp } from "../timestamp";
-import { CollateralModel } from "../loan/collateral.model";
-import { LoanChecklist } from "../loan/checklist.model";
-import { InsuranceModel } from "../loan/insurance.model";
+import { CollateralModel, BorrowerModel, FeeConfig, LoanUnderwritingDocuments, LoanOriginationDetailsModel, LoanChecklist, InsuranceModel } from "../loan";
 import { InterestAccrualMethod } from "../../enum/loan/interest-accrual-method.enum";
 export interface LoanApiModel {
     id: string;
@@ -23,20 +21,21 @@ export interface LoanApiModel {
     installmentAmount: number;
     contractDate: Timestamp;
     amortizationStartDate: Timestamp;
-    lastPaymentDate: Timestamp | null;
-    lastAccrualDate: Timestamp;
+    firstPaymentDate: Timestamp;
     nextDueDate: Timestamp;
     originalNextDueDate: Timestamp;
+    lastPaymentDate: Timestamp | null;
+    lastAccrualDate: Timestamp | null;
     daysPastDue: number;
     delinquentSince: Timestamp | null;
     payoffDate?: Timestamp | null;
     payoffAmount?: number | null;
     chargeOffDate?: Timestamp | null;
+    deficiencyBalance?: number | null;
     repossessionDate?: Timestamp | null;
     repossessionAgent?: string | null;
     vehicleSaleDate?: Timestamp | null;
     vehicleSalePrice?: number | null;
-    deficiencyBalance?: number | null;
     closureReason?: LoanClosureReason | null;
     customClosureReason?: string | null;
     principalOriginal: number;
@@ -96,36 +95,4 @@ export interface LoanApiModel {
     deletedBy: CreatedByModel | null;
     timeZone: string;
     source: EntityType;
-}
-export interface BorrowerModel {
-    id: string;
-    name: string;
-    ECOACode: EcoaCode | null;
-}
-export interface FeeConfig {
-    flatFee: number;
-    gracePeriodDays: number;
-    nsfFeeAmount: number;
-}
-export interface LoanUnderwritingDocuments {
-    governmentId: string | null;
-    bankStatement: string | null;
-    specificationSheet: string | null;
-    socialSecurityCard: string | null;
-}
-export interface LoanOriginationDetailsModel {
-    salesPrice: number;
-    netAmountDown: number | null;
-    taxes: number | null;
-    gapInsurance: number | null;
-    warranty: number | null;
-    dealerProfit: number | null;
-    reserveAmount: number | null;
-    feeBreakdown: FeeBreakdownModel;
-}
-export interface FeeBreakdownModel {
-    closingFees: number;
-    technologyFee: number;
-    collateralReviewFee: number;
-    underwritingFee: number;
 }
