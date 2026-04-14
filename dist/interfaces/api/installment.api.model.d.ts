@@ -29,7 +29,7 @@ export interface InstallmentApiModel {
     lastRescheduleAt?: Timestamp;
     lateFeeAppliedAt: Timestamp | null;
     lateFeeAppliedCount?: number;
-    nsfFeeAppliedAt: Timestamp | null;
+    nsfFeeAppliedAt?: Timestamp | null;
     nsfFeeAppliedCount?: number;
     loanId: string;
     createdAt: Timestamp;

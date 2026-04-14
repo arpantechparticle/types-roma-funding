@@ -1,6 +1,6 @@
 import { Timestamp } from "../timestamp";
 import { CreatedByModel } from "../created-by.model";
-import { EntityType, PaymentMode, InstallmentStatus, RescheduleReason } from "../../enum";
+import { EntityType, PaymentMode, InstallmentStatus } from "../../enum";
 
 export interface InstallmentApiModel {
   id: string;
@@ -32,17 +32,17 @@ export interface InstallmentApiModel {
   paymentMode?: PaymentMode;
   status: InstallmentStatus;
 
-  // 🔹 Rescheduling tracking
+  // Rescheduling tracking
   rescheduledFromDate?: Timestamp;    // Previous due date (before last reschedule)
   rescheduleCount?: number;           // How many times rescheduled
-  lastRescheduleReason?: string;
+  lastRescheduleReason?: string;      // Free-text reason for rescheduling
   lastRescheduleBy?: CreatedByModel;
   lastRescheduleAt?: Timestamp;
 
-  // 🔹 Late fee tracking
+  // Late fee tracking
   lateFeeAppliedAt: Timestamp | null;  // When late fee was last applied (null = not yet applied)
   lateFeeAppliedCount?: number;         // How many times late fee applied
-  nsfFeeAppliedAt: Timestamp | null;  // When NSF fee was last applied (null = not yet applied)
+  nsfFeeAppliedAt?: Timestamp | null;  // When NSF fee was last applied (null = not yet applied)
   nsfFeeAppliedCount?: number;         // How many times NSF fee applied
 
   loanId: string;

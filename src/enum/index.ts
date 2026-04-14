@@ -30,7 +30,6 @@ export {InterestAccrualMethod} from './loan/interest-accrual-method.enum';
 export {PaymentStatus} from './loan/payment-status.enum';
 export {PaymentMode} from './loan/payment-mode.enum';
 export {TransactionStatus} from './loan/transaction-status.enum';
-export {RescheduleReason} from './loan/reschedule-reason.enum';
 export {WaiverReason} from './loan/waiver-reason.enum';
 
 //Collateral
