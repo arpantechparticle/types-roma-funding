@@ -1,4 +1,4 @@
 export declare enum CollateralFundingPaymentMethod {
-    Cheque = "cheque",
+    Check = "check",
     OnlineTransaction = "online_transaction"
 }

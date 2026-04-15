@@ -30,6 +30,9 @@ export interface PaymentLedgerApiModel {
   repossessionFee: number;
 
   repossessionAgent?: string;
+  storageLocationName?: string;
+
+  waiverReason?: string;
 
   vehicleSalePrice?: number;
   vehicleBuyerName?: string;

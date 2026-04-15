@@ -22,6 +22,8 @@ export interface PaymentLedgerApiModel {
     lateFee: number;
     repossessionFee: number;
     repossessionAgent?: string;
+    storageLocationName?: string;
+    waiverReason?: string;
     vehicleSalePrice?: number;
     vehicleBuyerName?: string;
     principalBefore: number;

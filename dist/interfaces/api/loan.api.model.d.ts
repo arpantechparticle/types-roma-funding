@@ -34,6 +34,7 @@ export interface LoanApiModel {
     deficiencyBalance?: number | null;
     repossessionDate?: Timestamp | null;
     repossessionAgent?: string | null;
+    storageLocationName?: string | null;
     vehicleSaleDate?: Timestamp | null;
     vehicleSalePrice?: number | null;
     closureReason?: LoanClosureReason | null;
