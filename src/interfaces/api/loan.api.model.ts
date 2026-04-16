@@ -85,6 +85,12 @@ export interface LoanApiModel {
    */
   accruedInterestLeft: number;
 
+  /**
+   * Interest accrued since lastAccrualDate (includes principal + fees)
+   * This accumulates between ledger entries and is reset to 0 upon payment
+   */
+  currentAccruedInterest: number;
+
   closingFee: number;
   closingFeeOutstanding: number;
   closingFeePaid: number;

@@ -53,6 +53,11 @@ export interface LoanApiModel {
      * so we have to take it from the next payment
      */
     accruedInterestLeft: number;
+    /**
+     * Interest accrued since lastAccrualDate (includes principal + fees)
+     * This accumulates between ledger entries and is reset to 0 upon payment
+     */
+    currentAccruedInterest: number;
     closingFee: number;
     closingFeeOutstanding: number;
     closingFeePaid: number;
