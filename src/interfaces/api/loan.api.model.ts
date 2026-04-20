@@ -58,6 +58,7 @@ export interface LoanApiModel {
 
   chargeOffDate?: Timestamp | null;
   deficiencyBalance?: number | null;
+  surplusBalance?: number | null;
 
   repossessionDate?: Timestamp | null;
   repossessionAgent?: string | null;
