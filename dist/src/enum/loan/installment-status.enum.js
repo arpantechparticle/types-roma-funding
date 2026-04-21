@@ -7,6 +7,7 @@ var InstallmentStatus;
     InstallmentStatus["Success"] = "success";
     InstallmentStatus["Failed"] = "failed";
     InstallmentStatus["Late"] = "late";
+    InstallmentStatus["Rescheduled"] = "rescheduled";
     InstallmentStatus["Cancelled"] = "cancelled";
 })(InstallmentStatus || (exports.InstallmentStatus = InstallmentStatus = {}));
 //# sourceMappingURL=installment-status.enum.js.map

@@ -3,5 +3,6 @@ export enum InstallmentStatus {
   Success = 'success',
   Failed = 'failed',
   Late = 'late',
+  Rescheduled = 'rescheduled',
   Cancelled = 'cancelled',
 }
