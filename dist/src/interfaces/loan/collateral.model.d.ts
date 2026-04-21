@@ -1,0 +1,24 @@
+import { EngineType } from "../../enum/collateral/engine-type.enum";
+import { LicensePlateModel } from "./license-plate.model";
+import { LienModel } from "./lien.model";
+import { WarrantyModel } from "./warranty.model";
+import { carrierComplianceModel } from "./carrier-compliance.model";
+export interface CollateralModel {
+    vin: string;
+    year: number;
+    make: string;
+    model: string;
+    trim: string | null;
+    miles: number | null;
+    additionalInfo: string | null;
+    color: string | null;
+    gpsDeviceSerialNumber: string | null;
+    bookValue: number | null;
+    grossWeightValueNumber: number | null;
+    engineType: EngineType | null;
+    licensePlate?: LicensePlateModel | null;
+    lien?: LienModel | null;
+    warranty?: WarrantyModel | null;
+    carrierCompliance?: carrierComplianceModel | null;
+    notes?: string | null;
+}
