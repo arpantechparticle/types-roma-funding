@@ -33,6 +33,7 @@ export interface PaymentLedgerApiModel {
   storageLocationName?: string;
 
   waiverReason?: string;
+  sourceLedgerEntryId?: string | null; // Links waiver entry back to the original fee entry
 
   vehicleSalePrice?: number;
   vehicleBuyerName?: string;
