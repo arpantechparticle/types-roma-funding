@@ -25,6 +25,7 @@ export interface PaymentLedgerApiModel {
     storageLocationName?: string;
     waiverReason?: string;
     sourceLedgerEntryId?: string | null;
+    interestReversed?: number;
     vehicleSalePrice?: number;
     vehicleBuyerName?: string;
     principalBefore: number;

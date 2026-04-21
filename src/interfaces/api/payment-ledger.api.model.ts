@@ -34,6 +34,7 @@ export interface PaymentLedgerApiModel {
 
   waiverReason?: string;
   sourceLedgerEntryId?: string | null; // Links waiver entry back to the original fee entry
+  interestReversed?: number; // Interest reversed due to fee waiver (positive = credit to borrower)
 
   vehicleSalePrice?: number;
   vehicleBuyerName?: string;
