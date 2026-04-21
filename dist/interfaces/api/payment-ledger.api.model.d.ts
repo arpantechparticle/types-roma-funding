@@ -40,6 +40,14 @@ export interface PaymentLedgerApiModel {
     nsfFeeAfter: number;
     lateFeeAfter: number;
     closingFeeAfter: number;
+    lateFeeWaivedBefore: number;
+    lateFeeWaivedAfter: number;
+    nsfFeeWaivedBefore: number;
+    nsfFeeWaivedAfter: number;
+    repossessionFeeWaivedBefore: number;
+    repossessionFeeWaivedAfter: number;
+    closingFeeWaivedBefore: number;
+    closingFeeWaivedAfter: number;
     createdAt: Timestamp;
     updatedAt: Timestamp;
     deletedAt: Timestamp | null;

@@ -55,6 +55,16 @@ export interface PaymentLedgerApiModel {
   lateFeeAfter: number;
   closingFeeAfter: number;
 
+  // 🔹 WAIVED FEE SNAPSHOTS (AUDIT TRAIL)
+  lateFeeWaivedBefore: number;
+  lateFeeWaivedAfter: number;
+  nsfFeeWaivedBefore: number;
+  nsfFeeWaivedAfter: number;
+  repossessionFeeWaivedBefore: number;
+  repossessionFeeWaivedAfter: number;
+  closingFeeWaivedBefore: number;
+  closingFeeWaivedAfter: number;
+
   createdAt: Timestamp;
   updatedAt: Timestamp;
   deletedAt: Timestamp | null;
