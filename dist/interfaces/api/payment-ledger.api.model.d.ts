@@ -26,6 +26,9 @@ export interface PaymentLedgerApiModel {
     waiverReason?: string;
     sourceLedgerEntryId?: string | null;
     interestReversed?: number;
+    waivedLateFee: number;
+    waivedNsfFee: number;
+    waivedRepossessionFee: number;
     vehicleSalePrice?: number;
     vehicleBuyerName?: string;
     principalBefore: number;
@@ -46,8 +49,6 @@ export interface PaymentLedgerApiModel {
     nsfFeeWaivedAfter: number;
     repossessionFeeWaivedBefore: number;
     repossessionFeeWaivedAfter: number;
-    closingFeeWaivedBefore: number;
-    closingFeeWaivedAfter: number;
     createdAt: Timestamp;
     updatedAt: Timestamp;
     deletedAt: Timestamp | null;

@@ -95,7 +95,6 @@ export interface LoanApiModel {
   closingFee: number;
   closingFeeOutstanding: number;
   closingFeePaid: number;
-  closingFeeWaived: number;     // Total closing fees waived
 
   lateFee: number;              // Cumulative total late fees ever applied
   lateFeeOutstanding: number;   // Current outstanding (unpaid) late fees

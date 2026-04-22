@@ -36,6 +36,11 @@ export interface PaymentLedgerApiModel {
   sourceLedgerEntryId?: string | null; // Links waiver entry back to the original fee entry
   interestReversed?: number; // Interest reversed due to fee waiver (positive = credit to borrower)
 
+  // 🔹 WAIVED FEE AMOUNTS (positive value = amount waived in this entry)
+  waivedLateFee: number;
+  waivedNsfFee: number;
+  waivedRepossessionFee: number;
+
   vehicleSalePrice?: number;
   vehicleBuyerName?: string;
 
@@ -62,9 +67,6 @@ export interface PaymentLedgerApiModel {
   nsfFeeWaivedAfter: number;
   repossessionFeeWaivedBefore: number;
   repossessionFeeWaivedAfter: number;
-  closingFeeWaivedBefore: number;
-  closingFeeWaivedAfter: number;
-
   createdAt: Timestamp;
   updatedAt: Timestamp;
   deletedAt: Timestamp | null;
