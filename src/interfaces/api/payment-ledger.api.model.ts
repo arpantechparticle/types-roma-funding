@@ -42,9 +42,9 @@ export interface PaymentLedgerApiModel {
   waivedRepossessionFee: number;
 
   // 🔹 FEE PAYMENT TRACKING (only for fee-type entries: LateFee, NsfFee, RepossessionFee)
-  feePaymentStatus?: FeePaymentStatus;   // Unpaid | PartiallyPaid | Paid
-  paidAmount?: number;                   // Cumulative amount paid against this fee (default: 0)
-  appliedPaymentIds?: string[];          // Payment ledger entry IDs that applied to this fee
+  feePaymentStatus?: FeePaymentStatus | null;   // Unpaid | PartiallyPaid | Paid (null for non-fee entries)
+  paidFeeAmount?: number | null;                 // Cumulative fee amount paid (null for non-fee entries)
+  appliedPaymentIds?: string[] | null;           // Payment ledger IDs that applied (null for non-fee entries)
 
   vehicleSalePrice?: number;
   vehicleBuyerName?: string;

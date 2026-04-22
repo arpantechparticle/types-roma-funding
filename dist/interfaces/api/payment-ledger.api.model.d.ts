@@ -29,9 +29,9 @@ export interface PaymentLedgerApiModel {
     waivedLateFee: number;
     waivedNsfFee: number;
     waivedRepossessionFee: number;
-    feePaymentStatus?: FeePaymentStatus;
-    paidAmount?: number;
-    appliedPaymentIds?: string[];
+    feePaymentStatus?: FeePaymentStatus | null;
+    paidFeeAmount?: number | null;
+    appliedPaymentIds?: string[] | null;
     vehicleSalePrice?: number;
     vehicleBuyerName?: string;
     principalBefore: number;
