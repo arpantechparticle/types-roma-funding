@@ -112,6 +112,11 @@ export interface LoanApiModel {
   repossessionFeePaid: number;
   repossessionFeeWaived: number; // Total repossession fees waived
 
+  // Fee credits (from waiving already-paid fees - reduces interest accrual base)
+  lateFeeCredit: number;        // Credit from waiving paid late fees
+  nfsFeeCredit: number;         // Credit from waiving paid NSF fees
+  repossessionFeeCredit: number; // Credit from waiving paid repo fees
+
   borrowers: BorrowerModel[];
   borrowerIds: string[];
   collateral: CollateralModel;

@@ -74,6 +74,9 @@ export interface LoanApiModel {
     repossessionFeeOutstanding: number;
     repossessionFeePaid: number;
     repossessionFeeWaived: number;
+    lateFeeCredit: number;
+    nfsFeeCredit: number;
+    repossessionFeeCredit: number;
     borrowers: BorrowerModel[];
     borrowerIds: string[];
     collateral: CollateralModel;

@@ -72,6 +72,15 @@ export interface PaymentLedgerApiModel {
   nsfFeeWaivedAfter: number;
   repossessionFeeWaivedBefore: number;
   repossessionFeeWaivedAfter: number;
+
+  // 🔹 FEE CREDIT SNAPSHOTS (from waiving already-paid fees)
+  lateFeeCreditBefore: number;
+  lateFeeCreditAfter: number;
+  nfsFeeCreditBefore: number;
+  nfsFeeCreditAfter: number;
+  repossessionFeeCreditBefore: number;
+  repossessionFeeCreditAfter: number;
+
   createdAt: Timestamp;
   updatedAt: Timestamp;
   deletedAt: Timestamp | null;
