@@ -1,6 +1,6 @@
 import { Timestamp } from "../timestamp";
 import { CreatedByModel } from "../created-by.model";
-import { EntityType, PaymentStatus, PaymentMode, LedgerEntryType } from "../../enum";
+import { EntityType, PaymentStatus, PaymentMode, LedgerEntryType, FeePaymentStatus } from "../../enum";
 export interface PaymentLedgerApiModel {
     id: string;
     loanId: string;
@@ -29,6 +29,9 @@ export interface PaymentLedgerApiModel {
     waivedLateFee: number;
     waivedNsfFee: number;
     waivedRepossessionFee: number;
+    feePaymentStatus?: FeePaymentStatus;
+    paidAmount?: number;
+    appliedPaymentIds?: string[];
     vehicleSalePrice?: number;
     vehicleBuyerName?: string;
     principalBefore: number;

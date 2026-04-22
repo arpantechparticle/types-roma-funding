@@ -1,6 +1,6 @@
 import { Timestamp } from "../timestamp";
 import { CreatedByModel } from "../created-by.model";
-import { EntityType, PaymentStatus, PaymentMode, LedgerEntryType, WaiverReason } from "../../enum";
+import { EntityType, PaymentStatus, PaymentMode, LedgerEntryType, WaiverReason, FeePaymentStatus } from "../../enum";
 
 export interface PaymentLedgerApiModel {
   id: string;
@@ -40,6 +40,11 @@ export interface PaymentLedgerApiModel {
   waivedLateFee: number;
   waivedNsfFee: number;
   waivedRepossessionFee: number;
+
+  // 🔹 FEE PAYMENT TRACKING (only for fee-type entries: LateFee, NsfFee, RepossessionFee)
+  feePaymentStatus?: FeePaymentStatus;   // Unpaid | PartiallyPaid | Paid
+  paidAmount?: number;                   // Cumulative amount paid against this fee (default: 0)
+  appliedPaymentIds?: string[];          // Payment ledger entry IDs that applied to this fee
 
   vehicleSalePrice?: number;
   vehicleBuyerName?: string;

@@ -14,7 +14,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CalculationType = exports.EngineType = exports.TitleStatus = exports.LienStatus = exports.LicensePlateStatus = exports.WaiverReason = exports.TransactionStatus = exports.PaymentMode = exports.PaymentStatus = exports.InterestAccrualMethod = exports.InstallmentStatus = exports.CollateralFundingPaymentMethod = exports.AuthorizeNetTransactionStatus = exports.PaymentMethodType = exports.EcoaCode = exports.AprIncludes = exports.InterestRateFrequency = exports.CalculationMethod = exports.InsuranceCancellationType = exports.InsuranceStatus = exports.InsuranceCoverageType = exports.LoanCategory = exports.LoanType = exports.ServicingStatus = exports.PaymentFrequency = exports.LoanClosureReason = exports.LoanStatus = exports.EmploymentStatus = exports.BorrowerType = exports.Roles = exports.TaxIdType = exports.IRSBusinessEntityType = exports.EntityType = exports.Collection = void 0;
+exports.CalculationType = exports.EngineType = exports.TitleStatus = exports.LienStatus = exports.LicensePlateStatus = exports.FeePaymentStatus = exports.WaiverReason = exports.TransactionStatus = exports.PaymentMode = exports.PaymentStatus = exports.InterestAccrualMethod = exports.InstallmentStatus = exports.CollateralFundingPaymentMethod = exports.AuthorizeNetTransactionStatus = exports.PaymentMethodType = exports.EcoaCode = exports.AprIncludes = exports.InterestRateFrequency = exports.CalculationMethod = exports.InsuranceCancellationType = exports.InsuranceStatus = exports.InsuranceCoverageType = exports.LoanCategory = exports.LoanType = exports.ServicingStatus = exports.PaymentFrequency = exports.LoanClosureReason = exports.LoanStatus = exports.EmploymentStatus = exports.BorrowerType = exports.Roles = exports.TaxIdType = exports.IRSBusinessEntityType = exports.EntityType = exports.Collection = void 0;
 // Export all enums here
 var firestore_collections_enum_1 = require("./firestore-collections.enum");
 Object.defineProperty(exports, "Collection", { enumerable: true, get: function () { return firestore_collections_enum_1.Collection; } });
@@ -76,6 +76,8 @@ var transaction_status_enum_1 = require("./loan/transaction-status.enum");
 Object.defineProperty(exports, "TransactionStatus", { enumerable: true, get: function () { return transaction_status_enum_1.TransactionStatus; } });
 var waiver_reason_enum_1 = require("./loan/waiver-reason.enum");
 Object.defineProperty(exports, "WaiverReason", { enumerable: true, get: function () { return waiver_reason_enum_1.WaiverReason; } });
+var fee_payment_status_enum_1 = require("./loan/fee-payment-status.enum");
+Object.defineProperty(exports, "FeePaymentStatus", { enumerable: true, get: function () { return fee_payment_status_enum_1.FeePaymentStatus; } });
 //Collateral
 var license_plate_status_enum_1 = require("./collateral/license-plate-status.enum");
 Object.defineProperty(exports, "LicensePlateStatus", { enumerable: true, get: function () { return license_plate_status_enum_1.LicensePlateStatus; } });
