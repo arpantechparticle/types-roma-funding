@@ -8,7 +8,20 @@ export interface PaymentLedgerApiModel {
   transactionId: string | null;
   authorizeNetTransactionId: string | null; // authorization.net transaction id
   installmentId: string | null; // installment this payment was applied to (null if all installments paid)
-  paymentNumber: number | null; // installment's payment number (null if no installment linked)
+  paymentNumber: number | null; // DEPRECATED: kept for backward compatibility. Use installmentNumber instead.
+
+  /**
+   * Sequential per-loan invoice number assigned to successful payment + payoff ledger entries.
+   * Sourced from `loan.paymentCount + 1` and used as the Authorize.Net invoice suffix.
+   * Null for failed payment / fee-only / waiver entries.
+   */
+  invoiceNumber: number | null;
+
+  /**
+   * The amortization-schedule sequence number (1..N) of the installment this entry was applied to.
+   * Mirrors `installment.paymentNumber`. Null when no installment is linked (e.g. early payoff).
+   */
+  installmentNumber: number | null;
 
   // 🔹 ENTRY TYPE
   entryType: LedgerEntryType; // Type of ledger entry (payment, fee, payoff, write_off, etc.)

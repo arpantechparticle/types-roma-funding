@@ -22,6 +22,8 @@ export interface PaymentTransactionApiModel {
   status: TransactionStatus;
   paymentMode: PaymentMode;
   errorMessage: string | null;
+  authorizeNetErrorCode: string | null;
+  authorizeNetErrorText: string | null;
 
   cardLast4: string;
   cardType: string;

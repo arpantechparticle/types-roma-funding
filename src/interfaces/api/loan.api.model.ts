@@ -121,7 +121,6 @@ export interface LoanApiModel {
   borrowerIds: string[];
   collateral: CollateralModel;
   checklist: LoanChecklist;
-  insurance?: InsuranceModel | null;
   inquiryId: string | null;
   hasDealer: boolean;
   dealerId: string | null;
@@ -129,10 +128,20 @@ export interface LoanApiModel {
   titleDocument: string | null;
   underwritingDocuments: LoanUnderwritingDocuments | null;
 
+  /**
+   * Per-loan running count of successful payment + payoff ledger entries.
+   * Used to assign a unique invoiceNumber on each successful PaymentLedger entry
+   * and to build the Authorize.Net invoice string `<loanNumber>-Schedule-<paymentCount+1>`.
+   * Initialized to 0 on loan creation. NOT incremented on failed payments.
+   */
+  paymentCount: number;
+
   // Auto-payment configuration
   paymentMode: PaymentMode; // 'auto' | 'manual'
   autoPaymentSuspended: boolean; // Flag set to true after failed payment
   lastAutoPaymentDate: Timestamp | null; // Prevents duplicate charges on same due date
+
+  insurance?: InsuranceModel | null;
 
   // Rescheduling tracking
   rescheduledFromDate?: Timestamp;    // Previous due date (before last reschedule)
