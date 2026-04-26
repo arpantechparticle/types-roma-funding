@@ -34,7 +34,8 @@ export interface PaymentLedgerApiModel {
 
   waiverReason?: string;
   sourceLedgerEntryId?: string | null; // Links waiver entry back to the original fee entry
-  interestReversed?: number; // Interest reversed due to fee waiver (positive = credit to borrower)
+  interestCredit?: number; // Interest credit due to fee waiver (positive = credit to borrower)
+  waivedFeeInterestDays?: number; // Days from fee date to waiver date used for interest credit calculation
 
   // 🔹 WAIVED FEE AMOUNTS (positive value = amount waived in this entry)
   waivedLateFee: number;
@@ -45,6 +46,7 @@ export interface PaymentLedgerApiModel {
   feePaymentStatus?: FeePaymentStatus | null;   // Unpaid | PartiallyPaid | Paid (null for non-fee entries)
   paidFeeAmount?: number | null;                 // Cumulative fee amount paid (null for non-fee entries)
   targetFeeLedgerIds?: string[] | null;          // Fee ledger IDs this payment covers (null for non-payment entries)
+  paidByLedgerIds?: string[] | null;             // Payment ledger IDs that paid this fee entry (only for fee-type entries)
 
   vehicleSalePrice?: number;
   vehicleBuyerName?: string;

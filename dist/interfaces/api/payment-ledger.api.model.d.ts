@@ -25,13 +25,15 @@ export interface PaymentLedgerApiModel {
     storageLocationName?: string;
     waiverReason?: string;
     sourceLedgerEntryId?: string | null;
-    interestReversed?: number;
+    interestCredit?: number;
+    waivedFeeInterestDays?: number;
     waivedLateFee: number;
     waivedNsfFee: number;
     waivedRepossessionFee: number;
     feePaymentStatus?: FeePaymentStatus | null;
     paidFeeAmount?: number | null;
     targetFeeLedgerIds?: string[] | null;
+    paidByLedgerIds?: string[] | null;
     vehicleSalePrice?: number;
     vehicleBuyerName?: string;
     principalBefore: number;
