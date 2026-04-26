@@ -58,7 +58,6 @@ export interface PaymentLedgerApiModel {
   // 🔹 FEE PAYMENT TRACKING (only for fee-type entries: LateFee, NsfFee, RepossessionFee)
   feePaymentStatus?: FeePaymentStatus | null;   // Unpaid | PartiallyPaid | Paid (null for non-fee entries)
   paidFeeAmount?: number | null;                 // Cumulative fee amount paid (null for non-fee entries)
-  targetFeeLedgerIds?: string[] | null;          // Fee ledger IDs this payment covers (null for non-payment entries)
   paidByLedgerIds?: string[] | null;             // Payment ledger IDs that paid this fee entry (only for fee-type entries)
 
   vehicleSalePrice?: number;
