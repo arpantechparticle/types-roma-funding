@@ -44,6 +44,7 @@ export interface PaymentLedgerApiModel {
     feePaymentStatus?: FeePaymentStatus | null;
     paidFeeAmount?: number | null;
     paidByLedgerIds?: string[] | null;
+    waivedByLedgerIds?: string[] | null;
     vehicleSalePrice?: number;
     vehicleBuyerName?: string;
     principalBefore: number;
