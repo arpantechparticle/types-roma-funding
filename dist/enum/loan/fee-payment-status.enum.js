@@ -6,5 +6,6 @@ var FeePaymentStatus;
     FeePaymentStatus["Unpaid"] = "unpaid";
     FeePaymentStatus["PartiallyPaid"] = "partially_paid";
     FeePaymentStatus["Paid"] = "paid";
+    FeePaymentStatus["Waived"] = "waived";
 })(FeePaymentStatus || (exports.FeePaymentStatus = FeePaymentStatus = {}));
 //# sourceMappingURL=fee-payment-status.enum.js.map
