@@ -36,8 +36,10 @@ export interface LoanApiModel {
     repossessionDate?: Timestamp | null;
     repossessionAgent?: string | null;
     storageLocationName?: string | null;
+    storageLocationAddress?: string | null;
     vehicleSaleDate?: Timestamp | null;
     vehicleSalePrice?: number | null;
+    vehicleBuyerName?: string | null;
     closureReason?: LoanClosureReason | null;
     customClosureReason?: string | null;
     principalOriginal: number;
