@@ -8,12 +8,8 @@ export interface PaymentLedgerApiModel {
     authorizeNetTransactionId: string | null;
     installmentId: string | null;
     paymentNumber: number | null;
-    /**
-     * Sequential per-loan invoice number assigned to successful payment + payoff ledger entries.
-     * Sourced from `loan.paymentCount + 1` and used as the Authorize.Net invoice suffix.
-     * Null for failed payment / fee-only / waiver entries.
-     */
-    invoiceNumber: number | null;
+    /** Formatted invoice ID sent to Authorize.Net (e.g. `LN-1001-PAY-5`). Null for failed/fee/waiver entries. */
+    invoiceId: string | null;
     /**
      * The amortization-schedule sequence number (1..N) of the installment this entry was applied to.
      * Mirrors `installment.paymentNumber`. Null when no installment is linked (e.g. early payoff).

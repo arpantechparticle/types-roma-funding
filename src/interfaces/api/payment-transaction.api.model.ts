@@ -6,6 +6,8 @@ export interface PaymentTransactionApiModel {
   id: string;
   loanId: string;
   installmentId: string | null;
+  /** Formatted invoice ID sent to Authorize.Net (e.g. `LN-1001-PAY-5`). Null for failed transactions. */
+  invoiceId: string | null;
   paymentProfileId: string;
   amount: number;
 
