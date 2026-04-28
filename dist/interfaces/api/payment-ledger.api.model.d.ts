@@ -67,6 +67,9 @@ export interface PaymentLedgerApiModel {
     nfsFeeCreditAfter: number;
     repossessionFeeCreditBefore: number;
     repossessionFeeCreditAfter: number;
+    lateFeeCredit: number;
+    nsfFeeCredit: number;
+    repossessionFeeCredit: number;
     createdAt: Timestamp;
     updatedAt: Timestamp;
     deletedAt: Timestamp | null;

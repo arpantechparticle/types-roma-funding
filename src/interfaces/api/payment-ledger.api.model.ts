@@ -92,6 +92,11 @@ export interface PaymentLedgerApiModel {
   repossessionFeeCreditBefore: number;
   repossessionFeeCreditAfter: number;
 
+  // 🔹 CREDIT CREATED IN THIS ENTRY (waiveFromPaid; 0 for all non-waiver entries)
+  lateFeeCredit: number;
+  nsfFeeCredit: number;
+  repossessionFeeCredit: number;
+
   createdAt: Timestamp;
   updatedAt: Timestamp;
   deletedAt: Timestamp | null;
