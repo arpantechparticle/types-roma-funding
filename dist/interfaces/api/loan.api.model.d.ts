@@ -104,6 +104,7 @@ export interface LoanApiModel {
     lastRescheduleReason?: string;
     lastRescheduleBy?: CreatedByModel;
     lastRescheduleAt?: Timestamp;
+    paymentInReview?: PaymentInReview | null;
     createdAt: Timestamp;
     updatedAt: Timestamp;
     deletedAt: Timestamp | null;
@@ -113,4 +114,10 @@ export interface LoanApiModel {
     deletedBy: CreatedByModel | null;
     timeZone: string;
     source: EntityType;
+}
+export interface PaymentInReview {
+    transactionId: string;
+    amount: number;
+    heldAt: Timestamp;
+    gatewayTransactionId: string;
 }
