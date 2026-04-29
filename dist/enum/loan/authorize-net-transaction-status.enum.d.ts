@@ -4,5 +4,6 @@ export declare enum AuthorizeNetTransactionStatus {
     Declined = "declined",
     Error = "error",
     Voided = "voided",
-    Refunded = "refunded"
+    Refunded = "refunded",
+    HeldForReview = "held_for_review"
 }

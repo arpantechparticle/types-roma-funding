@@ -9,5 +9,6 @@ var AuthorizeNetTransactionStatus;
     AuthorizeNetTransactionStatus["Error"] = "error";
     AuthorizeNetTransactionStatus["Voided"] = "voided";
     AuthorizeNetTransactionStatus["Refunded"] = "refunded";
+    AuthorizeNetTransactionStatus["HeldForReview"] = "held_for_review";
 })(AuthorizeNetTransactionStatus || (exports.AuthorizeNetTransactionStatus = AuthorizeNetTransactionStatus = {}));
 //# sourceMappingURL=authorize-net-transaction-status.enum.js.map

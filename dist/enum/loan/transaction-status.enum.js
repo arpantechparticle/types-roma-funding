@@ -6,5 +6,6 @@ var TransactionStatus;
     TransactionStatus["Initiated"] = "initiated";
     TransactionStatus["Success"] = "success";
     TransactionStatus["Failed"] = "failed";
+    TransactionStatus["HeldForReview"] = "held_for_review";
 })(TransactionStatus || (exports.TransactionStatus = TransactionStatus = {}));
 //# sourceMappingURL=transaction-status.enum.js.map
