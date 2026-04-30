@@ -103,10 +103,10 @@ export interface LoanApiModel {
   lateFeePaid: number;          // Total late fees paid
   lateFeeWaived: number;        // Total late fees waived
 
-  nfsFee: number;
-  nfsFeeOutstanding: number;
-  nfsFeePaid: number;
-  nfsFeeWaived: number;         // Total NSF fees waived
+  nsfFee: number;
+  nsfFeeOutstanding: number;
+  nsfFeePaid: number;
+  nsfFeeWaived: number;         // Total NSF fees waived
 
   // Repossession fee tracking
   repossessionFee: number;
@@ -116,7 +116,7 @@ export interface LoanApiModel {
 
   // Fee credits (from waiving already-paid fees - reduces interest accrual base)
   lateFeeCredit: number;        // Credit from waiving paid late fees
-  nfsFeeCredit: number;         // Credit from waiving paid NSF fees
+  nsfFeeCredit: number;         // Credit from waiving paid NSF fees
   repossessionFeeCredit: number; // Credit from waiving paid repo fees
 
   borrowers: BorrowerModel[];

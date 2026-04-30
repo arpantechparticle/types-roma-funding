@@ -64,8 +64,8 @@ export interface PaymentLedgerApiModel {
     repossessionFeeWaivedAfter: number;
     lateFeeCreditBefore: number;
     lateFeeCreditAfter: number;
-    nfsFeeCreditBefore: number;
-    nfsFeeCreditAfter: number;
+    nsfFeeCreditBefore: number;
+    nsfFeeCreditAfter: number;
     repossessionFeeCreditBefore: number;
     repossessionFeeCreditAfter: number;
     lateFeeCredit: number;
