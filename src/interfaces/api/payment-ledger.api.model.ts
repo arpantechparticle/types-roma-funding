@@ -54,6 +54,7 @@ export interface PaymentLedgerApiModel {
   // 🔹 FEE PAYMENT TRACKING (only for fee-type entries: LateFee, NsfFee, RepossessionFee)
   feePaymentStatus?: FeePaymentStatus | null;   // Unpaid | PartiallyPaid | Paid | Waived (null for non-fee entries)
   paidFeeAmount?: number | null;                 // Cumulative fee amount paid (null for non-fee entries)
+  waivedFeeAmount?: number | null;               // Cumulative fee amount waived from the unpaid portion (null for non-fee entries)
   paidByLedgerIds?: string[] | null;             // Payment ledger IDs that paid this fee entry (only for fee-type entries)
   waivedByLedgerIds?: string[] | null;           // Waiver ledger IDs that waived this fee entry (only for fee-type entries)
 

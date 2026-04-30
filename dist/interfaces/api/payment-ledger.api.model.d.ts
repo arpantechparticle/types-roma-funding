@@ -39,6 +39,7 @@ export interface PaymentLedgerApiModel {
     waivedRepossessionFee: number;
     feePaymentStatus?: FeePaymentStatus | null;
     paidFeeAmount?: number | null;
+    waivedFeeAmount?: number | null;
     paidByLedgerIds?: string[] | null;
     waivedByLedgerIds?: string[] | null;
     vehicleSalePrice?: number;
