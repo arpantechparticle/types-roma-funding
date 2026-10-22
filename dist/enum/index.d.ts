@@ -29,6 +29,7 @@ export { PaymentMode } from './loan/payment-mode.enum';
 export { TransactionStatus } from './loan/transaction-status.enum';
 export { WaiverReason } from './loan/waiver-reason.enum';
 export { FeePaymentStatus } from './loan/fee-payment-status.enum';
+export { PromiseType } from './loan/promise-type.enum';
 export { LicensePlateStatus } from './collateral/license-plate-status.enum';
 export { LienStatus } from './collateral/lien-status.enum';
 export { TitleStatus } from './collateral/title-status.enum';

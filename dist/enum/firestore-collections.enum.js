@@ -20,5 +20,6 @@ var Collection;
     Collection["PaymentTransactions"] = "paymentTransactions";
     Collection["PaymentAllocations"] = "paymentAllocations";
     Collection["PaymentProfiles"] = "paymentProfiles";
+    Collection["Promises"] = "promises";
 })(Collection || (exports.Collection = Collection = {}));
 //# sourceMappingURL=firestore-collections.enum.js.map

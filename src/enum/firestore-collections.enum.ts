@@ -34,5 +34,7 @@ export enum Collection {
 
     PaymentProfiles = 'paymentProfiles',
 
+    Promises = 'promises',
+
 }
 

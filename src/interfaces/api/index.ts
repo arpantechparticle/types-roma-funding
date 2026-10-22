@@ -13,3 +13,4 @@ export {PaymentLedgerApiModel} from './payment-ledger.api.model';
 export {PaymentTransactionApiModel} from './payment-transaction.api.model';
 export {InsurancePolicyApiModel} from './insurance-policy.api.model';
 export {CollateralFundingApiModel} from "./collateral-funding.api.model"
+export {PromiseApiModel} from './promise.api.model';
