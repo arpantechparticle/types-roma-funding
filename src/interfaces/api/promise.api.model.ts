@@ -7,8 +7,9 @@ export interface PromiseApiModel {
   id: string;
   subject: string;
   type: PromiseType;
-  dueDate: Timestamp;
-  note: string;
+  dueDate: Timestamp | null;
+  amount: number | null;
+  note: string | null;
   fulfillmentDate: Timestamp | null;
 
   createdAt: Timestamp;
