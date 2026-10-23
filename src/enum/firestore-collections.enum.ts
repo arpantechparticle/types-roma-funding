@@ -36,5 +36,9 @@ export enum Collection {
 
     Promises = 'promises',
 
+    Notes = 'notes',
+
+    NoteCategories = 'noteCategories',
+
 }
 

@@ -16,5 +16,7 @@ export declare enum Collection {
     PaymentTransactions = "paymentTransactions",
     PaymentAllocations = "paymentAllocations",
     PaymentProfiles = "paymentProfiles",
-    Promises = "promises"
+    Promises = "promises",
+    Notes = "notes",
+    NoteCategories = "noteCategories"
 }

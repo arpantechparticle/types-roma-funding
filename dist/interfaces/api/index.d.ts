@@ -13,3 +13,5 @@ export { PaymentTransactionApiModel } from './payment-transaction.api.model';
 export { InsurancePolicyApiModel } from './insurance-policy.api.model';
 export { CollateralFundingApiModel } from "./collateral-funding.api.model";
 export { PromiseApiModel } from './promise.api.model';
+export { NoteApiModel } from './note.api.model';
+export { NoteCategoryApiModel } from './note-category.api.model';
