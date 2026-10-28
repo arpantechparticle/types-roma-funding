@@ -1,4 +1,5 @@
 export { InquiryApiModel, InquiryBusinessInformation, InquiryApplicantInformation, InquiryEmploymentInformation, InquiryBankReference, InquiryReferenceDetail, InquiryFinancingHistory, InquiryVehicleDetail, InquiryDocuments, InquiryApplicantHomeDetails } from './inquiry.api.model';
+export { ApplicationApiModel, ApplicationStatus, ApplicationBasicInfo, ApplicationVehicleDetail, ApplicationDocuments, ApplicationReferenceDetail } from './application.api.model';
 export { UserApiModel } from './user.api.model';
 export { ContactApiModel } from './contact.api.model';
 export { PersonApiModel } from './person.api.model';

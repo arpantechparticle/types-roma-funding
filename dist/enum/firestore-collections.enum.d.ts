@@ -1,5 +1,6 @@
 export declare enum Collection {
     Inquiries = "inquiries",
+    Applications = "applications",
     AdminUsers = "adminUsers",
     Contacts = "contacts",
     TempAssignClaim = "tempAssignClaim",

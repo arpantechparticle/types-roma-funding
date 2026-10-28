@@ -4,6 +4,7 @@ exports.Collection = void 0;
 var Collection;
 (function (Collection) {
     Collection["Inquiries"] = "inquiries";
+    Collection["Applications"] = "applications";
     Collection["AdminUsers"] = "adminUsers";
     Collection["Contacts"] = "contacts";
     Collection["TempAssignClaim"] = "tempAssignClaim";
