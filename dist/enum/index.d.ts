@@ -3,6 +3,7 @@ export { EntityType } from './entity-type.enum';
 export { IRSBusinessEntityType } from './irs-business-entity-type.enum';
 export { TaxIdType } from './tax-id-type.enum';
 export { Roles } from './roles.enum';
+export { PermissionKey } from './permission-key.enum';
 export { BorrowerType } from './borrower-type.enum';
 export { EmploymentStatus } from './employment-status.enum';
 export { LoanStatus } from './loan/loan-status.enum';
