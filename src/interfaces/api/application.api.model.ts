@@ -67,6 +67,8 @@ export interface ApplicationApiModel {
   documents: ApplicationDocuments;
   references: ApplicationReferenceDetail[];
   acknowledgement: boolean;
+  /** True when the applicant opted in to SMS on the public apply form. */
+  smsConsent?: boolean;
   loanId: string | null;
   createdAt: Timestamp;
   updatedAt: Timestamp;
