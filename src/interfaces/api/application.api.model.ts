@@ -4,7 +4,7 @@ import {Timestamp} from "../timestamp";
 import {AddressModel} from "../address.model";
 import {PhoneNumberModel} from "../phone-number-model";
 
-export type ApplicationStatus = 'new' | 'in-progress' | 'accepted' | 'rejected';
+export type ApplicationStatus = 'draft' | 'new' | 'in-progress' | 'accepted' | 'rejected';
 
 export interface ApplicationBasicInfo {
   name: string;
@@ -58,13 +58,21 @@ export interface ApplicationReferenceDetail {
 
 export interface ApplicationApiModel {
   id: string;
-  applicationNumber: number;
+  /** Assigned when the applicant submits. Null while the application is a draft. */
+  applicationNumber: number | null;
   status: ApplicationStatus;
+  /** Step to reopen. Finish later stores 3, the documents step. */
+  currentStep: number | null;
+  /**
+   * Set when the applicant clicks Finish later so the resume email is sent.
+   * Absent on applications created before drafts existed.
+   */
+  resumeLinkRequestedAt?: Timestamp | null;
   timeZone: string;
   source: EntityType;
   basicInfo: ApplicationBasicInfo;
-  vehicle: ApplicationVehicleDetail;
-  documents: ApplicationDocuments;
+  vehicle: ApplicationVehicleDetail | null;
+  documents: ApplicationDocuments | null;
   references: ApplicationReferenceDetail[];
   acknowledgement: boolean;
   /** True when the applicant opted in to SMS on the public apply form. */
