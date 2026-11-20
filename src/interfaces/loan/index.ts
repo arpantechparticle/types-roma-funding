@@ -7,5 +7,5 @@ export {carrierComplianceModel} from './carrier-compliance.model';
 export {InsuranceModel} from './insurance.model';
 export {BorrowerModel} from './borrower.model';
 export {FeeConfig} from './fee-config.model';
-export {LoanUnderwritingDocuments} from './loan-underwriting-documents.model';
+export {LoanUnderwritingDocuments, LoanAdditionalDocument} from './loan-underwriting-documents.model';
 export {LoanOriginationDetailsModel, FeeBreakdownModel} from './loan-origination-details.model';
